@@ -1,14 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-11T16:23:58+09:00</updated><id>http://localhost:4000/</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2017/09/11/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-09-11T16:15:43+09:00</published><updated>2017-09-11T16:15:43+09:00</updated><id>http://localhost:4000/jekyll/update/2017/09/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/09/11/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-12T12:39:42+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdu’s Blog</title><subtitle>하루에 하나씩 HTML, CSS, JavaScript... Front-End 기술에 대해서 정리하는 블로그입니다.
+</subtitle><entry><title type="html">DOCTYPE 이란?</title><link href="http://localhost:4000/html/2017/09/12/DOCTYPE.html" rel="alternate" type="text/html" title="DOCTYPE 이란?" /><published>2017-09-12T10:08:43+09:00</published><updated>2017-09-12T10:08:43+09:00</updated><id>http://localhost:4000/html/2017/09/12/DOCTYPE</id><content type="html" xml:base="http://localhost:4000/html/2017/09/12/DOCTYPE.html">&lt;h3 id=&quot;doctypedtd&quot;&gt;DOCTYPE(DTD)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;DOCTYPE은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 웹브라우저가 제대로 표현할 수 있도록하는 선언문이다.&lt;/li&gt;
+  &lt;li&gt;브라우저는 선언된 doctype에 따라 렌더링할 모드를 선택하게 되는데 이 과정을 &lt;code class=&quot;highlighter-rouge&quot;&gt;doctype sniffing&lt;/code&gt; 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;doctype switching&lt;/code&gt;이라고 한다.&lt;/li&gt;
+  &lt;li&gt;DOCTYPE은 html문서의 제일 첫 줄에 선언되어야 한다.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- HTML5의 문서선언 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;h3 id=&quot;doctype을-선언하지-않았을-경우&quot;&gt;DOCTYPE을 선언하지 않았을 경우?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTML문서가 &lt;code class=&quot;highlighter-rouge&quot;&gt;Quirks Mode(쿼크모드)&lt;/code&gt;로 랜더링 된다.&lt;/li&gt;
+  &lt;li&gt;Quirks Mode: 옛 버전의 브라우저(HTML2 ~ HTML4)를 웹페이지의 CSS(Design)를 유지하기 위해 쓰는 웹 브라우저 기술.&lt;/li&gt;
+  &lt;li&gt;IE(Internet Explorer)의 &lt;code class=&quot;highlighter-rouge&quot;&gt;호환성 보기 헤더(X-UA-Compatible header)&lt;/code&gt;가 설정되지 않을 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;Quicks Mode&lt;/code&gt;로 변경된다.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IE=Edge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;h3 id=&quot;doctypedtd의-필요성&quot;&gt;DOCTYPE(DTD)의 필요성&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;문서의 가독성 증가&lt;/li&gt;
+  &lt;li&gt;브라우저 별 호환성 증가(크로스 브라우징)&lt;/li&gt;
+  &lt;li&gt;문서 제작의 효율성 증가&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;참고&quot;&gt;참고&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/uchang7194/FDS-Study/blob/master/DAY01/HTML_Structure.md&quot; target=&quot;_blank&quot;&gt;uchang7194의 깃헙&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://webdir.tistory.com/40&quot; target=&quot;_blank&quot;&gt;흉내쟁이 블로그&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- #### What's the difference between HTML and XHTML?
+#### Are there any problems with serving pages as application/xhtml+xml?
+#### How do you serve a page with content in multiple languages?
+#### What kind of things must you be wary of when design or developing for multilingual sites?
+#### What are data- attributes good for?
+#### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+#### Describe the difference between a cookie, sessionStorage and localStorage.
+#### Describe the difference between &lt;script&gt;, &lt;script async&gt; and &lt;script defer&gt;.
+#### Why is it generally a good idea to position CSS &lt;link&gt;s between &lt;head&gt;&lt;/head&gt; and JS &lt;script&gt;s just before &lt;/body&gt;? Do you know any exceptions?
+#### What is progressive rendering?
+#### Have you used different HTML templating languages before? --&gt;</content><author><name></name></author><summary type="html">DOCTYPE(DTD) DOCTYPE은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 웹브라우저가 제대로 표현할 수 있도록하는 선언문이다. 브라우저는 선언된 doctype에 따라 렌더링할 모드를 선택하게 되는데 이 과정을 doctype sniffing 또는 doctype switching이라고 한다. DOCTYPE은 html문서의 제일 첫 줄에 선언되어야 한다.</summary></entry></feed>
