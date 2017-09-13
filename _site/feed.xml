@@ -1,5 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-12T12:39:42+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdu’s Blog</title><subtitle>하루에 하나씩 HTML, CSS, JavaScript... Front-End 기술에 대해서 정리하는 블로그입니다.
-</subtitle><entry><title type="html">DOCTYPE 이란?</title><link href="http://localhost:4000/html/2017/09/12/DOCTYPE.html" rel="alternate" type="text/html" title="DOCTYPE 이란?" /><published>2017-09-12T10:08:43+09:00</published><updated>2017-09-12T10:08:43+09:00</updated><id>http://localhost:4000/html/2017/09/12/DOCTYPE</id><content type="html" xml:base="http://localhost:4000/html/2017/09/12/DOCTYPE.html">&lt;h3 id=&quot;doctypedtd&quot;&gt;DOCTYPE(DTD)&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-13T13:41:09+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdu’s Blog</title><subtitle>하루에 하나씩 HTML, CSS, JavaScript... Front-End 기술에 대해서 정리하는 블로그입니다.
+</subtitle><entry><title type="html">웹 접근성이란?</title><link href="http://localhost:4000/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/2017/09/13/Web-Accessibility.html" rel="alternate" type="text/html" title="웹 접근성이란?" /><published>2017-09-13T11:03:43+09:00</published><updated>2017-09-13T11:03:43+09:00</updated><id>http://localhost:4000/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/2017/09/13/Web-Accessibility</id><content type="html" xml:base="http://localhost:4000/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/2017/09/13/Web-Accessibility.html">&lt;p&gt;우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;웹-접근성&quot;&gt;웹 접근성&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;웹 접근성은 남녀노소, 장애에 구분 없이 웹 사이트에서 제공하는 정보에 동등하게 접근하고 이해할 수 있도록 보장하는 것이다.&lt;/li&gt;
+  &lt;li&gt;WWW(World Wide Web)의 창시자 팀 버너스 리는 웹을 ‘장애에 구애 없이 모든 사람들이 손쉽게 정보를 공유할 수 있는 공간’ 이라고 정의 하였다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;웹-접근성의-필요성&quot;&gt;웹 접근성의 필요성&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;인터넷이용률 - 장애인 56.7%, 고령자 48.5% 2013 정보격차지수 및 실태조사보고서, 한국정보화진흥원&lt;/li&gt;
+  &lt;li&gt;웹 접근성 보장은 「국가정보화기본법」과 「장애인차별금지 및 권리구제 등에 관한 법률(이하 “장애인차별금지법”)」등 법률에 명시된 의무사항이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;웹-접근성의-4대-원칙&quot;&gt;웹 접근성의 4대 원칙&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;인식의 용이성 (Perceivable)&lt;/strong&gt; : 모든 콘텐츠는 사용자가 인식할 수 있어야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;운용의 용이성(Operable)&lt;/strong&gt; : 사용자 인터페이스 구성요소는 조작 가능하고 내비게이션 할 수 있어야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;이해의 용이성(Understandable)&lt;/strong&gt; : 콘텐츠는 이해할 수 있어야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;견고성(Robust)&lt;/strong&gt; : 웹 콘텐츠는 미래의 기술로도 접근할 수 있도록 견고하게 만들어야 한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;웹-접근성을-지키지-못-한-사례&quot;&gt;웹 접근성을 지키지 못 한 사례&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.ablenews.co.kr/News/NewsContent.aspx?CategoryCode=0014&amp;amp;NewsCode=001420170907162736910979&quot; target=&quot;_blank&quot;&gt;에이블뉴스 : 시각장애인들, 온라인몰 3곳 대상 집단소송&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ablenews.co.kr/News/Include/NewsContentInc.aspx?CategoryCode=0011&amp;amp;NewsCode=001120170907173907885715&quot; target=&quot;_blank&quot;&gt;에이블뉴스 : 코레일, 장애인을 진정 소비자로 인식은 하나&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.newstomato.com/ReadNews.aspx?no=749072&quot; target=&quot;_blank&quot;&gt;토마토뉴스 : 인터넷 쇼핑 천국? 장애인에겐 ‘그림의 떡’&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;wa마크&quot;&gt;WA마크&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;「국가정보화기본법」 제32조의2 및 동법 시행규칙 제3조의3에 의거 과학기술정보통신부 지정한 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 접근성준수 마크&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;인증의 유효기간은 1년이며 매년마다 갱신 필요하다.&lt;/li&gt;
+  &lt;li&gt;기대효과
+    &lt;ul&gt;
+      &lt;li&gt;접근성 준수 향상을 통해 지식정보사회의 정보접근권 제고&lt;/li&gt;
+      &lt;li&gt;고객 신뢰도 및 만족도 제고와 사회적 공헌&lt;/li&gt;
+      &lt;li&gt;국내 웹 개발 환경 개선 및 관련 기술 발전 촉진&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://webwatch.or.kr/imgs/2014_WA_mark2.jpg&quot; alt=&quot;WA마크&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;참고&quot;&gt;참고&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.wah.or.kr/&quot; target=&quot;_blank&quot;&gt;웹 접근성 연구소&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.websoul.co.kr/&quot; target=&quot;_blank&quot;&gt;Web Soul Lab&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력이다.</summary></entry><entry><title type="html">DOCTYPE 이란?</title><link href="http://localhost:4000/html/2017/09/12/DOCTYPE.html" rel="alternate" type="text/html" title="DOCTYPE 이란?" /><published>2017-09-12T10:08:43+09:00</published><updated>2017-09-12T10:08:43+09:00</updated><id>http://localhost:4000/html/2017/09/12/DOCTYPE</id><content type="html" xml:base="http://localhost:4000/html/2017/09/12/DOCTYPE.html">&lt;h3 id=&quot;doctypedtd&quot;&gt;DOCTYPE(DTD)&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;DOCTYPE은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 웹브라우저가 제대로 표현할 수 있도록하는 선언문이다.&lt;/li&gt;
   &lt;li&gt;브라우저는 선언된 doctype에 따라 렌더링할 모드를 선택하게 되는데 이 과정을 &lt;code class=&quot;highlighter-rouge&quot;&gt;doctype sniffing&lt;/code&gt; 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;doctype switching&lt;/code&gt;이라고 한다.&lt;/li&gt;
