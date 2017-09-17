@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>DOCTYPE 이란? - Beomdus's Blog</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#2d2a2a">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#2d2a2a">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#2d2a2a">
+
+	<link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+  <div class="sidebar-container">
+    <div class="sidebar-logo">
+      <a href="/" class="logo">Beomdu's Blog</a>
+    </div>
+
+    <menu class="sidebar-menu">
+      <li class="menu-items"><a class="menu-links" href="/">Home</a></li>
+      <li class="menu-items"><a class="menu-links" href="/about/">About</a></li>
+      <li class="menu-items"><a class="menu-links" href="/contact/">Contact</a></li>
+      <li class="menu-items"><a class="menu-links" href="https://github.com/artemsheludko/fresh">Github project</a></li>
+      <li class="menu-items"><a class="menu-links" href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>
+    </menu>
+
+    <div class="sidebar-social">
+      <li class="social-items"><a href="https://www.facebook.com/" class="social-links"><i class="social-icons fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li class="social-items"><a href="https://twitter.com/" class="social-links"><i class="social-icons fa fa-twitter" aria-hidden="true"></i></a></li>
+      <li class="social-items"><a href="https://plus.google.com/" class="social-links"><i class="social-icons fa fa-google-plus" aria-hidden="true"></i></a></li>
+      <li class="social-items"><a href="https://github.com/" class="social-links"><i class="social-icons fa fa-github" aria-hidden="true"></i></a></li>
+    </div>
+
+  </div>
+</aside>
+
+
+  <main role="main">
+    <div class="content">
+      <article class="page-article">
+  <div class="wrap-content">
+    <header class="page-header">
+      <h1 class="page-title">DOCTYPE 이란?</h1>
+      <div class="page-date"><span>2017, Sep 12&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    </header>
+    <div class="page-content">
+      
+      <h3 id="doctypedtd">DOCTYPE(DTD)</h3>
+<p><code class="highlighter-rouge">DOCTYPE</code>은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 <strong>어떤 웹브라우저라도 제대로 표현</strong>할 수 있도록하는 선언문입니다.</p>
+
+<p><code class="highlighter-rouge">HTML 4.01</code>의 경우 <code class="highlighter-rouge">SGML</code>을 기반으로 되어있어서 HTML 4.01에서 &lt;! DOCTYPE&gt; 선언은 <code class="highlighter-rouge">DTD</code>참조를 해야합니다.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span>
+</code></pre>
+</div>
+<p>하지만 <code class="highlighter-rouge">HTML5</code>는 SGML을 기반이 아니기때문에 <strong>DTD의 참조를 필요로하지 않습니다.</strong></p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- HTML5의 문서선언 --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+</code></pre>
+</div>
+<p>브라우저는 선언된 doctype에 따라 렌더링할 모드를 선택하게 되는데 이 과정을 <code class="highlighter-rouge">doctype sniffing</code> 또는 <code class="highlighter-rouge">doctype switching</code>이라고 합니다.</p>
+
+<p>참고</p>
+
+<p><a href="https://ko.wikipedia.org/wiki/SGML">SGML(Standard Generalized Markup Language)</a></p>
+
+<p><a href="https://ko.wikipedia.org/wiki/%EB%AC%B8%EC%84%9C_%ED%98%95%EC%8B%9D_%EC%A0%95%EC%9D%98">DTD(Document Type Definition)</a></p>
+
+<h3 id="doctype을-선언하지-않았을-경우">DOCTYPE을 선언하지 않았을 경우?</h3>
+<p>HTML문서에서 DOCTYPE을 선언하지 않았을 경우에는<code class="highlighter-rouge">Quirks Mode(쿼크모드)</code>로 랜더링 됩니다.</p>
+
+<p><code class="highlighter-rouge">Quirks Mode</code>: 옛 버전의 브라우저(HTML2 ~ HTML4)를 웹페이지의 CSS(Design)를 유지하기 위해 쓰는 웹 브라우저 기술.</p>
+
+<p>IE(Internet Explorer)의 <code class="highlighter-rouge">호환성 보기 헤더(X-UA-Compatible header)</code>가 설정되지 않을 경우에도 html문서는 <code class="highlighter-rouge">Quicks Mode</code>로 변경됩니다.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=Edge"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="doctypedtd의-필요성">DOCTYPE(DTD)의 필요성</h3>
+<ul>
+  <li>문서의 가독성 증가</li>
+  <li>브라우저 별 호환성 증가(크로스 브라우징)</li>
+  <li>문서 제작의 효율성 증가</li>
+</ul>
+
+<h3 id="html-mode">HTML Mode</h3>
+<p><code class="highlighter-rouge">Strict DTD</code> :
+W3C가 스타일시트 사용을 장려하기 위해 단계적으로 사라질 ‘표현’(presentation)에 관한 태그와 속성을 배제한 문서 타입입니다. 웹 문서 제작자는 가능하다면 Strict 타입을 사용해야 하지만(should), 불가피하게 표현을 담당하는 속성이 필요할 경우에는 Transitional 타입을 사용할 수도 있습니다.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD "+ XHTML 버전 +" Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd"&gt;</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">Transitional DTD</code> :
+HTML이전 버전들과의 호환성을 위한 문서 타입입니다. iframe과 새창띄우기(target=”_blank”)등을 사용할 수 있어 XHTML 사용시 이것을 추천합니다.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD "+ XHTML 버전 +" Transitional//EN" "http://www.w3.org/TR/xhtml1-transitional.dtd"&gt;</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">Frameset DTD</code> :
+Transitional DTD 기반 위에 프레임 지원을 위한 태그와 속성을 추가한 문서 타입입니다.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD "+ XHTML 버전 +"Frameset//EN" "http://www.w3.org/TR/xhtml1-frameset.dtd"&gt;</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">XHTML 프롤로그(선언문)</code> :
+모든 XML문서는 XML 해석 방법을 브라우저에게 말하는 선언문에서 시작된다. XML 선언문 또는 프롤로그는 DOCTYPE과 네임스페이스 선언, 그리고 문서의 타입 또는 마크업 랭귀지를 정의하는 것에 앞서서 정의됩니다.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="참고">참고</h4>
+
+<p><a href="https://github.com/uchang7194/FDS-Study/blob/master/DAY01/HTML_Structure.md" target="_blank">uchang7194의 깃헙</a></p>
+
+<p><a href="http://webdir.tistory.com/40" target="_blank">흉내쟁이 블로그</a></p>
+
+    </div>
+    
+
+  </div>
+</article>
+
+    </div>
+  </main>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

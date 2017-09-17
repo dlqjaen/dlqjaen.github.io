@@ -1,44 +1,176 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-13T13:51:40+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdu’s Blog</title><subtitle>하루에 하나씩 HTML, CSS, JavaScript... Front-End 기술에 대해서 정리하는 블로그입니다.
-</subtitle><entry><title type="html">웹 접근성이란?</title><link href="http://localhost:4000/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/2017/09/13/Web-Accessibility.html" rel="alternate" type="text/html" title="웹 접근성이란?" /><published>2017-09-13T11:03:43+09:00</published><updated>2017-09-13T11:03:43+09:00</updated><id>http://localhost:4000/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/2017/09/13/Web-Accessibility</id><content type="html" xml:base="http://localhost:4000/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/2017/09/13/Web-Accessibility.html">&lt;p&gt;우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력이다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-17T17:31:08+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdus’s Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">시맨틱 마크업이란?</title><link href="http://localhost:4000/Semantic-Markup/" rel="alternate" type="text/html" title="시맨틱 마크업이란?" /><published>2017-09-15T16:31:43+09:00</published><updated>2017-09-15T16:31:43+09:00</updated><id>http://localhost:4000/Semantic-Markup</id><content type="html" xml:base="http://localhost:4000/Semantic-Markup/">&lt;p&gt;특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?&lt;/p&gt;
+
+&lt;p&gt;이런 사이트의 마크업을 보면 대체로 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;로만 마크업이 되어있습니다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;로만 작성된 사이트는 검색 봇이 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹사이트의 타이틀과 내용 제대로 크롤링을 하지 못해서 검색에 노출되지 않습니다.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;사이트를 방문하는 사용자들의 &lt;code class=&quot;highlighter-rouge&quot;&gt;접근성을 생각한다면 시멘틱한 마크업으로 웹 사이트를 제작해야 할 필요&lt;/code&gt;가 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;시맨틱-마크업&quot;&gt;시맨틱 마크업&lt;/h3&gt;
+&lt;p&gt;Semantic Markup은 &lt;code class=&quot;highlighter-rouge&quot;&gt;W3C에서 지정한 권고안에 맞도록 HTML을 구성하는 것&lt;/code&gt;입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;시맨틱-마크업의-중요성&quot;&gt;시맨틱 마크업의 중요성&lt;/h3&gt;
+&lt;p&gt;시멘틱 마크업은 &lt;code class=&quot;highlighter-rouge&quot;&gt;적절한 HTML요소를 올바르게 사용&lt;/code&gt;하는 것에서 시작합니다.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Header&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;위의 마크업은 ‘id’, ‘내용’으로 이 ‘div’는 헤드부분이라고 사람은 인식되어지지만 검색 봇은 이를 인지하지 못합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&amp;gt;&lt;/span&gt;Header&lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;하지만 위의 마크업처럼 &lt;code class=&quot;highlighter-rouge&quot;&gt;W3C 권고안에 맞는 요소태그&lt;/code&gt;로 마크업을 하게 된다면 검색 봇은 위의 내용을 웹사이트의 &lt;code class=&quot;highlighter-rouge&quot;&gt;header부분이라고 안식&lt;/code&gt;하고 검색에 노출 시킬 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;시멘틱 마크업은 검색에 노출시키는 것(SEO) 외에도 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 접근성 관점&lt;/code&gt;에서도 스크린리더기를 이용하는 장애인에게 &lt;code class=&quot;highlighter-rouge&quot;&gt;현재 탭이 위하고 있는 부분이 어떤 부분인지 정확하게 인식&lt;/code&gt;시켜 줍니다.&lt;/p&gt;
+
+&lt;p&gt;또 &lt;code class=&quot;highlighter-rouge&quot;&gt;개발&lt;/code&gt;함에 있어서도 DOM Select부분에서 해당 &lt;code class=&quot;highlighter-rouge&quot;&gt;요소를 쉽게 선택&lt;/code&gt;할 수 있고 코드의 &lt;code class=&quot;highlighter-rouge&quot;&gt;가독성도 높아집니다.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;시멘틱-마크업-태그의-종류&quot;&gt;시멘틱 마크업 태그의 종류&lt;/h3&gt;
+
+&lt;h4&gt;&lt;페이지의 구조를=&quot;&quot; 잡는=&quot;&quot; 태그들=&quot;&quot;&gt;&lt;/페이지의&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;header&amp;gt;&lt;/code&gt; 문서나 Section의 상단 정보 영역을 지정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;nav&amp;gt;&lt;/code&gt;	문서의 네비게이션을 지정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;	문서의 주 컨텐츠영역을 지정합니다. 한 번만 사용가능 하다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;section&amp;gt;&lt;/code&gt;	문단구분을 지정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;article&amp;gt;&lt;/code&gt;	독립된 컨텐츠영역을 지정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;	페이지의 왼쪽 혹은 오른쪽에 위치한 컨텐츠영역을 지정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;footer&amp;gt;&lt;/code&gt; 문서나 Section의 하단 정보 영역을 지정합니다. 한 번만 사용가능 하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;tip&quot;&gt;Tip&lt;/h5&gt;
+&lt;p&gt;페이지의 구조를 잡는 태그들은 각각 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt; ~ &amp;lt;h5&amp;gt;&lt;/code&gt;요소가 반드시 하나씩은 있어야 한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;-1&quot;&gt;&lt;구조안에서 세부영역을=&quot;&quot; 잡는=&quot;&quot; 태그들=&quot;&quot;&gt;&lt;/구조안에서&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;address&amp;gt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;footer&amp;gt;&lt;/code&gt;영역에서 사용 할 수 있으며 주소, 연락처와 관련된 정보를 기입한다. 한 웹에선 한 번만 사용가능하다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;bdi&amp;gt;&lt;/code&gt;	텍스트의 방향이 반대일 경우 사용합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;details&amp;gt;&lt;/code&gt;	추가정보를 기술하는 영역을 지정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt;	대화상자나 창을 지정하며 open속성을 사용하여 숨기거나 보이도록 할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/code&gt;	&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;figure&amp;gt;&lt;/code&gt; 요소의 제목을 지정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;figure&amp;gt;&lt;/code&gt;	문서흐름상 이해를 위해 필요한 그림,동영상등을 포함할때 사용합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;mark&amp;gt;&lt;/code&gt;	마크되거나 하이라이트된 텍스트.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;menuitem&amp;gt;&lt;/code&gt; 	팝업메뉴의 아이템을 지정합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meter&amp;gt;&lt;/code&gt;	설정된 범위안에 특정값을 막대그래프식으로 표현합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;progress&amp;gt;&lt;/code&gt;	&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meter&amp;gt;&lt;/code&gt;태그와 비슷하게 동작하며 현재 진행되고 있는 수치를 보여줍니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;rp&amp;gt;&lt;/code&gt;	&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;rt&amp;gt;&lt;/code&gt;태그가 지원되지않는 브라우저를 위해 사용합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;rt&amp;gt;&lt;/code&gt;	&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;ruby&amp;gt;&lt;/code&gt;태그와 같이 사용합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;ruby&amp;gt;&lt;/code&gt;	일본어나 중국어에서 글자위에 글자를 쓸때 사용합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;summary&amp;gt;&lt;/code&gt;	&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;details&amp;gt;&lt;/code&gt; 요소안에서 제목이나 요약등의 내용을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;time&amp;gt;&lt;/code&gt;	날짜/시간 표현&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;wbr&amp;gt;&lt;/code&gt;	줄바꿈위치를 지정합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://misofamily.com/2&quot;&gt;MisoFamily&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?</summary></entry><entry><title type="html">웹 표준이란?</title><link href="http://localhost:4000/Web-Standard.1/" rel="alternate" type="text/html" title="웹 표준이란?" /><published>2017-09-14T13:02:43+09:00</published><updated>2017-09-14T13:02:43+09:00</updated><id>http://localhost:4000/Web-Standard.1</id><content type="html" xml:base="http://localhost:4000/Web-Standard.1/">&lt;p&gt;하나의 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다.&lt;/code&gt; 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?&lt;/p&gt;
+
+&lt;h3 id=&quot;웹-표준&quot;&gt;웹 표준&lt;/h3&gt;
+&lt;p&gt;이 문제를 해결하기 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;W3C(World Wide Web Consortium)&lt;/code&gt;는 &lt;code class=&quot;highlighter-rouge&quot;&gt;표준안&lt;/code&gt;을 지정했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;표준안&lt;/code&gt;에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML, CSS, JavaScript 등에 대한 규칙&lt;/code&gt;들을 담고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이 표준안을 지켜 웹사이트를 제작하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;어떤 운영체제나 웹브라우저 상에서도 비교적 동일한 디자인과 기능을 구현&lt;/code&gt;할 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;웹-표준-장점&quot;&gt;웹 표준 장점&lt;/h3&gt;
+&lt;p&gt;웹표준을 지키면 부단 어느 브라우저에서나 비슷하게 보이는 것 뿐만아니라 다양한 장점이 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;수정 및 운영관리 용이&lt;/code&gt;&lt;/strong&gt; : 
+콘텐츠의 올바른 구조화와 CSS로 시각표현을 통일하여 제어하게 되어 &lt;code class=&quot;highlighter-rouge&quot;&gt;페이지 제작의 부담 감소 및 관리가 용이하다.&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;접근성 향상&lt;/code&gt;&lt;/strong&gt; :
+웹 표준을 이용해 작성한 문서는 다양한 브라우징 환경에 대응이 가능하며 &lt;code class=&quot;highlighter-rouge&quot;&gt;휴대폰, PDA에서도 정상적인 작동 및 
+장애인 지원용 프로그램에도 도움&lt;/code&gt;이 되므로 사용자나 접속 장치의 접근성이 용이하다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;검색엔진 최적화(SEO)&lt;/code&gt;&lt;/strong&gt; :
+구조화된 웹페이지는 검색 로봇 수집을 통해 &lt;code class=&quot;highlighter-rouge&quot;&gt;검색엔진에 효율적으로 노출&lt;/code&gt; 될 수 있도록 검색엔진의 검색결과를 최적화된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;File Size 축소, 서버 저장 공간 절약&lt;/code&gt;&lt;/strong&gt; :
+효율적인 소스 작성은 &lt;code class=&quot;highlighter-rouge&quot;&gt;파일 사이즈와 서버공간을 절약&lt;/code&gt;할 수 있으며 동시에 &lt;code class=&quot;highlighter-rouge&quot;&gt;화면표시에 소요되는 시간을 단축된다.&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;효율적인 마크업&lt;/code&gt;&lt;/strong&gt; :
+CSS와 HTML문서를 분리하여 제작할 경우 불필요한 마크업이 최소화되어 &lt;code class=&quot;highlighter-rouge&quot;&gt;페이지 로딩속도 향상된다.&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;호환성 가능&lt;/code&gt;&lt;/strong&gt; :
+기존 IE브라우저에서만 작동이 가능했던 요소들이 웹 표준을 준수함으로써 &lt;code class=&quot;highlighter-rouge&quot;&gt;다양한 브라우저대응이 가능하다.&lt;/code&gt;
+(크롬, 파이어폭스, 사파리, 오페라 등)에서도 작동된다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;웹-표준의-필요성&quot;&gt;웹 표준의 필요성&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.thisisgame.com/webzine/nboard/213/?n=56672&quot;&gt;웹 표준이 중요한 이유 - 웹툰&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;웹-표준을-검증하는-서비스&quot;&gt;웹 표준을 검증하는 서비스&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://validator.kldp.org/&quot;&gt;W3C Mark Up 검증 서비스&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jigsaw.w3.org/css-validator/&quot;&gt;W3C CSS Validation 서비스&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.smartebiz.kr/new/subpage02_02.html&quot;&gt;웹발전 연구소&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://webdir.tistory.com/34&quot;&gt;WEBDIR&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">하나의 웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다. 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?</summary></entry><entry><title type="html">웹 접근성이란?</title><link href="http://localhost:4000/Web-Accessibility/" rel="alternate" type="text/html" title="웹 접근성이란?" /><published>2017-09-13T11:03:43+09:00</published><updated>2017-09-13T11:03:43+09:00</updated><id>http://localhost:4000/Web-Accessibility</id><content type="html" xml:base="http://localhost:4000/Web-Accessibility/">&lt;p&gt;우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력입니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-접근성&quot;&gt;웹 접근성&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;웹 접근성은 남녀노소, 장애에 구분 없이 웹 사이트에서 제공하는 정보에 동등하게 접근하고 이해할 수 있도록 보장하는 것이다.&lt;/li&gt;
-  &lt;li&gt;WWW(World Wide Web)의 창시자 팀 버너스 리는 웹을 ‘장애에 구애 없이 모든 사람들이 손쉽게 정보를 공유할 수 있는 공간’ 이라고 정의 하였다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;웹 접근성이란 &lt;code class=&quot;highlighter-rouge&quot;&gt;남녀노소, 장애에 구분 없이 웹 사이트에서 제공하는 정보에 동등하게 접근하고 이해할 수 있도록 보장&lt;/code&gt;하는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;WWW(World Wide Web)의 창시자 &lt;code class=&quot;highlighter-rouge&quot;&gt;팀 버너스 리&lt;/code&gt; 또한 웹을 &lt;code class=&quot;highlighter-rouge&quot;&gt;'장애에 구애 없이 모든 사람들이 손쉽게 정보를 공유할 수 있는 공간'&lt;/code&gt; 이라고 정의 한 바 있습니다.&lt;/p&gt;
+
+&lt;p&gt;하지만 정작 웹 접근성을 지키고 있는 웹 사이트는 많지 않고 &lt;code class=&quot;highlighter-rouge&quot;&gt;대부분의 웹 사이트는 웹 접근성을 지키지 않고 무시&lt;/code&gt;하고 있습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-접근성의-필요성&quot;&gt;웹 접근성의 필요성&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;인터넷이용률 - 장애인 56.7%, 고령자 48.5% 2013 정보격차지수 및 실태조사보고서, 한국정보화진흥원&lt;/li&gt;
-  &lt;li&gt;웹 접근성 보장은 「국가정보화기본법」과 「장애인차별금지 및 권리구제 등에 관한 법률(이하 “장애인차별금지법”)」등 법률에 명시된 의무사항이다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;그렇다면 왜 웹 접근성을 지켜야 하는 것일까요?&lt;/p&gt;
 
-&lt;h3 id=&quot;웹-접근성의-4대-원칙&quot;&gt;웹 접근성의 4대 원칙&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;인식의 용이성 (Perceivable)&lt;/strong&gt; : 모든 콘텐츠는 사용자가 인식할 수 있어야 한다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;운용의 용이성(Operable)&lt;/strong&gt; : 사용자 인터페이스 구성요소는 조작 가능하고 내비게이션 할 수 있어야 한다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;이해의 용이성(Understandable)&lt;/strong&gt; : 콘텐츠는 이해할 수 있어야 한다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;견고성(Robust)&lt;/strong&gt; : 웹 콘텐츠는 미래의 기술로도 접근할 수 있도록 견고하게 만들어야 한다.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;웹 접근성 보장은 &lt;code class=&quot;highlighter-rouge&quot;&gt;「국가정보화기본법」과 「장애인차별금지 및 권리구제 등에 관한 법률(이하 &quot;장애인차별금지법&quot;)」&lt;/code&gt;등 법률에 명시된 &lt;code class=&quot;highlighter-rouge&quot;&gt;의무사항&lt;/code&gt;입니다.&lt;/p&gt;
+
+&lt;p&gt;또 한국정보화진흥원의 2013 정보격차지수 및 실태조사보고서에 따르면 &lt;code class=&quot;highlighter-rouge&quot;&gt;인터넷이용률은 장애인 56.7%, 고령자 48.5%&lt;/code&gt;으로 절반의 장애인과 고령자가 인터넷을 이용하고 있다는 것을 알 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 법으로도 지정되어 있을 뿐만 아니라 전체 장애인, 고령자의 절반이나 되는 사람들이 인터넷을 이용하고 있고 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 접근성을 지키지 못 한 웹사이트 때문에 차별을 비장애인과의 차별을 당하고 있습니다.&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-접근성을-지키지-못-한-사례&quot;&gt;웹 접근성을 지키지 못 한 사례&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;웹 접근성을 지키지 못해 차별을 당한 사례&lt;/code&gt;는 우리 주변에서 흔히 사용하는 웹사이트에서 찾아 볼 수 있습니다.&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&quot;http://www.ablenews.co.kr/News/NewsContent.aspx?CategoryCode=0014&amp;amp;NewsCode=001420170907162736910979&quot; target=&quot;_blank&quot;&gt;에이블뉴스 : 시각장애인들, 온라인몰 3곳 대상 집단소송&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.ablenews.co.kr/News/Include/NewsContentInc.aspx?CategoryCode=0011&amp;amp;NewsCode=001120170907173907885715&quot; target=&quot;_blank&quot;&gt;에이블뉴스 : 코레일, 장애인을 진정 소비자로 인식은 하나&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.newstomato.com/ReadNews.aspx?no=749072&quot; target=&quot;_blank&quot;&gt;토마토뉴스 : 인터넷 쇼핑 천국? 장애인에겐 ‘그림의 떡’&lt;/a&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;웹-접근성의-4대-원칙&quot;&gt;웹 접근성의 4대 원칙&lt;/h3&gt;
+&lt;p&gt;그렇다면 어떻게 해야 웹 접근성을 지킬 수 있을까요?&lt;/p&gt;
+
+&lt;p&gt;웹 접근성은 4가지 원칙을 가지고 지켜야 합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;인식의 용이성 (Perceivable)&lt;/code&gt;&lt;/strong&gt; : 모든 콘텐츠는 사용자가 인식할 수 있어야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;운용의 용이성(Operable)&lt;/code&gt;&lt;/strong&gt; : 사용자 인터페이스 구성요소는 조작 가능하고 내비게이션 할 수 있어야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;이해의 용이성(Understandable)&lt;/code&gt;&lt;/strong&gt; : 콘텐츠는 이해할 수 있어야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;견고성(Robust)&lt;/code&gt;&lt;/strong&gt; : 웹 콘텐츠는 미래의 기술로도 접근할 수 있도록 견고하게 만들어야 한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;저시력장애인을-위한-wai-aria&quot;&gt;저시력장애인을 위한 WAI-ARIA&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/Accessibility/ARIA&quot;&gt;MDN - ARIA&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&quot;wa마크&quot;&gt;WA마크&lt;/h3&gt;
+&lt;p&gt;웹 접근성을 지키기위한 노력으로는 국가에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 접근성을 지킨 웹사이트라는 증거로 WA마크를 부여&lt;/code&gt;하는 정책이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;WA마크는 「국가정보화기본법」 제32조의2 및 동법 시행규칙 제3조의3에 의거 과학기술정보통신부에서 지정한 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 접근성준수 마크&lt;/code&gt; 입니다.&lt;/p&gt;
+
+&lt;p&gt;인증의 &lt;code class=&quot;highlighter-rouge&quot;&gt;유효기간은 1년이며 매년마다 갱신이 필요&lt;/code&gt;합니다.&lt;/p&gt;
+
+&lt;p&gt;WA마크를 부여함으로 인해 기대하는 효과로는&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;「국가정보화기본법」 제32조의2 및 동법 시행규칙 제3조의3에 의거 과학기술정보통신부 지정한 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 접근성준수 마크&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;인증의 유효기간은 1년이며 매년마다 갱신 필요하다.&lt;/li&gt;
-  &lt;li&gt;기대효과
-    &lt;ul&gt;
-      &lt;li&gt;접근성 준수 향상을 통해 지식정보사회의 정보접근권 제고&lt;/li&gt;
-      &lt;li&gt;고객 신뢰도 및 만족도 제고와 사회적 공헌&lt;/li&gt;
-      &lt;li&gt;국내 웹 개발 환경 개선 및 관련 기술 발전 촉진&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;접근성 준수 향상을 통해 &lt;code class=&quot;highlighter-rouge&quot;&gt;지식정보사회의 정보접근권 제고&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;고객 신뢰도 및 만족도 제고와 사회적 공헌&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;국내 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 개발 환경 개선 및 관련 기술 발전&lt;/code&gt; 촉진&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://webwatch.or.kr/imgs/2014_WA_mark2.jpg&quot; alt=&quot;WA마크&quot; /&gt;&lt;/p&gt;
@@ -47,24 +179,33 @@
 
 &lt;p&gt;&lt;a href=&quot;http://www.wah.or.kr/&quot; target=&quot;_blank&quot;&gt;웹 접근성 연구소&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.websoul.co.kr/&quot; target=&quot;_blank&quot;&gt;Web Soul Lab&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력이다.</summary></entry><entry><title type="html">DOCTYPE 이란?</title><link href="http://localhost:4000/html/2017/09/12/DOCTYPE.html" rel="alternate" type="text/html" title="DOCTYPE 이란?" /><published>2017-09-12T10:08:43+09:00</published><updated>2017-09-12T10:08:43+09:00</updated><id>http://localhost:4000/html/2017/09/12/DOCTYPE</id><content type="html" xml:base="http://localhost:4000/html/2017/09/12/DOCTYPE.html">&lt;h3 id=&quot;doctypedtd&quot;&gt;DOCTYPE(DTD)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;DOCTYPE은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 웹브라우저가 제대로 표현할 수 있도록하는 선언문이다.&lt;/li&gt;
-  &lt;li&gt;브라우저는 선언된 doctype에 따라 렌더링할 모드를 선택하게 되는데 이 과정을 &lt;code class=&quot;highlighter-rouge&quot;&gt;doctype sniffing&lt;/code&gt; 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;doctype switching&lt;/code&gt;이라고 한다.&lt;/li&gt;
-  &lt;li&gt;DOCTYPE은 html문서의 제일 첫 줄에 선언되어야 한다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.websoul.co.kr/&quot; target=&quot;_blank&quot;&gt;Web Soul Lab&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력입니다.</summary></entry><entry><title type="html">DOCTYPE 이란?</title><link href="http://localhost:4000/DOCTYPE/" rel="alternate" type="text/html" title="DOCTYPE 이란?" /><published>2017-09-12T10:08:43+09:00</published><updated>2017-09-12T10:08:43+09:00</updated><id>http://localhost:4000/DOCTYPE</id><content type="html" xml:base="http://localhost:4000/DOCTYPE/">&lt;h3 id=&quot;doctypedtd&quot;&gt;DOCTYPE(DTD)&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DOCTYPE&lt;/code&gt;은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 &lt;strong&gt;어떤 웹브라우저라도 제대로 표현&lt;/strong&gt;할 수 있도록하는 선언문입니다.&lt;/p&gt;
 
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML 4.01&lt;/code&gt;의 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;SGML&lt;/code&gt;을 기반으로 되어있어서 HTML 4.01에서 &amp;lt;! DOCTYPE&amp;gt; 선언은 &lt;code class=&quot;highlighter-rouge&quot;&gt;DTD&lt;/code&gt;참조를 해야합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;하지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML5&lt;/code&gt;는 SGML을 기반이 아니기때문에 &lt;strong&gt;DTD의 참조를 필요로하지 않습니다.&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- HTML5의 문서선언 --&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;브라우저는 선언된 doctype에 따라 렌더링할 모드를 선택하게 되는데 이 과정을 &lt;code class=&quot;highlighter-rouge&quot;&gt;doctype sniffing&lt;/code&gt; 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;doctype switching&lt;/code&gt;이라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;참고&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/SGML&quot;&gt;SGML(Standard Generalized Markup Language)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%AC%B8%EC%84%9C_%ED%98%95%EC%8B%9D_%EC%A0%95%EC%9D%98&quot;&gt;DTD(Document Type Definition)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;doctype을-선언하지-않았을-경우&quot;&gt;DOCTYPE을 선언하지 않았을 경우?&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;HTML문서가 &lt;code class=&quot;highlighter-rouge&quot;&gt;Quirks Mode(쿼크모드)&lt;/code&gt;로 랜더링 된다.&lt;/li&gt;
-  &lt;li&gt;Quirks Mode: 옛 버전의 브라우저(HTML2 ~ HTML4)를 웹페이지의 CSS(Design)를 유지하기 위해 쓰는 웹 브라우저 기술.&lt;/li&gt;
-  &lt;li&gt;IE(Internet Explorer)의 &lt;code class=&quot;highlighter-rouge&quot;&gt;호환성 보기 헤더(X-UA-Compatible header)&lt;/code&gt;가 설정되지 않을 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;Quicks Mode&lt;/code&gt;로 변경된다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;HTML문서에서 DOCTYPE을 선언하지 않았을 경우에는&lt;code class=&quot;highlighter-rouge&quot;&gt;Quirks Mode(쿼크모드)&lt;/code&gt;로 랜더링 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Quirks Mode&lt;/code&gt;: 옛 버전의 브라우저(HTML2 ~ HTML4)를 웹페이지의 CSS(Design)를 유지하기 위해 쓰는 웹 브라우저 기술.&lt;/p&gt;
+
+&lt;p&gt;IE(Internet Explorer)의 &lt;code class=&quot;highlighter-rouge&quot;&gt;호환성 보기 헤더(X-UA-Compatible header)&lt;/code&gt;가 설정되지 않을 경우에도 html문서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Quicks Mode&lt;/code&gt;로 변경됩니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IE=Edge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -79,20 +220,33 @@
   &lt;li&gt;문서 제작의 효율성 증가&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;html-mode&quot;&gt;HTML Mode&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Strict DTD&lt;/code&gt; :
+W3C가 스타일시트 사용을 장려하기 위해 단계적으로 사라질 ‘표현’(presentation)에 관한 태그와 속성을 배제한 문서 타입입니다. 웹 문서 제작자는 가능하다면 Strict 타입을 사용해야 하지만(should), 불가피하게 표현을 담당하는 속성이 필요할 경우에는 Transitional 타입을 사용할 수도 있습니다.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD &quot;+ XHTML 버전 +&quot; Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1-strict.dtd&quot;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Transitional DTD&lt;/code&gt; :
+HTML이전 버전들과의 호환성을 위한 문서 타입입니다. iframe과 새창띄우기(target=”_blank”)등을 사용할 수 있어 XHTML 사용시 이것을 추천합니다.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD &quot;+ XHTML 버전 +&quot; Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1-transitional.dtd&quot;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Frameset DTD&lt;/code&gt; :
+Transitional DTD 기반 위에 프레임 지원을 위한 태그와 속성을 추가한 문서 타입입니다.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD &quot;+ XHTML 버전 +&quot;Frameset//EN&quot; &quot;http://www.w3.org/TR/xhtml1-frameset.dtd&quot;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;XHTML 프롤로그(선언문)&lt;/code&gt; :
+모든 XML문서는 XML 해석 방법을 브라우저에게 말하는 선언문에서 시작된다. XML 선언문 또는 프롤로그는 DOCTYPE과 네임스페이스 선언, 그리고 문서의 타입 또는 마크업 랭귀지를 정의하는 것에 앞서서 정의됩니다.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;h4 id=&quot;참고&quot;&gt;참고&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/uchang7194/FDS-Study/blob/master/DAY01/HTML_Structure.md&quot; target=&quot;_blank&quot;&gt;uchang7194의 깃헙&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://webdir.tistory.com/40&quot; target=&quot;_blank&quot;&gt;흉내쟁이 블로그&lt;/a&gt;&lt;/p&gt;
-
-&lt;!-- #### What's the difference between HTML and XHTML?
-#### Are there any problems with serving pages as application/xhtml+xml?
-#### How do you serve a page with content in multiple languages?
-#### What kind of things must you be wary of when design or developing for multilingual sites?
-#### What are data- attributes good for?
-#### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
-#### Describe the difference between a cookie, sessionStorage and localStorage.
-#### Describe the difference between &lt;script&gt;, &lt;script async&gt; and &lt;script defer&gt;.
-#### Why is it generally a good idea to position CSS &lt;link&gt;s between &lt;head&gt;&lt;/head&gt; and JS &lt;script&gt;s just before &lt;/body&gt;? Do you know any exceptions?
-#### What is progressive rendering?
-#### Have you used different HTML templating languages before? --&gt;</content><author><name></name></author><summary type="html">DOCTYPE(DTD) DOCTYPE은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 웹브라우저가 제대로 표현할 수 있도록하는 선언문이다. 브라우저는 선언된 doctype에 따라 렌더링할 모드를 선택하게 되는데 이 과정을 doctype sniffing 또는 doctype switching이라고 한다. DOCTYPE은 html문서의 제일 첫 줄에 선언되어야 한다.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;http://webdir.tistory.com/40&quot; target=&quot;_blank&quot;&gt;흉내쟁이 블로그&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">DOCTYPE(DTD) DOCTYPE은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 어떤 웹브라우저라도 제대로 표현할 수 있도록하는 선언문입니다.</summary></entry></feed>
