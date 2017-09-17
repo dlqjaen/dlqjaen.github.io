@@ -1,5 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-17T17:31:08+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdus’s Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">시맨틱 마크업이란?</title><link href="http://localhost:4000/Semantic-Markup/" rel="alternate" type="text/html" title="시맨틱 마크업이란?" /><published>2017-09-15T16:31:43+09:00</published><updated>2017-09-15T16:31:43+09:00</updated><id>http://localhost:4000/Semantic-Markup</id><content type="html" xml:base="http://localhost:4000/Semantic-Markup/">&lt;p&gt;특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-17T21:33:25+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdus’s Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">jQuery VS Vue.js</title><link href="http://localhost:4000/jQuery-VS-Vue-js/" rel="alternate" type="text/html" title="jQuery VS Vue.js" /><published>2017-09-17T20:00:43+09:00</published><updated>2017-09-17T20:00:43+09:00</updated><id>http://localhost:4000/jQuery-VS-Vue-js</id><content type="html" xml:base="http://localhost:4000/jQuery-VS-Vue-js/">&lt;p&gt;Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;javascript-라이브러리&quot;&gt;JavaScript 라이브러리&lt;/h3&gt;
+&lt;p&gt;우선, JavaScript의 라이브러리란 네이티브 스크립트에는 없는 함수(기능)들을 함수로 만들어서 묶어놓은 JavaScript 파일이라고 할 수 있습니다. 이런 라이브러리들은&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DOM 조작&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DOM 이벤트&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AJAX / 데이터 검색&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;효과 &amp;amp; 애니메이션&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML 템플릿&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;페이지 레이아웃&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UI 위젯&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;그래픽 &amp;amp; 차트&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;데이터 모델링&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;라우팅 &amp;amp; 탐색&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;접근성&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;다중 브라우저 지원&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;모바일 지원&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;등의 다양한 부분에 관하여 새로운 함수(기능)을 개발자들이 쓰기 편하도록 만들어져 있습니다.&lt;/p&gt;
+
+&lt;p&gt;라이브러리에 따라 아주 작은부분의 역할만 하는 라이브러리는 미니라이브러리, 마이크로 라이브러리라고도 합니다.&lt;/p&gt;
+
+&lt;p&gt;우리가 알아보고자하는 jQuery는 DOM API, 윈도우 메소드 기능들을 더 쉽게 사용할 수 있도록 도와주는 라이브러리입니다.&lt;/p&gt;
+
+&lt;p&gt;그렇다면 비교해볼 Vue.js는 뭘까요?&lt;/p&gt;
+
+&lt;h3 id=&quot;javascript-프레임워크&quot;&gt;JavaScript 프레임워크&lt;/h3&gt;
+&lt;p&gt;Vue.js는 JavaScript 프레임워크 입니다. 프레임워크는 라이브러리와 달리 애플리케이션의 틀과 구조를 결정하고 그 위에 개발된 개발자의 코드를 제어합니다.&lt;/p&gt;
+
+&lt;p&gt;프레임워크는 구체적이며 확장 가능한 기반 코드를 가지고 있으며, 설계자가 의도하는 여러 디자인 패턴의 집합으로 구성되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;즉, 프레임워크는 설계의 기반이 되는 부분을 기술한 확장 가능한 기반 코드와
+사용자가 이 코드를 자기 입맛대로 확장하는 데 필요한 라이브러리 이 두 가지 요소가 통합되어 제공되는 형태라고 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;결국 Vue.js를 사용하여 개발을 하면서 jQuery도 적용시켜 개발할 수 있는 것 입니다.&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;jquery와-vuejs의-다른-차이점&quot;&gt;jQuery와 Vue.js의 다른 차이점&lt;/h3&gt;
+&lt;p&gt;지금까지 jQuery와 Vue.js의 가장 큰 차이점인 라이브러리와 프레임워크에 대해 알아봤습니다.&lt;/p&gt;
+
+&lt;p&gt;그렇다면 본격적으로 jQuery와 Vue.js의 다른 차이점은 뭐가 있을까요?&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;분류&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;jQuery&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Vue.js&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;개발자&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;존 레식&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;에반뉴&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;배포날짜&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2006.06.30&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2014.02&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;종류&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;JavaScript 라이브러리&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;JavaScript  프레임워크&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;접근방식&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;실제 DOM에 접근&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;가상(Virtual) DOM에 접근&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;용량&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;270kb&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;76kb&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;속도(네이티브 스크립트)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;10배 느림&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1.2배 느림&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;참고&quot;&gt;참고&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;http://webframeworks.kr/tutorials/translate/virtual-dom/&quot;&gt;돔과 가상돔의 차이점&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;참고-1&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mygumi.tistory.com/193&quot;&gt;Vue.js 와 jQuery 공존하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jokergt.tistory.com/89&quot;&gt;Gun’s Knowledge Base&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.</summary></entry><entry><title type="html">시맨틱 마크업이란?</title><link href="http://localhost:4000/Semantic-Markup/" rel="alternate" type="text/html" title="시맨틱 마크업이란?" /><published>2017-09-15T16:31:43+09:00</published><updated>2017-09-15T16:31:43+09:00</updated><id>http://localhost:4000/Semantic-Markup</id><content type="html" xml:base="http://localhost:4000/Semantic-Markup/">&lt;p&gt;특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?&lt;/p&gt;
 
 &lt;p&gt;이런 사이트의 마크업을 보면 대체로 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;로만 마크업이 되어있습니다.&lt;/p&gt;
 
@@ -28,7 +120,7 @@
 
 &lt;h3 id=&quot;시멘틱-마크업-태그의-종류&quot;&gt;시멘틱 마크업 태그의 종류&lt;/h3&gt;
 
-&lt;h4&gt;&lt;페이지의 구조를=&quot;&quot; 잡는=&quot;&quot; 태그들=&quot;&quot;&gt;&lt;/페이지의&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;페이지의-구조를-잡는-태그들&quot;&gt;페이지의 구조를 잡는 태그들&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;header&amp;gt;&lt;/code&gt; 문서나 Section의 상단 정보 영역을 지정합니다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;nav&amp;gt;&lt;/code&gt;	문서의 네비게이션을 지정합니다.&lt;/li&gt;
@@ -42,7 +134,7 @@
 &lt;h5 id=&quot;tip&quot;&gt;Tip&lt;/h5&gt;
 &lt;p&gt;페이지의 구조를 잡는 태그들은 각각 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt; ~ &amp;lt;h5&amp;gt;&lt;/code&gt;요소가 반드시 하나씩은 있어야 한다.&lt;/p&gt;
 
-&lt;h4 id=&quot;-1&quot;&gt;&lt;구조안에서 세부영역을=&quot;&quot; 잡는=&quot;&quot; 태그들=&quot;&quot;&gt;&lt;/구조안에서&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;구조안에서-세부영역을-잡는-태그들&quot;&gt;구조안에서 세부영역을 잡는 태그들&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;address&amp;gt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;footer&amp;gt;&lt;/code&gt;영역에서 사용 할 수 있으며 주소, 연락처와 관련된 정보를 기입한다. 한 웹에선 한 번만 사용가능하다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;bdi&amp;gt;&lt;/code&gt;	텍스트의 방향이 반대일 경우 사용합니다.&lt;/li&gt;
@@ -65,7 +157,7 @@
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://misofamily.com/2&quot;&gt;MisoFamily&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?</summary></entry><entry><title type="html">웹 표준이란?</title><link href="http://localhost:4000/Web-Standard.1/" rel="alternate" type="text/html" title="웹 표준이란?" /><published>2017-09-14T13:02:43+09:00</published><updated>2017-09-14T13:02:43+09:00</updated><id>http://localhost:4000/Web-Standard.1</id><content type="html" xml:base="http://localhost:4000/Web-Standard.1/">&lt;p&gt;하나의 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다.&lt;/code&gt; 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?</summary></entry><entry><title type="html">웹 표준이란?</title><link href="http://localhost:4000/Web-Standard/" rel="alternate" type="text/html" title="웹 표준이란?" /><published>2017-09-14T13:02:43+09:00</published><updated>2017-09-14T13:02:43+09:00</updated><id>http://localhost:4000/Web-Standard</id><content type="html" xml:base="http://localhost:4000/Web-Standard/">&lt;p&gt;하나의 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다.&lt;/code&gt; 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-표준&quot;&gt;웹 표준&lt;/h3&gt;
 &lt;p&gt;이 문제를 해결하기 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;W3C(World Wide Web Consortium)&lt;/code&gt;는 &lt;code class=&quot;highlighter-rouge&quot;&gt;표준안&lt;/code&gt;을 지정했습니다.&lt;/p&gt;
@@ -170,10 +262,10 @@ CSS와 HTML문서를 분리하여 제작할 경우 불필요한 마크업이 최
 &lt;ul&gt;
   &lt;li&gt;접근성 준수 향상을 통해 &lt;code class=&quot;highlighter-rouge&quot;&gt;지식정보사회의 정보접근권 제고&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;고객 신뢰도 및 만족도 제고와 사회적 공헌&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;국내 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 개발 환경 개선 및 관련 기술 발전&lt;/code&gt; 촉진&lt;/li&gt;
+  &lt;li&gt;국내 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹 개발 환경 개선 및 관련 기술 발전&lt;/code&gt; 촉진
+이 있습니다.
+&lt;img src=&quot;http://webwatch.or.kr/imgs/2014_WA_mark2.jpg&quot; alt=&quot;WA마크&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://webwatch.or.kr/imgs/2014_WA_mark2.jpg&quot; alt=&quot;WA마크&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;참고&quot;&gt;참고&lt;/h4&gt;
 
