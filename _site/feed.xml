@@ -1,5 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-17T21:33:25+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdus’s Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">jQuery VS Vue.js</title><link href="http://localhost:4000/jQuery-VS-Vue-js/" rel="alternate" type="text/html" title="jQuery VS Vue.js" /><published>2017-09-17T20:00:43+09:00</published><updated>2017-09-17T20:00:43+09:00</updated><id>http://localhost:4000/jQuery-VS-Vue-js</id><content type="html" xml:base="http://localhost:4000/jQuery-VS-Vue-js/">&lt;p&gt;Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-18T20:14:18+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdus’s Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">DOM VS Virtual-DOM</title><link href="http://localhost:4000/DOM-VS-Virtual-DOM/" rel="alternate" type="text/html" title="DOM VS Virtual-DOM" /><published>2017-09-18T10:12:43+09:00</published><updated>2017-09-18T10:12:43+09:00</updated><id>http://localhost:4000/DOM-VS-Virtual-DOM</id><content type="html" xml:base="http://localhost:4000/DOM-VS-Virtual-DOM/">&lt;p&gt;jQuery와 Vue.js의 차이점 중 하나였던 돔(DOM)과 가상돔(Vuertual DOM)이 뭔지 알아보도록 하겠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h3&gt;
+&lt;p&gt;DOM은 HTML 문서의 요소들에 접근하는 방법을 제공해주는 API입니다.&lt;/p&gt;
+
+&lt;p&gt;window 객체의 document 프로퍼티를 통해서 DOM을 사용할 수 있으며 HTML의 요소들을 생성, 선택, 수정, 삭제를 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;아래 이미지는 DOM Tree입니다.
+웹페이지가 요청되면 DOM이 제일 먼저 document객체를 통해 html객체를 생성하고 head객체와 body객체를 생성하는 순서로 트리구조를 만들어가는 것을 보여줍니다.
+&lt;img src=&quot;http://pautasso.info/lectures/w13/sa3/3-js/img/dom-tree.svg&quot; alt=&quot;Dom Tree&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;dom의-문제점&quot;&gt;DOM의 문제점&lt;/h4&gt;
+&lt;p&gt;이런 DOM에는 치명적인 문제점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;DOM의 Document로 생성된 html요소들의 스타일이 변경되면 html객체부터 다시 생성하기 시작합니다. 그렇기 때문에 스타일 하나가 적용되기까지는 시간이 많이 걸립니다.(속도가 느리다)&lt;/p&gt;
+
+&lt;p&gt;SPA(Single Page Application)의 사이트인 경우에는 DOM 트리의 크기는 엄청나게 클 것이고 동적으로 변해야하는 UI들을 감당하게 벅찰 것입니다.&lt;/p&gt;
+
+&lt;p&gt;이런 문제점을 해결하고자 나온 방법이 Virtual DOM을 사용하는 것입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;virtual-domdocument-object-model&quot;&gt;Virtual DOM(Document Object Model)&lt;/h3&gt;
+&lt;p&gt;Virtual DOM은 실제 DOM을 가볍게하여 따로 복사해놓는 추상화된 돔입니다.&lt;/p&gt;
+
+&lt;p&gt;Virtual DOM은 요소의 스타일이 변경되면 변경되기 전의 추상화된 돔과 변경 후의 추상화된 돔을 비교하여 바뀐 부분만을 찾아 실제돔에 적용을 시킵니다.&lt;/p&gt;
+
+&lt;p&gt;그렇기 때문에 속도가 월등히 빠릅니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;virtual-dom-사용하는-프레임워크&quot;&gt;Virtual DOM 사용하는 프레임워크&lt;/h4&gt;
+&lt;p&gt;이런 Virtual DOM을 사용하는 프레임워크는 Vue.js, React가 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://webframeworks.kr/tutorials/translate/virtual-dom/&quot; target=&quot;_blank&quot;&gt;돔과 가상돔의 차이점&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">jQuery와 Vue.js의 차이점 중 하나였던 돔(DOM)과 가상돔(Vuertual DOM)이 뭔지 알아보도록 하겠습니다.</summary></entry><entry><title type="html">jQuery VS Vue.js</title><link href="http://localhost:4000/jQuery-VS-Vue-js/" rel="alternate" type="text/html" title="jQuery VS Vue.js" /><published>2017-09-17T20:00:43+09:00</published><updated>2017-09-17T20:00:43+09:00</updated><id>http://localhost:4000/jQuery-VS-Vue-js</id><content type="html" xml:base="http://localhost:4000/jQuery-VS-Vue-js/">&lt;p&gt;Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;javascript-라이브러리&quot;&gt;JavaScript 라이브러리&lt;/h3&gt;
 &lt;p&gt;우선, JavaScript의 라이브러리란 네이티브 스크립트에는 없는 함수(기능)들을 함수로 만들어서 묶어놓은 JavaScript 파일이라고 할 수 있습니다. 이런 라이브러리들은&lt;/p&gt;
@@ -85,12 +116,12 @@
 &lt;/table&gt;
 
 &lt;h4 id=&quot;참고&quot;&gt;참고&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;http://webframeworks.kr/tutorials/translate/virtual-dom/&quot;&gt;돔과 가상돔의 차이점&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://webframeworks.kr/tutorials/translate/virtual-dom/&quot; target=&quot;_blank&quot;&gt;돔과 가상돔의 차이점&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;참고-1&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://mygumi.tistory.com/193&quot;&gt;Vue.js 와 jQuery 공존하기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jokergt.tistory.com/89&quot;&gt;Gun’s Knowledge Base&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mygumi.tistory.com/193&quot; target=&quot;_blank&quot;&gt;Vue.js 와 jQuery 공존하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jokergt.tistory.com/89&quot; target=&quot;_blank&quot;&gt;Gun’s Knowledge Base&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><summary type="html">Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.</summary></entry><entry><title type="html">시맨틱 마크업이란?</title><link href="http://localhost:4000/Semantic-Markup/" rel="alternate" type="text/html" title="시맨틱 마크업이란?" /><published>2017-09-15T16:31:43+09:00</published><updated>2017-09-15T16:31:43+09:00</updated><id>http://localhost:4000/Semantic-Markup</id><content type="html" xml:base="http://localhost:4000/Semantic-Markup/">&lt;p&gt;특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?&lt;/p&gt;
 
 &lt;p&gt;이런 사이트의 마크업을 보면 대체로 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;로만 마크업이 되어있습니다.&lt;/p&gt;
@@ -156,7 +187,7 @@
 
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://misofamily.com/2&quot;&gt;MisoFamily&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://misofamily.com/2&quot; target=&quot;_blank&quot;&gt;MisoFamily&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><summary type="html">특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?</summary></entry><entry><title type="html">웹 표준이란?</title><link href="http://localhost:4000/Web-Standard/" rel="alternate" type="text/html" title="웹 표준이란?" /><published>2017-09-14T13:02:43+09:00</published><updated>2017-09-14T13:02:43+09:00</updated><id>http://localhost:4000/Web-Standard</id><content type="html" xml:base="http://localhost:4000/Web-Standard/">&lt;p&gt;하나의 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다.&lt;/code&gt; 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-표준&quot;&gt;웹 표준&lt;/h3&gt;
@@ -199,17 +230,17 @@ CSS와 HTML문서를 분리하여 제작할 경우 불필요한 마크업이 최
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;웹-표준의-필요성&quot;&gt;웹 표준의 필요성&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.thisisgame.com/webzine/nboard/213/?n=56672&quot;&gt;웹 표준이 중요한 이유 - 웹툰&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.thisisgame.com/webzine/nboard/213/?n=56672&quot; target=&quot;_blank&quot;&gt;웹 표준이 중요한 이유 - 웹툰&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-표준을-검증하는-서비스&quot;&gt;웹 표준을 검증하는 서비스&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://validator.kldp.org/&quot;&gt;W3C Mark Up 검증 서비스&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://validator.kldp.org/&quot; target=&quot;_blank&quot;&gt;W3C Mark Up 검증 서비스&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://jigsaw.w3.org/css-validator/&quot;&gt;W3C CSS Validation 서비스&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jigsaw.w3.org/css-validator/&quot; target=&quot;_blank&quot;&gt;W3C CSS Validation 서비스&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.smartebiz.kr/new/subpage02_02.html&quot;&gt;웹발전 연구소&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.smartebiz.kr/new/subpage02_02.html&quot; target=&quot;_blank&quot;&gt;웹발전 연구소&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://webdir.tistory.com/34&quot;&gt;WEBDIR&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">하나의 웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다. 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?</summary></entry><entry><title type="html">웹 접근성이란?</title><link href="http://localhost:4000/Web-Accessibility/" rel="alternate" type="text/html" title="웹 접근성이란?" /><published>2017-09-13T11:03:43+09:00</published><updated>2017-09-13T11:03:43+09:00</updated><id>http://localhost:4000/Web-Accessibility</id><content type="html" xml:base="http://localhost:4000/Web-Accessibility/">&lt;p&gt;우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력입니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://webdir.tistory.com/34&quot; target=&quot;_blank&quot;&gt;WEBDIR&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">하나의 웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다. 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?</summary></entry><entry><title type="html">웹 접근성이란?</title><link href="http://localhost:4000/Web-Accessibility/" rel="alternate" type="text/html" title="웹 접근성이란?" /><published>2017-09-13T11:03:43+09:00</published><updated>2017-09-13T11:03:43+09:00</updated><id>http://localhost:4000/Web-Accessibility</id><content type="html" xml:base="http://localhost:4000/Web-Accessibility/">&lt;p&gt;우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력입니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-접근성&quot;&gt;웹 접근성&lt;/h3&gt;
 &lt;p&gt;웹 접근성이란 &lt;code class=&quot;highlighter-rouge&quot;&gt;남녀노소, 장애에 구분 없이 웹 사이트에서 제공하는 정보에 동등하게 접근하고 이해할 수 있도록 보장&lt;/code&gt;하는 것입니다.&lt;/p&gt;

@@ -2,7 +2,8 @@
 layout: post
 title:  "DOCTYPE 이란?"
 date:   2017-09-12 10:08:43 +0900
-<!-- img: doctype.jpg -->
+img: front-end-posting.png
+description: 안녕하세요~
 categories: HTML
 ---
 ### DOCTYPE(DTD)

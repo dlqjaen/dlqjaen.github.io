@@ -13,16 +13,16 @@ url: "artemsheludko.pw" # the base hostname & protocol for your site, e.g. http:
 facebook: #Add your Facebook
 twitter: #Add your Twitter
 google-plus: #Add your Google+
-github: #Add your Github
+github: dlqjaen
 
 # Contact form
-email: #your-email@domain.com
+email: a01055255417@gmail.com
 
 # Comments
 discus-identifier: # Add your Disqus identifier
 
 # Paginate
-paginate: 5
+paginate: 10
 paginate_path: /page:num/
 
 # Build settings

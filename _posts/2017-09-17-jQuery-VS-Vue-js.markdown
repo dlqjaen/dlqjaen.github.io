@@ -56,9 +56,9 @@ Vue.js는 JavaScript 프레임워크 입니다. 프레임워크는 라이브러�
 |속도(네이티브 스크립트) | 10배 느림  | 1.2배 느림
 
 #### 참고
-[돔과 가상돔의 차이점](http://webframeworks.kr/tutorials/translate/virtual-dom/)
+[돔과 가상돔의 차이점](http://webframeworks.kr/tutorials/translate/virtual-dom/){: target="_blank" }
 
 
 ### 참고
-- [Vue.js 와 jQuery 공존하기](http://mygumi.tistory.com/193)
-- [Gun's Knowledge Base](http://jokergt.tistory.com/89)
+- [Vue.js 와 jQuery 공존하기](http://mygumi.tistory.com/193){: target="_blank" }
+- [Gun's Knowledge Base](http://jokergt.tistory.com/89){: target="_blank" }

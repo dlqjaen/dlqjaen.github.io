@@ -66,4 +66,4 @@ Semantic Markup은 `W3C에서 지정한 권고안에 맞도록 HTML을 구성하
 
 
 ### 참고
-- [MisoFamily](http://misofamily.com/2)
+- [MisoFamily](http://misofamily.com/2){: target="_blank" }

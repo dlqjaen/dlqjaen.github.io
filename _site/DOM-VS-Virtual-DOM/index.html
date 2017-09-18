@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>About - Beomdus's Blog</title>
+	<title>DOM VS Virtual-DOM - Beomdus's Blog</title>
 	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -52,16 +52,43 @@
       <article class="page-article">
   <div class="wrap-content">
     <header class="page-header">
-      <h1 class="page-title">About</h1>
-      <div class="page-date"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      <h1 class="page-title">DOM VS Virtual-DOM</h1>
+      <div class="page-date"><span>2017, Sep 18&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
     </header>
     <div class="page-content">
       
-      <p>This is the Fresh theme for Jekyll. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
+      <p>jQuery와 Vue.js의 차이점 중 하나였던 돔(DOM)과 가상돔(Vuertual DOM)이 뭔지 알아보도록 하겠습니다.</p>
 
-<p>You can find the source code for the Fresh theme at: <a href="https://github.com/artemsheludko/fresh">fresh</a></p>
+<h3 id="domdocument-object-model">DOM(Document Object Model)</h3>
+<p>DOM은 HTML 문서의 요소들에 접근하는 방법을 제공해주는 API입니다.</p>
 
-<p>You can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">jekyll</a></p>
+<p>window 객체의 document 프로퍼티를 통해서 DOM을 사용할 수 있으며 HTML의 요소들을 생성, 선택, 수정, 삭제를 할 수 있습니다.</p>
+
+<p>아래 이미지는 DOM Tree입니다.
+웹페이지가 요청되면 DOM이 제일 먼저 document객체를 통해 html객체를 생성하고 head객체와 body객체를 생성하는 순서로 트리구조를 만들어가는 것을 보여줍니다.
+<img src="http://pautasso.info/lectures/w13/sa3/3-js/img/dom-tree.svg" alt="Dom Tree" /></p>
+
+<h4 id="dom의-문제점">DOM의 문제점</h4>
+<p>이런 DOM에는 치명적인 문제점이 있습니다.</p>
+
+<p>DOM의 Document로 생성된 html요소들의 스타일이 변경되면 html객체부터 다시 생성하기 시작합니다. 그렇기 때문에 스타일 하나가 적용되기까지는 시간이 많이 걸립니다.(속도가 느리다)</p>
+
+<p>SPA(Single Page Application)의 사이트인 경우에는 DOM 트리의 크기는 엄청나게 클 것이고 동적으로 변해야하는 UI들을 감당하게 벅찰 것입니다.</p>
+
+<p>이런 문제점을 해결하고자 나온 방법이 Virtual DOM을 사용하는 것입니다.</p>
+
+<h3 id="virtual-domdocument-object-model">Virtual DOM(Document Object Model)</h3>
+<p>Virtual DOM은 실제 DOM을 가볍게하여 따로 복사해놓는 추상화된 돔입니다.</p>
+
+<p>Virtual DOM은 요소의 스타일이 변경되면 변경되기 전의 추상화된 돔과 변경 후의 추상화된 돔을 비교하여 바뀐 부분만을 찾아 실제돔에 적용을 시킵니다.</p>
+
+<p>그렇기 때문에 속도가 월등히 빠릅니다.</p>
+
+<h4 id="virtual-dom-사용하는-프레임워크">Virtual DOM 사용하는 프레임워크</h4>
+<p>이런 Virtual DOM을 사용하는 프레임워크는 Vue.js, React가 있습니다.</p>
+
+<h3 id="참고">참고</h3>
+<p><a href="http://webframeworks.kr/tutorials/translate/virtual-dom/" target="_blank">돔과 가상돔의 차이점</a></p>
 
     </div>
     

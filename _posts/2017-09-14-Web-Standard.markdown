@@ -38,14 +38,14 @@ CSS와 HTML문서를 분리하여 제작할 경우 불필요한 마크업이 최
 (크롬, 파이어폭스, 사파리, 오페라 등)에서도 작동된다.
 
 ### 웹 표준의 필요성
-[웹 표준이 중요한 이유 - 웹툰](http://www.thisisgame.com/webzine/nboard/213/?n=56672)
+[웹 표준이 중요한 이유 - 웹툰](http://www.thisisgame.com/webzine/nboard/213/?n=56672){: target="_blank" }
 
 ### 웹 표준을 검증하는 서비스
-[W3C Mark Up 검증 서비스](http://validator.kldp.org/)
+[W3C Mark Up 검증 서비스](http://validator.kldp.org/){: target="_blank" }
 
-[W3C CSS Validation 서비스](http://jigsaw.w3.org/css-validator/)
+[W3C CSS Validation 서비스](http://jigsaw.w3.org/css-validator/){: target="_blank" }
 
 ### 참고
-[웹발전 연구소](http://www.smartebiz.kr/new/subpage02_02.html)
+[웹발전 연구소](http://www.smartebiz.kr/new/subpage02_02.html){: target="_blank" }
 
-[WEBDIR](http://webdir.tistory.com/34 )
+[WEBDIR](http://webdir.tistory.com/34 ){: target="_blank" }
