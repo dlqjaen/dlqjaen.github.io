@@ -4,9 +4,11 @@ Beomdu's Blog
 > HTML
   - [DOCTYPE](https://dlqjaen.github.io/DOCTYPE/){: target="_blank" }
 > CSS
+  - [Image Sprite 기법](https://dlqjaen.github.io/Image-Sprite/)
 > JavaScript
   - [jQuery VS Vue.js](https://dlqjaen.github.io/jQuery-VS-Vue-js/){: target="_blank" }
-  - [DOM VS Virtual DOM](https://dlqjaen.github.io/DOM-VS-Virtual-DOM){: target="_blank" }
+  - [DOM VS Virtual DOM](https://dlqjaen.github.io/DOM-VS-Virtual-DOM/){: target="_blank" }
+  - [동기통신과 비동기통신](https://dlqjaen.github.io/Sync-VS-Async/){: target="_blank" }
 > 웹 표준
   - [웹 표준이란](https://dlqjaen.github.io/Web-Accessibility/){: target="_blank" }
   - [시맨틱 마크업](https://dlqjaen.github.io/Semantic-Markup/){: target="_blank" }

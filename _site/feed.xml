@@ -1,5 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-18T20:14:18+09:00</updated><id>http://localhost:4000/</id><title type="html">Beomdus’s Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">DOM VS Virtual-DOM</title><link href="http://localhost:4000/DOM-VS-Virtual-DOM/" rel="alternate" type="text/html" title="DOM VS Virtual-DOM" /><published>2017-09-18T10:12:43+09:00</published><updated>2017-09-18T10:12:43+09:00</updated><id>http://localhost:4000/DOM-VS-Virtual-DOM</id><content type="html" xml:base="http://localhost:4000/DOM-VS-Virtual-DOM/">&lt;p&gt;jQuery와 Vue.js의 차이점 중 하나였던 돔(DOM)과 가상돔(Vuertual DOM)이 뭔지 알아보도록 하겠습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="artemsheludko.pw/feed.xml" rel="self" type="application/atom+xml" /><link href="artemsheludko.pw/" rel="alternate" type="text/html" /><updated>2017-09-21T01:30:25+09:00</updated><id>artemsheludko.pw/</id><title type="html">Beomdus’s Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">Image Sprite</title><link href="artemsheludko.pw/Image-Sprite/" rel="alternate" type="text/html" title="Image Sprite" /><published>2017-09-19T10:25:43+09:00</published><updated>2017-09-19T10:25:43+09:00</updated><id>artemsheludko.pw/Image-Sprite</id><content type="html" xml:base="artemsheludko.pw/Image-Sprite/">&lt;p&gt;웹의 성능을 향상시키는 방법은 여러가지가 있지만 웹 사이트에서 빠질 수 없는 이미지를 불러오는 방식에서도 웹 성능을 향상시킬 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그 방법이 Image Sprite기법입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;image-sprite-기법&quot;&gt;Image Sprite 기법&lt;/h3&gt;
+&lt;p&gt;Image Sprtite 기법은 웹에서 자주쓰이는 이미지들을 하나의 큰 이미지(배경이 투명한 이미지)에 필요한 이미지들을 모아 딱 한 번만 이미지를 불러온 후 background-image, background-position 속성을 이용해서 필요한 곳에 필요한 이미지의 부분만 보여주는 방식을 말 합니다.&lt;/p&gt;
+
+&lt;p&gt;매번 이미지들을 불러왔을 경우 이미지들을 계속 다운받아 화면에 출력해야 하기에 이미지를 다운로드 하는 시간 + 화면에 출력하는 시간이 걸리지만 Image Sprite 기법을 사용했을 경우에는 웹사이트 초기 로딩시 한 번만 다운받아 이미지를 사용하기에 웹 로딩이 생기지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;또 한정된 자원을 사용해야하는 모바일 환경에서 Image Sprite기법은 웹 페이지 로딩시간을 단축시켜줍니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;image-sprite를-도와주는-도구&quot;&gt;Image Sprite를 도와주는 도구&lt;/h3&gt;
+&lt;p&gt;Image Sprite기법을 사용하기 위해선 일일이 그래픽 프로그램에서 여러 개의 그림을 하나의 이미지로 합쳐야 하고 실제 웹에서 CSS 적용을 위한 그림의 좌표값을 얻기란 번거로울 수가 있습니다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;그래서, 이런 작업을 자동화해주는 도구들이 개발돼서 한둘씩 생겨나고 있는데, 대표적으로 Website Performance&lt;/td&gt;
+      &lt;td&gt;CSS Sprite Generator가 있습니다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;이곳에서는 이미지들을 하나로 묶은 압축 파일(zip)을 올려놓으면 약간의 설정만으로 Sprite 이미지와 함께 CSS 적용 rule까지 한꺼번에 얻을 수 있어서 편합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://windtale.net/blog/css-image-sprite-automation-with-grunt-spritesmith/&quot; target=&quot;_blank&quot;&gt;CSS 이미지 스프라이트 자동화 (With Grunt-spritesmith)&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">웹의 성능을 향상시키는 방법은 여러가지가 있지만 웹 사이트에서 빠질 수 없는 이미지를 불러오는 방식에서도 웹 성능을 향상시킬 수 있습니다.</summary></entry><entry><title type="html">동기 통신 VS 비동기 통신</title><link href="artemsheludko.pw/Sync-VS-Async/" rel="alternate" type="text/html" title="동기 통신 VS 비동기 통신" /><published>2017-09-19T10:25:43+09:00</published><updated>2017-09-19T10:25:43+09:00</updated><id>artemsheludko.pw/Sync-VS-Async</id><content type="html" xml:base="artemsheludko.pw/Sync-VS-Async/">&lt;p&gt;자바스크립트는 싱글 스레드로 동작하기 때문에 기본적으로 동기방식의 진행을 하게됩니다. 하지만 바닐라 자바스크립트자체도 무거워지면서 비동기 방식의 통신을 따로 구현해야 할 상황이 되었습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;동기통신sync&quot;&gt;동기통신(Sync)&lt;/h3&gt;
+&lt;p&gt;동기통신은 일정신호를 전달한 후 전달된 신호의 답신이 오면 다음 신호를 전달하는 식의 통신으로 작업이 들어온 순서에 맞게 하나씩 진행됩니다.&lt;/p&gt;
+
+&lt;p&gt;또 동기 통신은 순서에 맞게 빨리빨리 진행되는 장점이 있지만, 여러 가지의 일을 동시에 처리할 수 없다는 단점이 있습니다. 이런 불편한 점으로인해 비동기통신방식이 만들어졌다고 할 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;비동기통신async&quot;&gt;비동기통신(Async)&lt;/h3&gt;
+&lt;p&gt;비동기통신은 통신이 시작되면 한번에 모든 신호를 다 보내고 그 결과값을 받아 함수(콜백함수)를 실행시킵니다.&lt;/p&gt;
+
+&lt;p&gt;그렇기 때문에 비동기통신 방식은 여러일을 동시에 처리할 수 있지만, 동기통신 방식보다 속도가 느릴 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;상황에 따라서는 콜백함수들이 하나씩 늘어나면서 코드를 알아보기 힘들어지거나 코드 유지, 보수가 힘들어지기도 합니다.
+이런 점을 해결하기위해서 콜백함수를 패키지로 묶는 작업을 하게되고 Promise가 탄생하게 됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/demun/FrontEndStudy/raw/master/document/Javascript/images/seongeun_01.jpg&quot; alt=&quot;동기통신과 비동기통신을 설명한 그림&quot; target=&quot;_blank&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">자바스크립트는 싱글 스레드로 동작하기 때문에 기본적으로 동기방식의 진행을 하게됩니다. 하지만 바닐라 자바스크립트자체도 무거워지면서 비동기 방식의 통신을 따로 구현해야 할 상황이 되었습니다.</summary></entry><entry><title type="html">DOM VS Virtual-DOM</title><link href="artemsheludko.pw/DOM-VS-Virtual-DOM/" rel="alternate" type="text/html" title="DOM VS Virtual-DOM" /><published>2017-09-18T10:12:43+09:00</published><updated>2017-09-18T10:12:43+09:00</updated><id>artemsheludko.pw/DOM-VS-Virtual-DOM</id><content type="html" xml:base="artemsheludko.pw/DOM-VS-Virtual-DOM/">&lt;p&gt;jQuery와 Vue.js의 차이점 중 하나였던 돔(DOM)과 가상돔(Vuertual DOM)이 뭔지 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h3&gt;
 &lt;p&gt;DOM은 HTML 문서의 요소들에 접근하는 방법을 제공해주는 API입니다.&lt;/p&gt;
@@ -30,7 +72,7 @@
 &lt;p&gt;이런 Virtual DOM을 사용하는 프레임워크는 Vue.js, React가 있습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://webframeworks.kr/tutorials/translate/virtual-dom/&quot; target=&quot;_blank&quot;&gt;돔과 가상돔의 차이점&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">jQuery와 Vue.js의 차이점 중 하나였던 돔(DOM)과 가상돔(Vuertual DOM)이 뭔지 알아보도록 하겠습니다.</summary></entry><entry><title type="html">jQuery VS Vue.js</title><link href="http://localhost:4000/jQuery-VS-Vue-js/" rel="alternate" type="text/html" title="jQuery VS Vue.js" /><published>2017-09-17T20:00:43+09:00</published><updated>2017-09-17T20:00:43+09:00</updated><id>http://localhost:4000/jQuery-VS-Vue-js</id><content type="html" xml:base="http://localhost:4000/jQuery-VS-Vue-js/">&lt;p&gt;Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://webframeworks.kr/tutorials/translate/virtual-dom/&quot; target=&quot;_blank&quot;&gt;돔과 가상돔의 차이점&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">jQuery와 Vue.js의 차이점 중 하나였던 돔(DOM)과 가상돔(Vuertual DOM)이 뭔지 알아보도록 하겠습니다.</summary></entry><entry><title type="html">jQuery VS Vue.js</title><link href="artemsheludko.pw/jQuery-VS-Vue-js/" rel="alternate" type="text/html" title="jQuery VS Vue.js" /><published>2017-09-17T20:00:43+09:00</published><updated>2017-09-17T20:00:43+09:00</updated><id>artemsheludko.pw/jQuery-VS-Vue-js</id><content type="html" xml:base="artemsheludko.pw/jQuery-VS-Vue-js/">&lt;p&gt;Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;javascript-라이브러리&quot;&gt;JavaScript 라이브러리&lt;/h3&gt;
 &lt;p&gt;우선, JavaScript의 라이브러리란 네이티브 스크립트에는 없는 함수(기능)들을 함수로 만들어서 묶어놓은 JavaScript 파일이라고 할 수 있습니다. 이런 라이브러리들은&lt;/p&gt;
@@ -122,7 +164,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://mygumi.tistory.com/193&quot; target=&quot;_blank&quot;&gt;Vue.js 와 jQuery 공존하기&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://jokergt.tistory.com/89&quot; target=&quot;_blank&quot;&gt;Gun’s Knowledge Base&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.</summary></entry><entry><title type="html">시맨틱 마크업이란?</title><link href="http://localhost:4000/Semantic-Markup/" rel="alternate" type="text/html" title="시맨틱 마크업이란?" /><published>2017-09-15T16:31:43+09:00</published><updated>2017-09-15T16:31:43+09:00</updated><id>http://localhost:4000/Semantic-Markup</id><content type="html" xml:base="http://localhost:4000/Semantic-Markup/">&lt;p&gt;특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Front-End 기술면접을 보다보면 면접질문으로 jQuery와 Vue.js의 차이점을 물어보는 경우가 있습니다. 이 질문의 의도는 라이브러리와 프레임워크의 차이점을 알고 있는지에대해 물어보는 것이라 생각합니다.</summary></entry><entry><title type="html">시맨틱 마크업이란?</title><link href="artemsheludko.pw/Semantic-Markup/" rel="alternate" type="text/html" title="시맨틱 마크업이란?" /><published>2017-09-15T16:31:43+09:00</published><updated>2017-09-15T16:31:43+09:00</updated><id>artemsheludko.pw/Semantic-Markup</id><content type="html" xml:base="artemsheludko.pw/Semantic-Markup/">&lt;p&gt;특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?&lt;/p&gt;
 
 &lt;p&gt;이런 사이트의 마크업을 보면 대체로 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;로만 마크업이 되어있습니다.&lt;/p&gt;
 
@@ -188,7 +230,7 @@
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://misofamily.com/2&quot; target=&quot;_blank&quot;&gt;MisoFamily&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?</summary></entry><entry><title type="html">웹 표준이란?</title><link href="http://localhost:4000/Web-Standard/" rel="alternate" type="text/html" title="웹 표준이란?" /><published>2017-09-14T13:02:43+09:00</published><updated>2017-09-14T13:02:43+09:00</updated><id>http://localhost:4000/Web-Standard</id><content type="html" xml:base="http://localhost:4000/Web-Standard/">&lt;p&gt;하나의 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다.&lt;/code&gt; 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">특정 웹사이트를 검색했을 때 검색결과에 웹사이트가 나타나지 않는 경우를 경험해보셨나요?</summary></entry><entry><title type="html">웹 표준이란?</title><link href="artemsheludko.pw/Web-Standard/" rel="alternate" type="text/html" title="웹 표준이란?" /><published>2017-09-14T13:02:43+09:00</published><updated>2017-09-14T13:02:43+09:00</updated><id>artemsheludko.pw/Web-Standard</id><content type="html" xml:base="artemsheludko.pw/Web-Standard/">&lt;p&gt;하나의 &lt;code class=&quot;highlighter-rouge&quot;&gt;웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다.&lt;/code&gt; 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-표준&quot;&gt;웹 표준&lt;/h3&gt;
 &lt;p&gt;이 문제를 해결하기 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;W3C(World Wide Web Consortium)&lt;/code&gt;는 &lt;code class=&quot;highlighter-rouge&quot;&gt;표준안&lt;/code&gt;을 지정했습니다.&lt;/p&gt;
@@ -240,7 +282,7 @@ CSS와 HTML문서를 분리하여 제작할 경우 불필요한 마크업이 최
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.smartebiz.kr/new/subpage02_02.html&quot; target=&quot;_blank&quot;&gt;웹발전 연구소&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://webdir.tistory.com/34&quot; target=&quot;_blank&quot;&gt;WEBDIR&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">하나의 웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다. 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?</summary></entry><entry><title type="html">웹 접근성이란?</title><link href="http://localhost:4000/Web-Accessibility/" rel="alternate" type="text/html" title="웹 접근성이란?" /><published>2017-09-13T11:03:43+09:00</published><updated>2017-09-13T11:03:43+09:00</updated><id>http://localhost:4000/Web-Accessibility</id><content type="html" xml:base="http://localhost:4000/Web-Accessibility/">&lt;p&gt;우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력입니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://webdir.tistory.com/34&quot; target=&quot;_blank&quot;&gt;WEBDIR&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">하나의 웹문서가 IE, 크롬, 사파리, 오페라...등등 다양한 브라우저(브라우저엔진)에서 완전히 같은 모습으로 보이는 것은 불가능합니다. 그렇다면 최대한 비슷하게 만들기 위해선 어떻게 해야할까요?</summary></entry><entry><title type="html">웹 접근성이란?</title><link href="artemsheludko.pw/Web-Accessibility/" rel="alternate" type="text/html" title="웹 접근성이란?" /><published>2017-09-13T11:03:43+09:00</published><updated>2017-09-13T11:03:43+09:00</updated><id>artemsheludko.pw/Web-Accessibility</id><content type="html" xml:base="artemsheludko.pw/Web-Accessibility/">&lt;p&gt;우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력입니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;웹-접근성&quot;&gt;웹 접근성&lt;/h3&gt;
 &lt;p&gt;웹 접근성이란 &lt;code class=&quot;highlighter-rouge&quot;&gt;남녀노소, 장애에 구분 없이 웹 사이트에서 제공하는 정보에 동등하게 접근하고 이해할 수 있도록 보장&lt;/code&gt;하는 것입니다.&lt;/p&gt;
@@ -302,7 +344,7 @@ CSS와 HTML문서를 분리하여 제작할 경우 불필요한 마크업이 최
 
 &lt;p&gt;&lt;a href=&quot;http://www.wah.or.kr/&quot; target=&quot;_blank&quot;&gt;웹 접근성 연구소&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.websoul.co.kr/&quot; target=&quot;_blank&quot;&gt;Web Soul Lab&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력입니다.</summary></entry><entry><title type="html">DOCTYPE 이란?</title><link href="http://localhost:4000/DOCTYPE/" rel="alternate" type="text/html" title="DOCTYPE 이란?" /><published>2017-09-12T10:08:43+09:00</published><updated>2017-09-12T10:08:43+09:00</updated><id>http://localhost:4000/DOCTYPE</id><content type="html" xml:base="http://localhost:4000/DOCTYPE/">&lt;h3 id=&quot;doctypedtd&quot;&gt;DOCTYPE(DTD)&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.websoul.co.kr/&quot; target=&quot;_blank&quot;&gt;Web Soul Lab&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">우리가 살아가고있는 21세기에는 남녀불평등, 인종차별, 장애인차별등의 인권문제를 해결하기위한 노력을 하고 있습니다. 웹 접근성은 이런 흐름의 하나로 장애뿐만 아닌 모든 사람의 인권을 보장하고자하는 노력입니다.</summary></entry><entry><title type="html">DOCTYPE 이란?</title><link href="artemsheludko.pw/DOCTYPE/" rel="alternate" type="text/html" title="DOCTYPE 이란?" /><published>2017-09-12T10:08:43+09:00</published><updated>2017-09-12T10:08:43+09:00</updated><id>artemsheludko.pw/DOCTYPE</id><content type="html" xml:base="artemsheludko.pw/DOCTYPE/">&lt;h3 id=&quot;doctypedtd&quot;&gt;DOCTYPE(DTD)&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DOCTYPE&lt;/code&gt;은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 &lt;strong&gt;어떤 웹브라우저라도 제대로 표현&lt;/strong&gt;할 수 있도록하는 선언문입니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML 4.01&lt;/code&gt;의 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;SGML&lt;/code&gt;을 기반으로 되어있어서 HTML 4.01에서 &amp;lt;! DOCTYPE&amp;gt; 선언은 &lt;code class=&quot;highlighter-rouge&quot;&gt;DTD&lt;/code&gt;참조를 해야합니다.&lt;/p&gt;

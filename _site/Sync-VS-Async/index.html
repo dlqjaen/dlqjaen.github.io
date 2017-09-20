@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>동기 통신 VS 비동기 통신 - Beomdus's Blog</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#2d2a2a">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#2d2a2a">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#2d2a2a">
+
+	<link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+  <div class="sidebar-container">
+    <div class="sidebar-logo">
+      <a href="/" class="logo"><img src="/assets/img/logo.svg" alt=""></a>
+    </div>
+
+    <menu class="sidebar-menu">
+      <li class="menu-items"><a class="menu-links" href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li class="menu-items"><a class="menu-links" href="/about/"><i class="fa fa-info" aria-hidden="true"></i></a></li>
+      <li class="menu-items"><a class="menu-links" href="/contact/"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+      <li class="menu-items"><a class="menu-links" href="https://github.com/dlqjaen" target="_blank"><i class="social-icons fa fa-github" aria-hidden="true"></i></a></li>
+    </menu>
+
+    <div class="sidebar-social">
+      <!-- <li class="social-items"><a href="https://www.facebook.com/" class="social-links"><i class="social-icons fa fa-facebook" aria-hidden="true"></i></a></li> -->
+    </div>
+
+  </div>
+</aside>
+
+
+  <main role="main">
+    <div class="content">
+      <article class="page-article">
+  <div class="wrap-content">
+    <header class="page-header">
+      <h1 class="page-title">동기 통신 VS 비동기 통신</h1>
+      <div class="page-date"><span>2017, Sep 19&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    </header>
+    <div class="page-content">
+      
+      <p>자바스크립트는 싱글 스레드로 동작하기 때문에 기본적으로 동기방식의 진행을 하게됩니다. 하지만 바닐라 자바스크립트자체도 무거워지면서 비동기 방식의 통신을 따로 구현해야 할 상황이 되었습니다.</p>
+
+<h3 id="동기통신sync">동기통신(Sync)</h3>
+<p>동기통신은 일정신호를 전달한 후 전달된 신호의 답신이 오면 다음 신호를 전달하는 식의 통신으로 작업이 들어온 순서에 맞게 하나씩 진행됩니다.</p>
+
+<p>또 동기 통신은 순서에 맞게 빨리빨리 진행되는 장점이 있지만, 여러 가지의 일을 동시에 처리할 수 없다는 단점이 있습니다. 이런 불편한 점으로인해 비동기통신방식이 만들어졌다고 할 수 있습니다.</p>
+
+<h3 id="비동기통신async">비동기통신(Async)</h3>
+<p>비동기통신은 통신이 시작되면 한번에 모든 신호를 다 보내고 그 결과값을 받아 함수(콜백함수)를 실행시킵니다.</p>
+
+<p>그렇기 때문에 비동기통신 방식은 여러일을 동시에 처리할 수 있지만, 동기통신 방식보다 속도가 느릴 수 있습니다.</p>
+
+<p>상황에 따라서는 콜백함수들이 하나씩 늘어나면서 코드를 알아보기 힘들어지거나 코드 유지, 보수가 힘들어지기도 합니다.
+이런 점을 해결하기위해서 콜백함수를 패키지로 묶는 작업을 하게되고 Promise가 탄생하게 됩니다.</p>
+
+<h3 id="참고">참고</h3>
+<p><img src="https://github.com/demun/FrontEndStudy/raw/master/document/Javascript/images/seongeun_01.jpg" alt="동기통신과 비동기통신을 설명한 그림" target="_blank" /></p>
+
+    </div>
+    
+
+  </div>
+</article>
+
+    </div>
+  </main>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
