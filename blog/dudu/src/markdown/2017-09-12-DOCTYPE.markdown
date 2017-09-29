@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "DOCTYPE 이란?"
+date:   2017-09-12 10:08:43 +0900
+img: front-end-posting.png
+description: 
+categories: HTML
+---
+### DOCTYPE(DTD)
+`DOCTYPE`은 HTML문서의 버전을 미리 선언하여 지원하는 요소나 속성들을 **어떤 웹브라우저라도 제대로 표현**할 수 있도록하는 선언문입니다.
+
+`HTML 4.01`의 경우 `SGML`을 기반으로 되어있어서 HTML 4.01에서 <! DOCTYPE> 선언은 `DTD`참조를 해야합니다. 
+
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+```
+하지만 `HTML5`는 SGML을 기반이 아니기때문에 **DTD의 참조를 필요로하지 않습니다.**
+```html
+<!-- HTML5의 문서선언 -->
+<!DOCTYPE html>
+```
+ 브라우저는 선언된 doctype에 따라 렌더링할 모드를 선택하게 되는데 이 과정을 `doctype sniffing` 또는 `doctype switching`이라고 합니다.
+
+참고
+
+[SGML(Standard Generalized Markup Language)](https://ko.wikipedia.org/wiki/SGML)
+
+[DTD(Document Type Definition)](https://ko.wikipedia.org/wiki/%EB%AC%B8%EC%84%9C_%ED%98%95%EC%8B%9D_%EC%A0%95%EC%9D%98)
+
+### DOCTYPE을 선언하지 않았을 경우?
+HTML문서에서 DOCTYPE을 선언하지 않았을 경우에는`Quirks Mode(쿼크모드)`로 랜더링 됩니다.
+
+`Quirks Mode`: 옛 버전의 브라우저(HTML2 ~ HTML4)를 웹페이지의 CSS(Design)를 유지하기 위해 쓰는 웹 브라우저 기술.
+
+IE(Internet Explorer)의 `호환성 보기 헤더(X-UA-Compatible header)`가 설정되지 않을 경우에도 html문서는 `Quicks Mode`로 변경됩니다.
+
+```html
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+</head>
+```
+
+### DOCTYPE(DTD)의 필요성
+- 문서의 가독성 증가
+- 브라우저 별 호환성 증가(크로스 브라우징)
+- 문서 제작의 효율성 증가
+
+### HTML Mode
+`Strict DTD` :
+W3C가 스타일시트 사용을 장려하기 위해 단계적으로 사라질 ‘표현’(presentation)에 관한 태그와 속성을 배제한 문서 타입입니다. 웹 문서 제작자는 가능하다면 Strict 타입을 사용해야 하지만(should), 불가피하게 표현을 담당하는 속성이 필요할 경우에는 Transitional 타입을 사용할 수도 있습니다.
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD "+ XHTML 버전 +" Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
+```
+
+`Transitional DTD` :
+HTML이전 버전들과의 호환성을 위한 문서 타입입니다. iframe과 새창띄우기(target="_blank")등을 사용할 수 있어 XHTML 사용시 이것을 추천합니다.
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD "+ XHTML 버전 +" Transitional//EN" "http://www.w3.org/TR/xhtml1-transitional.dtd">
+```
+
+`Frameset DTD` :
+Transitional DTD 기반 위에 프레임 지원을 위한 태그와 속성을 추가한 문서 타입입니다.
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD "+ XHTML 버전 +"Frameset//EN" "http://www.w3.org/TR/xhtml1-frameset.dtd">
+```
+
+`XHTML 프롤로그(선언문)` :
+모든 XML문서는 XML 해석 방법을 브라우저에게 말하는 선언문에서 시작된다. XML 선언문 또는 프롤로그는 DOCTYPE과 네임스페이스 선언, 그리고 문서의 타입 또는 마크업 랭귀지를 정의하는 것에 앞서서 정의됩니다.
+```html
+<?xml version="1.0" encoding="UTF-8"?>
+```
+
+#### 참고
+
+[uchang7194의 깃헙](https://github.com/uchang7194/FDS-Study/blob/master/DAY01/HTML_Structure.md){: target="_blank" }
+
+[흉내쟁이 블로그](http://webdir.tistory.com/40){: target="_blank" }
