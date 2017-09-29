@@ -48,7 +48,7 @@ export const store = new Vuex.Store({
         <p>Node.js와 함께 설치되는 npm을 이용해 Vue.js 관련 도구를 설치하고 앱의 의존성 라이브러리를 관리하게 됩니다.</p>
         
         <ol>
-        <li><a href="http://nodejs.org/ko/">Node.js</a>를 다운로드하여 설치</li>
+        <li><a target="_blank" href="http://nodejs.org/ko/">Node.js</a>를 다운로드하여 설치</li>
         <li>설치가 끝나면 명령창(mac은 터미널)에서 npm을 최신 버전으로 업그레이드</li>
         </ol>
         <code>npm install -g npm (Window)<br>
@@ -56,7 +56,7 @@ export const store = new Vuex.Store({
         
         <h4>1.2.2 크롬 브라우저 및 Vue.js devtools 설치</h4>
         
-        <p>Vue의 디버깅을 돕기 위해서 <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd">Vue.js devtools</a>라는 크롬 브라우저 기반의 확장 애플리케이션을 설치하도록 합니다.</p>
+        <p>Vue의 디버깅을 돕기 위해서 <a target="_blank" href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd">Vue.js devtools</a>라는 크롬 브라우저 기반의 확장 애플리케이션을 설치하도록 합니다.</p>
         
         <h4>1.2.3 Vue-CLI 설치</h4>
         
@@ -86,7 +86,7 @@ export const store = new Vuex.Store({
         
         <h3>참고</h3>
         
-        <p><a href="http://book.naver.com/bookdb/book_detail.nhn?bid=12481190">Vue.js Quick Start</a></p>`
+        <p><a target="_blank" href="http://book.naver.com/bookdb/book_detail.nhn?bid=12481190">Vue.js Quick Start</a></p>`
       },
       {
         img: 'http://www.hurricanesoftwares.com/wp-content/uploads/2009/05/css-sprites-lead.png',
