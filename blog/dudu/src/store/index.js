@@ -3,12 +3,91 @@ import Vuex from 'vuex'
 import axios from 'axios'
 // import postingDefaltImg from '../assets/front-end-posting.png'
 import documentImg from '../assets/doctype.jpg'
+import logo from '../assets/applogo.png'
 Vue.use(Vuex, axios)
 
 export const store = new Vuex.Store({
   strict: true,
   state: {
+    applogo: logo,
     posting_data: [
+      {
+        img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
+        date: '2017-09-28',
+        title: '제 1장 시작하기',
+        description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 1.1 Vue.js란?, 1.2 개발 환경 설정, 1.3 첫 번째 Vue.js 애플리케이션',
+        content: `<h2>제 1장 시작하기</h2>
+        
+        <h3>1.1 Vue.js란?</h3>
+        
+        <p>Vue.js는 Google Creative Lab에서 일하던 에반 유<Even you>가 2013년 12월에 UI를 빠르게 개발하기 위해서 만들었습니다.</p>
+        
+        <h4>1.2.1Vue의 장점</h4>
+        
+        <ul>
+        <li><strong>유연하고 가볍습니다.</strong></li>
+        <li>SPA 아키텍쳐 구성을 위해 필수적으로 필요한 <strong>라우터 기능을 지원</strong>합니다.</li>
+        <li><strong>학습비용이 적습니다.</strong></li>
+        <li><strong>MVVM패턴</strong>애플리케이션 로직과 UI의 분리를 위해 설계된 패턴)을 사용합니다.</li>
+        <li><strong>가상 DOM</strong>을 사용하여 빠른 UI 랜더링 속도를 제공합니다.</li>
+        </ul>
+        
+        <h3>1.2 개발 환경 설정</h3>
+        
+        <ul>
+        <li><strong>Node.js</strong> : 서버측 자바스크립트 언어이자 플랫폼</li>
+        <li><strong>npm</strong> : 앱의 의존성 관리를 위해 사용하는 노드 패키지 관리자</li>
+        <li><strong>크롬 브라우저</strong> + Vue.js devtools : devtools는 크롬 브라우저 기반에서 작동하는 Vue전용 디버깅, 개발도구</li>
+        <li><strong>Vue-CLI</strong> : 앱 작성을 위해 기본 틀을 제공하는 도구</li>
+        </ul>
+        
+        <h4>1.2.1 Node.js 설치</h4>
+        
+        <p>Node.js는 Google V8 엔진을 기반으로 만들어진 <strong>서버 측 자바스크립트 언어이자 플랫폼</strong>입니다.</p>
+        
+        <p>Node.js와 함께 설치되는 npm을 이용해 Vue.js 관련 도구를 설치하고 앱의 의존성 라이브러리를 관리하게 됩니다.</p>
+        
+        <ol>
+        <li><a href="http://nodejs.org/ko/">Node.js</a>를 다운로드하여 설치</li>
+        <li>설치가 끝나면 명령창(mac은 터미널)에서 npm을 최신 버전으로 업그레이드</li>
+        </ol>
+        <code>npm install -g npm (Window)<br>
+        sudo npm install -g npm (macOS에서는 Root권한으로 설치해야 합니다.)</code>
+        
+        <h4>1.2.2 크롬 브라우저 및 Vue.js devtools 설치</h4>
+        
+        <p>Vue의 디버깅을 돕기 위해서 <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd">Vue.js devtools</a>라는 크롬 브라우저 기반의 확장 애플리케이션을 설치하도록 합니다.</p>
+        
+        <h4>1.2.3 Vue-CLI 설치</h4>
+        
+        <p>Vue-CLI는 에반 유가 공식적으로 관리하는 커맨드라인 인터페이스 기반의 스캐폴딩 도구입니다.</p>
+        
+        <code>npm install -g vue-cli (Window)<br>
+        sudo npm innstall -g vue-cli (macOS)</code>
+        
+        <p>vue list에 대해서 살펴봅시다.</p>
+        
+        <ul>
+        <li><strong>simple</strong> : 가장 간단한 프로젝트 템플릿 유형입니다.</li>
+        <li><strong>browerserify</strong> : browserify + vueify 조합으로 hot-reload, linting, 단위 테스트를 지원하는 프로젝트 템플릿을 구성합니다.</li>
+        <li><strong>browserify-simple</strong> : 빠른 프로토타이핑을 위한 browserift + vueify가 설정된 간단한 템플릿을 제공합니다.</li>
+        <li><strong>webpack : Webpack</strong> + vue-loader 조합의 기능에 hot-reload, linting, 단위 테스트 기능을 제공하는 프롲게트 플렛폼입니다.</li>
+        <li><strong>webpack-simple</strong> : 빠른 프로토타이팅을 위한 Webpack + vue-loader가 설정된 간단한 템플릿을 제공합니다.</li>
+        <li><strong>pwa</strong> : pwa는 PWA(Progressive Web App) 개발을 위한 템플릿을 제공합니다.</li>
+        </ul>
+        
+        <h3>1.3 첫 번쨰 Vue.js 애플리케이션</h3>
+        
+        <p>명령창을 열어서 적절한 디렉토리에서 <strong>vue init simple hellovuejs</strong>라는 명령어를 실행해봅시다.</p>
+        
+        <code>
+        vue init simple hellovuejs
+        </code>
+        
+        <h3>참고</h3>
+        
+        <p><a href="http://book.naver.com/bookdb/book_detail.nhn?bid=12481190">Vue.js Quick Start</a></p>`
+      },
       {
         img: 'http://www.hurricanesoftwares.com/wp-content/uploads/2009/05/css-sprites-lead.png',
         date: '2017-09-20',

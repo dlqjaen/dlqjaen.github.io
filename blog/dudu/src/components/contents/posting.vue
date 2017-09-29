@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h4 class="current-menu menu-title">블로그 포스팅</h4>
+    <h4 class="current-menu menu-title">블로그</h4>
     <ul class="post-wrapper">
       <router-link :to="'/posting/' + data.title" tag="li" class="post-preview" @click.native="setDetailPosting(index)" v-for="(data, index) in getPostingData" :key="index">
         <a href="#">

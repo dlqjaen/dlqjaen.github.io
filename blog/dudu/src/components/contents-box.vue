@@ -22,7 +22,7 @@
   display: inline-block;
   margin-bottom: 20px;
   padding: 10px;
-  border-bottom: 1px solid black;
+  /* border-top: 1px solid black; */
 }
 .main-transition-enter{
  opacity: 0;
