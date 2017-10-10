@@ -13,6 +13,144 @@ export const store = new Vuex.Store({
     posting_data: [
       {
         img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
+        data: '2017-10-10',
+        title: '제 2장 Vue.js 기초',
+        description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 2.1 hellovuejs, 2.2 기본 디렉티브, 2.3 반복 랜더링 디렉티브, 2.4 기타 디렉티브',
+        content: `<h2 id="-2-vue-js-">제 2장 Vue.js 기초</h2>
+        <h3 id="2-1-hellovuejs-">2.1 hellovuejs 예제분석</h3>
+        <pre><code><span class="hljs-attribute">var</span> model = {
+          <span class="hljs-attribute">message</span> : <span class="hljs-string">'첫 번째 Vue.js 앱 입니다!'</span>
+        }
+        </code></pre><p>modal 객체는 데이터를 가지고 있는 모델 객체 입니다.</p>
+        <pre><code>var simple = <span class="hljs-keyword">new</span> Vue({
+          <span class="hljs-string">el :</span> <span class="hljs-string">'#simple'</span>,
+          <span class="hljs-string">data :</span> model
+        })
+        </code></pre><p>simple 객체는 Vue 객체이자 뷰모델 객체입니다.
+        Vue객체의 el속성은 HTML 요소를 나타냅니다. 또한 data속성은 모델 객체를 참조합니다.
+        데이터(모델)가 변경되면 뷰모델 객체는 즉시 HTML요소(뷰)에 반영시킵니다.</p>
+        <p>HTML요소에서는 <strong>{{}}</strong> 과 같은 콧수염을 닮은 모양의 템플릿 표현식을 사용해 선언적으로 HTML DOM에 데이터를 랜더링합니다. 뷰모델 객체의 데이터 속성에서 해당 값을 이 위치에 나타냅니다. 콧수염 모양을 닮았다고 해서 <strong>콧수염 표현식(Mustache Expression)</strong> 이라고 부르며, 문자열을 덧붙인다는 의미로 <strong>보간법(Interpolation)</strong> 이라고도 합니다.</p>
+        <p>모든 작업은 반응형으로 이루어집니다. 모델을 변경하면 부모델 객체를 통해 HTML DOM이 즉시 변경됩니다.</p>
+        <p><img src="http://cfile9.uf.tistory.com/image/2262E8475655F13D07A6C5" alt="mvvm패턴"></p>
+        <p>MVVM패턴에서는 뷰모델 객체가 상태(Statea: 데이터)와 연산(Operations: 메서드)을 가지고 있다는 것을 알 수 있습니다.</p>
+        <h3 id="2-2-">2.2 기본 디렉티브</h3>
+        <h4 id="2-2-1-v-text-v-html-">2.2.1 v-text, v-html 디렉티브</h4>
+        <p>선언적 랜더링을 위해 HTML 요소 내부에 탬플릿 표현식(콧수염 표현식: Mustache Expression)만 사용할 수 있는 것은 아닙니다. 동일한 코드를 <strong>디렉티브</strong>라는 것을 이용해 표현해보도록 합시다.</p>
+        <pre><code>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"simple"</span>&gt;
+          &lt;h2 v-<span class="hljs-built_in">text</span>=<span class="hljs-string">"message"</span>&gt;&lt;/h2&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        </code></pre><p>각각 속성 값을 설정하거나 읽어낼 때 HTML 인코딩과 디코딩을 하는 속성임을 알고 있을 겁니다. 이에 반해 innerHTML 태그가 브라우저에 파싱되어 화면으로 나타납니다.</p>
+        <ul>
+        <li><p><strong>v-text, {{}}</strong>: innerText 속성에 연결됨, 태그 문자열을 HTML 인코딩하여 나타내기 떄문에 화면에는 태그 문자열이 그대로 나타남.</p>
+        </li>
+        <li><p><strong>v-html</strong>: innerHTML 속성에 연결됨, 태그 문자열을 파싱하여 화면에 나타냄</p>
+        </li>
+        </ul>
+        <p>v-html 디렉티브는 script 태그를 그대로 반영합니다. 요즘 문제가 되는 <strong>XSS(Cross Site Scripting)</strong> 공격 등에 취약합니다. 꼭 필요한 경우가 아니라면 <strong>v-text를 사용하는 것이 더 안전합니다.</strong></p>
+        <h4 id="2-2-2-v-bind-">2.2.2 v-bind 디렉티브</h4>
+        <p>v-bind 디렉티브는 요소(Element)의 콘텐트 영역(시작 태그와 종료 태그 사이의 영역)을 설정하는 것이 아닌 요소 객체의 속성들을 바인딩하기 위해 사용합니다. </p>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"simple"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">"message"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-bind:src</span>=<span class="hljs-string">"imagePath"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="actionscript">
+          <span class="hljs-keyword">var</span> model = {
+            message: <span class="hljs-string">'v-bind 디렉티브'</span>,
+            imagePath: <span class="hljs-string">'http://sample.bmaster.kro.kr/photos/61.jpg'</span> 
+          };
+          <span class="hljs-keyword">var</span> simple = <span class="hljs-keyword">new</span> Vue({
+            el: <span class="hljs-string">'#simple'</span>,
+            data: model
+          })
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        </code></pre><p>v-bind 디렉티브를 매번 작성하는 것이 부담스럽다면 줄여 쓰는 방법이 있습니다.
+        <strong>v-bind:src</strong>에서 v-bind를 생략하고 <strong>:src</strong>와 같이 작성해도 됩니다.</p>
+        <h4 id="2-2-3-v-model-">2.2.3 v-model 디렉티브</h4>
+        <p>위에서 살펴본 디렉티브들은 모두 단방향 디렉티브입니다. HTML요소에서 값을 변경하더라도 모델 객체의 값이 바뀌지 않습니다.</p>
+        <p>요소에서 변경한 값이 모델 객체에 반영되기를 원할 때는 <strong>v-model을 이용한 양방향 바인딩</strong>이 필요한 시점입니다.</p>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"simple"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"이름을 입력하세요"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+          입력된 이름 : <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"name"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="actionscript">
+          <span class="hljs-keyword">var</span> twoway = <span class="hljs-keyword">new</span> Vue({
+            el : <span class="hljs-string">'#simple'</span>,
+            data : {
+              name : <span class="hljs-string">''</span>
+            }
+          })
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        </code></pre><p>v-model 디렉티브는 텍스트뿐만 아니라 여러 가지 입력 폼 필드에서도 사용할 수 있습니다. 여러 개의 아이템을 선택할 수 있는 &lt;input type=&quot;checkbox&quot; /&gt; 나 &lt;select multiple&gt;&lt;/select&gt;의 경우는 모델 객체의 배열 객체와 연결됩니다. 단일 아이템만을 선택 할 수 있는 &lt;input type=&quot;radio&quot; /&gt;나 &lt;select&gt;&lt;/select&gt;인 경우는 모델 객체의 단일 값과 연결됩니다.</p>
+        <h4 id="2-2-4-v-show-v-if-v-else-v-else-if-">2.2.4 v-show, v-if, v-else, v-else-if 디렉티브</h4>
+        <p>v-if 디렉티브는 Vue객체의 data속성에따라 랜더링 여부를 결정할 수 있습니다.</p>
+        <p>비슷한 기능으로 v-show 디렉티브가 있습니다.</p>
+        <p>v-show와 v-if의 차이점은 랜더링의 여부에 인데 <strong>v-if 디렉티브는 boolean값이 false이면 화면에 랜더링을 하지 않는 반면에</strong> <strong>v-show디렉티브는 일단 HTML에 랜더링을 한 후에 display=&quot;none&quot; 속성을 부여</strong>합니다.</p>
+        <p>그렇기 때문에 자주 화면이 변경되는 부분에 대해서는 v-show 디렉티브를 사용하는것이 성능관점에서 더 좋습니다.</p>
+        <p>v-if, v-else, v-if를 사용하여 랜더링을 조건적으로 할 수도 있습니다.</p>
+        <h3 id="2-3-">2.3 반복 랜더링 디렉티브</h3>
+        <p>반복적인 데이터를 랜더링하기 위해서는 v-for 디렉티브를 사용합니다. </p>
+        <p><strong>v-for구문은 원본 데이터가 어떤 형식인가에 따라 달라집니다.</strong></p>
+        <p>원본데이터가 배열 또는 유사배열인 경우</p>
+        <pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"contact in contacts"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">{{contact.no}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">{{contact.name}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">{{contact.tel}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">{{contact.address}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span>
+        </code></pre><p>원본데이터가 객체일 경우 키를 이용해 값에 접근하는 해시맵 구조이기 떄문에 key, value값을 얻어낼 수 있는 구조를 사용합니다.</p>
+        <pre><code>&lt;<span class="hljs-keyword">option</span> v-for=<span class="hljs-string">"(val, key) in regions"</span> v-bind:value=<span class="hljs-string">"key"</span>&gt;{{val}}&lt;/<span class="hljs-keyword">option</span>&gt;
+        </code></pre><p>만약에 인덱스 번호를 표현해야 한다면 아래와 같이 index를 추가하면 됩니다.</p>
+        <p>배열 or 유사배열</p>
+        <pre><code>&lt;<span class="hljs-built_in">tr</span> v-<span class="hljs-keyword">for</span>=<span class="hljs-string">"(contact, index) in contacts"</span>&gt;...&lt;<span class="hljs-built_in">tr</span>&gt;
+        </code></pre><p>객체</p>
+        <pre><code>&lt;<span class="hljs-keyword">option</span> v-<span class="hljs-keyword">for</span>=<span class="hljs-string">"(val, key, index) in regions"</span> ...&gt;...&lt;/<span class="hljs-keyword">option</span>&gt;
+        </code></pre><p>v-for디렉티브와 앞서 다루었던 v-if디렉티브는 함께 사용할 수 있습니다. 주의할 점은 적용되는 순서인데, <strong>v-for 디렉티브가 먼저 실행되고 v-if디렉티브가 적용</strong>됩니다.</p>
+        <p>여러요소의 그룹을 반복 렌더링하려면 &lt;template&gt;태그를 사용합니다.</p>
+        <p>&lt;template&gt;태그는 랜더링 내용에 포함되지 않습니다.</p>
+        <p>v-for 디렉티브를 사용할 떄 요소의 고유한 값인 key 특성을 사용 할 수 있습니다.</p>
+        <h3 id="2-4-">2.4 기타 디렉티브</h3>
+        <ul>
+        <li><strong>v-pre</strong> : HTML요소에 대한 컴파일을 수행하지 않습니다.</li>
+        <li><strong>v-once</strong> : HTML요소를 단 한번만 랜더링하도록 설정합니다.</li>
+        </ul>
+        <p>가끔 v-for 디렉티브를 이용해 많은 데이터를 출력하거나 할 때에 콧수염 표현식이 화면에 일시적으로 나타나는 경우가 있습니다. 이것은 vue 인스턴스가 el옵션의 템플릿을 컴파일할 때 발생하는 시간 때문에 일어나는 현상입니다.</p>
+        <p>이와 같은 경우에 사용할 수 있는 디렉티브가 v-cloak입니다. <strong>v-cloak을 사용하면 화면 초기에 컴파일되지 않는 템플릿은 나타나지 않도록 할 수 있습니다.</strong></p>
+        <h3 id="2-5-">2.5 계산형 속성</h3>
+        <p>Vue.js의 계산된 속성은 연산로직이 필요할 때 사용할 수 있습니다.</p>
+        <p>Vue객체를 만들 때 computed라는 속성과 함께 함수를 등록해두면 마치 속성처럼 이용할 수 있습니다.</p>
+        <pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"num"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+          1부터 입력된 수까지의 합 : <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span class="hljs-template-variable">{{sum}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">var</span> vmSum = <span class="hljs-keyword">new</span> Vue({
+          <span class="hljs-attr">el</span> : <span class="hljs-string">'#example'</span>,
+          <span class="hljs-attr">data</span> : { <span class="hljs-attr">num</span> : <span class="hljs-number">0</span> },
+          <span class="hljs-attr">computed</span> : {
+            <span class="hljs-attr">sum</span> : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+              <span class="hljs-keyword">var</span> n = <span class="hljs-built_in">Number</span>(<span class="hljs-keyword">this</span>.sum);
+              <span class="hljs-keyword">if</span>(<span class="hljs-built_in">Number</span>.isNaN(n) || n&lt;<span class="hljs-number">1</span>){
+                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+              }
+              <span class="hljs-keyword">return</span> ((<span class="hljs-number">1</span>+n) * n) / <span class="hljs-number">2</span>;
+            }
+          }
+        })</span></span>
+        </code></pre><p>주의해야 할 점</p>
+        <ol>
+        <li><p>함수 내부에서의 <strong>this는 Vue객체 자신을 참조</strong>합니다. 함수 내부에서 다른 <strong>콜백 함수를 실행하거나 했을 떄는 this가 다른 값으로 연결</strong>될 수 있으므로 주의해야 합니다.</p>
+        </li>
+        <li><p>num값이 number타입이라 생각하기 쉽지만 <strong>HTML요소 내부에서는 모두 문자열로 다루어지기때문에 Number() 함수나 parseInt() 함수를 이용</strong>해 명시적으로 숫자 값으로 변환해주어야 합니다.</p>
+        </li>
+        </ol>
+        <h3 id="-">참고</h3>
+        <p><a href="http://book.naver.com/bookdb/book_detail.nhn?bid=12481190">Vue.js Quick Start</a></p>
+        `
+      },
+      {
+        img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
         date: '2017-09-28',
         title: '제 1장 시작하기',
         description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 1.1 Vue.js란?, 1.2 개발 환경 설정, 1.3 첫 번째 Vue.js 애플리케이션',
