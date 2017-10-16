@@ -13,20 +13,198 @@ export const store = new Vuex.Store({
     posting_data: [
       {
         img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
-        data: '2017-10-10',
+        date: '2017-10-16',
+        title: '제 3장 Vue 인스턴스',
+        description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 3.1 el, data, computed 옵션, 3.2 매서드, 3.3 관찰 속성, 3.4 v-cloak 디렉티브, 3.5 Vue 인스턴스 라이프 사이클',
+        content: `<h2 id="vue">Vue 인스턴스</h2>
+        
+        <h3 id="31eldatacomputed">3.1 el, data, computed 옵션</h3>
+        
+        <p>data 옵션에 주어진 모든 속성들은 vue 인스턴스 내부에서 직접 이용되지 않고 Vue 인스턴스와 Data 옵션에 주어진 객체 사이에 <strong>프록시</strong>를 두어 처리합니다.</p>
+        
+        <code>&lt;div id="test"&gt;
+          {{name}}
+        &lt;/div&gt;
+        &lt;script type="text/javascript"&gt;
+        var model = {
+          name : "홍길동"
+        }
+        var vm = new Vue({
+          el: '#test',
+          data : model
+        })
+        &lt;/script&gt;
+        </code>
+        
+        <p>따라서 위의 예제처럼 바로 {{name}}으로 접근해도 프록시 처러가 되면서 "홍길동"이라는 값이 출력된다.</p>
+        
+        <p>data 옵션은 Vue인스턴스가 관찰하는 데이터 객체를 의미하므로 변경 사항은 즉시 감지됩니다.</p>
+        
+        <blockquote>
+          <p>프록시 : 데이터에 직접 접근하는 것이아닌 중간에서 요청받은 데이터를 대신 받아와 전달해주는 전달자</p>
+        </blockquote>
+        
+        <p>el 옵션은 Vue 인스턴스에 연결할 HTML DOM 요소를 지정합니다. 주의 할 점은 여러 요소에 지정할 수 없다는 것입니다.</p>
+        
+        <p>동적으로 Vue 인스턴스와 HTML 요소를 연결할 수 있지만, 가능하다면 el 옵션은 Vue 인스턴스를 생성할 때 미리 지정하는 것을 권장합니다. </p>
+        
+        <p>computed 옵션에서 지정한 값은 함수였지만 Vue 인스턴스는 프록시 처리하여 마치 속성처럼 취급합니다.</p>
+        
+        <code>&lt;script type="text/javascript"&gt;
+        var vmSum = new Vue({
+          el : "#example",
+          data : { num : 0 },
+          computed : {
+            sum : function(){
+              var n = Number(this.num);
+              if(Number.isNaN(n) || n &lt; 1&gt;){
+                return 0;
+              }
+              return ((1+n) * n) / 2;
+            }
+          }
+        });
+        &lt;/script&gt;
+        </code>
+        
+        <p>계산형 속성은 읽기 전용이라 생각하기 쉽지만 set 메서드를 지정하면 쓰기 작업도 가능합니다.</p>
+        
+        <h3 id="32">3.2 메서드</h3>
+        
+        <p>Vue 인스턴스에서 사용할 메서드를 등록하는 옵션입니다.
+        등록된 메서드는 Vue 인스턴스를 이용해 직접 호출할 수도 있고, 디렉티브 표현식, 코수염 표현식으로도 사용할 수 있습니다.</p>
+        
+        <code>&lt;div id="example"&gt;
+          &lt;input type="text" v-model="num"&gt;&lt;br /&gt;
+          1부터 입력된 수까지의 합 : &lt;span&gt;{{sum()}}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;script type="text/javascript"&gt;
+        var vmSum = new Vue({
+          el : "#example",
+          data : { num : 0 },
+          methods : {
+            sum : function(){
+              var n = Number(this.sum);
+              if(Number.isNaN(n) || n &lt; 1){
+                return 0;
+              }
+              return ((1+n) * n) / 2;
+            }
+          }
+        });
+        &lt;/script&gt;
+        </code>
+        
+        <p>메서드와 계산형 속성을 사용했을 때 최종적인 결과물은 같아 보이지만 내부 작동 방식에는 차이가 있습니다. 계산형 속성은 종속된 값에 의해 결과값이 캐싱됩니다.</p>
+        
+        <p>즉, 메서드를 사용한 값은 매번 메서드를 실행하여 값을 받아오지만 계산형 속성을 사용한 값은 캐싱된 결과값을 바로 리턴합니다.</p>
+        
+        <p>메서드 작성시 ECMAScript6가 제공하는 화살표 함수는 사용해서선 안됩니다. 화살표 함수 내부에서 쓰이는 this는 Vue 인스턴스를 가리키지 않고, 전역 객체를 가리키기 때문에 Vue 인스턴스 내부 데이터에 접근할 수 없게 됩니다.</p>
+        
+        <h3 id="33">3.3 관찰 속성</h3>
+        
+        <p>Vue.js에서 하나의 데이터를 기반으로 다른 뎅니터를 변경할 필요가 있을 때 흔히 사용할 수 있는것으로 계산형 속성 외에 관찰 속성이란 것을 사용 할 수 있습니다.</p>
+        
+        <p>주로 긴 시간이 필요한 비동기 처리에 적합하다는 특징을 가지고 있습니다.(watch 옵션을 통해 관찰 속성을 등록합니다.)</p>
+        
+        <code>&lt;div id="example"&gt;
+          x : &lt;input type="text" v-model="x" /&gt;&lt;br /&gt;
+          y : &lt;input type="text" v-model="x" /&gt;&lt;br /&gt;
+          덧셈 결과 : {{sum}}
+        &lt;/div&gt;
+        &lt;script type="text/javascript"&gt;
+        var vm = new Vue({
+          el : "#example",
+          data : { x:0, y:0, sum:0},
+          watch: {
+            x : function(v){
+              console.log("## x 변경");
+              var result = Number(v) + Number(this.v);
+              if (isNaN(result)){
+                this.sum = 0;;
+              } else {
+                this.sum = result;
+              }
+            },
+            y : function(v) {
+              console.log("## y 변경");
+              this.y = v;
+              var result = Number(this.x) + Number(v);
+              if(isNaN(result)) {
+                this.sum = 0
+              } else {
+                this.sum = result;
+              }
+            }
+          }
+        })
+        &lt;/script&gt;
+        </code>
+        
+        <p>watch 옵션에 등록되는 것은 속성의 이름과 해당 속성이 변경되었을 때 호출할 함수입니다.</p>
+        
+        <p>비동기 처리가 필요한 경우라면 관찰 속성을 사용하거나 이벤트 처리 방법을 적용하면 됩니다.</p>
+        
+        <h3 id="34vcloak">3.4 v-cloak 디렉티브</h3>
+        
+        <p>템플릿의 문자열이 잠깐 나타났다가 사라지는 현상을 보이지 않게 처리할 수 있는 방법으로 v-cloak이 있습니다.</p>
+        
+        <code>&lt;template&gt;
+          &lt;section v-cloak&gt;
+            문자열
+          &lt;/section&gt;
+        &lt;/template&gt;
+        &lt;style&gt;
+          [v-cloak]{
+            display: none;
+          }
+        &lt;/style&gt;
+        </code>
+        
+        <p>템플릿 문자열이 일시적으로 나타나는 현상이 사라진 것을 확인할 수 있습니다.</p>
+        
+        <h3 id="35vue">3.5 Vue 인스턴트 라이플 사이클</h3>
+        
+        <p>Vue 인스턴스는 객체로 생성되고, 데이터에 대한 관찰 기능을 성정하는 등의 작업을 위해 초기화를 수행합니다. 그리고 이 과정에서 다양한 라이플 사이클 훅 매서드를 적용할 수 있습니다.</p>
+        
+        <p>라이플 사이클 훅</p>
+        
+        <ul>
+        <li>beforeCreate :Vue 인스턴스가 생성되고 데이터에 대한 관찰 기능 및 이벤트 감시자 설정 전에 호출됩니다.</li>
+        
+        <li>create :Vue 인스턴스가 생성된 후에 데이터에 대한 괄찰 기능, 계산된 속성, 메서드, 감시자 설정이 완료된 후에 호출됩니다.</li>
+        
+        <li>beforeMount : 마운트가 시작되기 전에 호출됩니다.</li>
+        
+        <li>mounted : el에 vue 인스턴스의 데이터가 마운트된 후에 호출됩니다.</li>
+        
+        <li>beforeUpdate : 가상 DOM이 랜더링, 퍂치되기 전에 데이터가 변경될 때 호출됩니다. 이 훅에서 추가적인 상태 변경을 실행할 수 있습니다. 하지만 추가로 다시 랜더링하지 않습니다.</li>
+        
+        <li>updated : 데이터의 변경으로 가상 DOM이 다시 랜더링되고 패치된 후에 호출됩니다. 이 훅이 호출되었을 때는 이미 컴포넌트의 DOM이 업데이트된 상태입니다. 그래서 DOM에 종속성이 있는 연산을 이 단계에서 수행할 수 있습니다.</li>
+        
+        <li>beforeDestroy : Vue 인스턴스가 제거되기 전에 호출됩니다.</li>
+        
+        <li>destroyed : Vue 인스턴스가 제거된 후에 호출됩니다. 이 훅이 호출될 때는 Vue 인스턴스의 모든 디렉티브의 바인딩이 해제되고, 이벤트 연결도 모두 제거됩니다.</li>
+        </ul>
+        
+        <p><img src="https://kr.vuejs.org/images/lifecycle.png" alt="Vue 인스턴스 라이플 시이클 훅 다이어그램" /></p>`
+      },
+      {
+        img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
+        date: '2017-10-10',
         title: '제 2장 Vue.js 기초',
         description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 2.1 hellovuejs, 2.2 기본 디렉티브, 2.3 반복 랜더링 디렉티브, 2.4 기타 디렉티브',
         content: `<h2 id="-2-vue-js-">제 2장 Vue.js 기초</h2>
         <h3 id="2-1-hellovuejs-">2.1 hellovuejs 예제분석</h3>
-        <pre><code><span class="hljs-attribute">var</span> model = {
+        <code><span class="hljs-attribute">var</span> model = {
           <span class="hljs-attribute">message</span> : <span class="hljs-string">'첫 번째 Vue.js 앱 입니다!'</span>
         }
-        </code></pre><p>modal 객체는 데이터를 가지고 있는 모델 객체 입니다.</p>
-        <pre><code>var simple = <span class="hljs-keyword">new</span> Vue({
+        </code><p>modal 객체는 데이터를 가지고 있는 모델 객체 입니다.</p>
+        <code>var simple = <span class="hljs-keyword">new</span> Vue({
           <span class="hljs-string">el :</span> <span class="hljs-string">'#simple'</span>,
           <span class="hljs-string">data :</span> model
         })
-        </code></pre><p>simple 객체는 Vue 객체이자 뷰모델 객체입니다.
+        </code><p>simple 객체는 Vue 객체이자 뷰모델 객체입니다.
         Vue객체의 el속성은 HTML 요소를 나타냅니다. 또한 data속성은 모델 객체를 참조합니다.
         데이터(모델)가 변경되면 뷰모델 객체는 즉시 HTML요소(뷰)에 반영시킵니다.</p>
         <p>HTML요소에서는 <strong>{{}}</strong> 과 같은 콧수염을 닮은 모양의 템플릿 표현식을 사용해 선언적으로 HTML DOM에 데이터를 랜더링합니다. 뷰모델 객체의 데이터 속성에서 해당 값을 이 위치에 나타냅니다. 콧수염 모양을 닮았다고 해서 <strong>콧수염 표현식(Mustache Expression)</strong> 이라고 부르며, 문자열을 덧붙인다는 의미로 <strong>보간법(Interpolation)</strong> 이라고도 합니다.</p>
@@ -36,10 +214,10 @@ export const store = new Vuex.Store({
         <h3 id="2-2-">2.2 기본 디렉티브</h3>
         <h4 id="2-2-1-v-text-v-html-">2.2.1 v-text, v-html 디렉티브</h4>
         <p>선언적 랜더링을 위해 HTML 요소 내부에 탬플릿 표현식(콧수염 표현식: Mustache Expression)만 사용할 수 있는 것은 아닙니다. 동일한 코드를 <strong>디렉티브</strong>라는 것을 이용해 표현해보도록 합시다.</p>
-        <pre><code>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"simple"</span>&gt;
+        <code>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"simple"</span>&gt;
           &lt;h2 v-<span class="hljs-built_in">text</span>=<span class="hljs-string">"message"</span>&gt;&lt;/h2&gt;
         &lt;/<span class="hljs-keyword">div</span>&gt;
-        </code></pre><p>각각 속성 값을 설정하거나 읽어낼 때 HTML 인코딩과 디코딩을 하는 속성임을 알고 있을 겁니다. 이에 반해 innerHTML 태그가 브라우저에 파싱되어 화면으로 나타납니다.</p>
+        </code><p>각각 속성 값을 설정하거나 읽어낼 때 HTML 인코딩과 디코딩을 하는 속성임을 알고 있을 겁니다. 이에 반해 innerHTML 태그가 브라우저에 파싱되어 화면으로 나타납니다.</p>
         <ul>
         <li><p><strong>v-text, {{}}</strong>: innerText 속성에 연결됨, 태그 문자열을 HTML 인코딩하여 나타내기 떄문에 화면에는 태그 문자열이 그대로 나타남.</p>
         </li>
@@ -49,7 +227,7 @@ export const store = new Vuex.Store({
         <p>v-html 디렉티브는 script 태그를 그대로 반영합니다. 요즘 문제가 되는 <strong>XSS(Cross Site Scripting)</strong> 공격 등에 취약합니다. 꼭 필요한 경우가 아니라면 <strong>v-text를 사용하는 것이 더 안전합니다.</strong></p>
         <h4 id="2-2-2-v-bind-">2.2.2 v-bind 디렉티브</h4>
         <p>v-bind 디렉티브는 요소(Element)의 콘텐트 영역(시작 태그와 종료 태그 사이의 영역)을 설정하는 것이 아닌 요소 객체의 속성들을 바인딩하기 위해 사용합니다. </p>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"simple"</span>&gt;</span>
+        <code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"simple"</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">"message"</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-bind:src</span>=<span class="hljs-string">"imagePath"</span> /&gt;</span>
@@ -64,12 +242,12 @@ export const store = new Vuex.Store({
             data: model
           })
         </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-        </code></pre><p>v-bind 디렉티브를 매번 작성하는 것이 부담스럽다면 줄여 쓰는 방법이 있습니다.
+        </code><p>v-bind 디렉티브를 매번 작성하는 것이 부담스럽다면 줄여 쓰는 방법이 있습니다.
         <strong>v-bind:src</strong>에서 v-bind를 생략하고 <strong>:src</strong>와 같이 작성해도 됩니다.</p>
         <h4 id="2-2-3-v-model-">2.2.3 v-model 디렉티브</h4>
         <p>위에서 살펴본 디렉티브들은 모두 단방향 디렉티브입니다. HTML요소에서 값을 변경하더라도 모델 객체의 값이 바뀌지 않습니다.</p>
         <p>요소에서 변경한 값이 모델 객체에 반영되기를 원할 때는 <strong>v-model을 이용한 양방향 바인딩</strong>이 필요한 시점입니다.</p>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"simple"</span>&gt;</span>
+        <code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"simple"</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"이름을 입력하세요"</span> /&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
           입력된 이름 : <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"name"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -82,7 +260,7 @@ export const store = new Vuex.Store({
             }
           })
         </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-        </code></pre><p>v-model 디렉티브는 텍스트뿐만 아니라 여러 가지 입력 폼 필드에서도 사용할 수 있습니다. 여러 개의 아이템을 선택할 수 있는 &lt;input type=&quot;checkbox&quot; /&gt; 나 &lt;select multiple&gt;&lt;/select&gt;의 경우는 모델 객체의 배열 객체와 연결됩니다. 단일 아이템만을 선택 할 수 있는 &lt;input type=&quot;radio&quot; /&gt;나 &lt;select&gt;&lt;/select&gt;인 경우는 모델 객체의 단일 값과 연결됩니다.</p>
+        </code><p>v-model 디렉티브는 텍스트뿐만 아니라 여러 가지 입력 폼 필드에서도 사용할 수 있습니다. 여러 개의 아이템을 선택할 수 있는 &lt;input type=&quot;checkbox&quot; /&gt; 나 &lt;select multiple&gt;&lt;/select&gt;의 경우는 모델 객체의 배열 객체와 연결됩니다. 단일 아이템만을 선택 할 수 있는 &lt;input type=&quot;radio&quot; /&gt;나 &lt;select&gt;&lt;/select&gt;인 경우는 모델 객체의 단일 값과 연결됩니다.</p>
         <h4 id="2-2-4-v-show-v-if-v-else-v-else-if-">2.2.4 v-show, v-if, v-else, v-else-if 디렉티브</h4>
         <p>v-if 디렉티브는 Vue객체의 data속성에따라 랜더링 여부를 결정할 수 있습니다.</p>
         <p>비슷한 기능으로 v-show 디렉티브가 있습니다.</p>
@@ -93,20 +271,20 @@ export const store = new Vuex.Store({
         <p>반복적인 데이터를 랜더링하기 위해서는 v-for 디렉티브를 사용합니다. </p>
         <p><strong>v-for구문은 원본 데이터가 어떤 형식인가에 따라 달라집니다.</strong></p>
         <p>원본데이터가 배열 또는 유사배열인 경우</p>
-        <pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"contact in contacts"</span>&gt;</span>
+        <code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"contact in contacts"</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">{{contact.no}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">{{contact.name}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">{{contact.tel}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">{{contact.address}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span>
-        </code></pre><p>원본데이터가 객체일 경우 키를 이용해 값에 접근하는 해시맵 구조이기 떄문에 key, value값을 얻어낼 수 있는 구조를 사용합니다.</p>
-        <pre><code>&lt;<span class="hljs-keyword">option</span> v-for=<span class="hljs-string">"(val, key) in regions"</span> v-bind:value=<span class="hljs-string">"key"</span>&gt;{{val}}&lt;/<span class="hljs-keyword">option</span>&gt;
-        </code></pre><p>만약에 인덱스 번호를 표현해야 한다면 아래와 같이 index를 추가하면 됩니다.</p>
+        </code><p>원본데이터가 객체일 경우 키를 이용해 값에 접근하는 해시맵 구조이기 떄문에 key, value값을 얻어낼 수 있는 구조를 사용합니다.</p>
+        <code>&lt;<span class="hljs-keyword">option</span> v-for=<span class="hljs-string">"(val, key) in regions"</span> v-bind:value=<span class="hljs-string">"key"</span>&gt;{{val}}&lt;/<span class="hljs-keyword">option</span>&gt;
+        </code><p>만약에 인덱스 번호를 표현해야 한다면 아래와 같이 index를 추가하면 됩니다.</p>
         <p>배열 or 유사배열</p>
-        <pre><code>&lt;<span class="hljs-built_in">tr</span> v-<span class="hljs-keyword">for</span>=<span class="hljs-string">"(contact, index) in contacts"</span>&gt;...&lt;<span class="hljs-built_in">tr</span>&gt;
-        </code></pre><p>객체</p>
-        <pre><code>&lt;<span class="hljs-keyword">option</span> v-<span class="hljs-keyword">for</span>=<span class="hljs-string">"(val, key, index) in regions"</span> ...&gt;...&lt;/<span class="hljs-keyword">option</span>&gt;
-        </code></pre><p>v-for디렉티브와 앞서 다루었던 v-if디렉티브는 함께 사용할 수 있습니다. 주의할 점은 적용되는 순서인데, <strong>v-for 디렉티브가 먼저 실행되고 v-if디렉티브가 적용</strong>됩니다.</p>
+        <code>&lt;<span class="hljs-built_in">tr</span> v-<span class="hljs-keyword">for</span>=<span class="hljs-string">"(contact, index) in contacts"</span>&gt;...&lt;<span class="hljs-built_in">tr</span>&gt;
+        </code><p>객체</p>
+        <code>&lt;<span class="hljs-keyword">option</span> v-<span class="hljs-keyword">for</span>=<span class="hljs-string">"(val, key, index) in regions"</span> ...&gt;...&lt;/<span class="hljs-keyword">option</span>&gt;
+        </code><p>v-for디렉티브와 앞서 다루었던 v-if디렉티브는 함께 사용할 수 있습니다. 주의할 점은 적용되는 순서인데, <strong>v-for 디렉티브가 먼저 실행되고 v-if디렉티브가 적용</strong>됩니다.</p>
         <p>여러요소의 그룹을 반복 렌더링하려면 &lt;template&gt;태그를 사용합니다.</p>
         <p>&lt;template&gt;태그는 랜더링 내용에 포함되지 않습니다.</p>
         <p>v-for 디렉티브를 사용할 떄 요소의 고유한 값인 key 특성을 사용 할 수 있습니다.</p>
@@ -120,7 +298,7 @@ export const store = new Vuex.Store({
         <h3 id="2-5-">2.5 계산형 속성</h3>
         <p>Vue.js의 계산된 속성은 연산로직이 필요할 때 사용할 수 있습니다.</p>
         <p>Vue객체를 만들 때 computed라는 속성과 함께 함수를 등록해두면 마치 속성처럼 이용할 수 있습니다.</p>
-        <pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example"</span>&gt;</span>
+        <code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example"</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"num"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
           1부터 입력된 수까지의 합 : <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span class="hljs-template-variable">{{sum}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -138,7 +316,7 @@ export const store = new Vuex.Store({
             }
           }
         })</span></span>
-        </code></pre><p>주의해야 할 점</p>
+        </code><p>주의해야 할 점</p>
         <ol>
         <li><p>함수 내부에서의 <strong>this는 Vue객체 자신을 참조</strong>합니다. 함수 내부에서 다른 <strong>콜백 함수를 실행하거나 했을 떄는 this가 다른 값으로 연결</strong>될 수 있으므로 주의해야 합니다.</p>
         </li>

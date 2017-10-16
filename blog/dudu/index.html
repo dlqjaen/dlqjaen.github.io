@@ -73,14 +73,19 @@
     }
     .posting-content code{
       box-sizing: border-box;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: pre-wrap;
       display: block;
       font-size: 1.2rem;
       padding: 10px;
       background: rgb(228, 230, 231);
       border-radius: 5px;
       border: 1px solid #ccc;
+    }
+    .posting-content p{
+      width: 100%;
+    }
+    .posting-content img{
+      width: 500px;
     }
     @media screen and (max-width: 600px){
       .posting-content img{
