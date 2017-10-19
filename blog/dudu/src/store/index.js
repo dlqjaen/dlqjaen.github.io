@@ -13,9 +13,249 @@ export const store = new Vuex.Store({
     posting_data: [
       {
         img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
+        date: '2017-10-19',
+        title: '제 4장 이벤트 처리',
+        description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 4.1 인라인 이벤트 처리, 4.2 이벤트 핸들러 메서드, 4.3 이벤트 객체, 4.4 기본이벤트, 4.5 이벤트 전파와 버블링, 4.6 이벤트 수식어',
+        tag: '#JavaScript',
+        content: `<h2 id="-">이벤트 처리</h2>
+        <h3 id="4-1-">4.1 인라인 이벤트 처리</h3>
+        <p>Vue.js의 HTML템플릿에서는 v-on 디렉티브를 이용하여 이벤트를 처리할 수 있습니다.</p>
+        <code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"amount"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"blance += perseInt(amount)"</span>&gt;</span>예금<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"blance -= perseInt(amount)"</span>&gt;</span>인출<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>계좌 잔고 : </span><span class="hljs-template-variable">{{blance}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+          <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+            el: <span class="hljs-string">'#example'</span>,
+            data : {
+              amount: <span class="hljs-number">0</span>,
+              balance : <span class="hljs-number">0</span>
+            }
+          })
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+        </code><p>v-on 이벤트는 @를 축약어로 사용할 수 있습니다. </p>
+        <blockquote>
+        <p>ex) v-on:click -&gt; @click</p>
+        </blockquote>
+        <p>v-on:click=&quot;blance += parselnt(amount)&quot; 코드는 이벤트를 처리하기위한 검증을 모두 반영하기 힘들기 떄문에 현실적인 방법은 아닙니다.
+        따라서 Vue 인스턴스에 등록해둔 메서드를 이벤트 처리에 연결하여 사용할 수 있습니다.</p>
+        <h3 id="4-2-">4.2 이벤트 핸들러 메서드</h3>
+        <code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"deposit"</span>&gt;</span>예금<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"withdraw"</span>&gt;</span>인출<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>계좌 잔고 : </span><span class="hljs-template-variable">{{balance}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+          methods : {
+            <span class="hljs-attr">deposit</span> : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+              <span class="hljs-keyword">var</span> amt = <span class="hljs-built_in">parseInt</span>(<span class="hljs-keyword">this</span>.amount);
+              <span class="hljs-keyword">if</span>(amt &lt;= <span class="hljs-number">0</span>&gt;) {
+                alert(<span class="hljs-string">"0보다 큰 값을 예금해야 합니다."</span>);
+              } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">this</span>.blance += amt;
+              }
+            },
+            <span class="hljs-attr">withdraw</span> : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+              <span class="hljs-keyword">var</span> amt = <span class="hljs-built_in">parseInt</span>(<span class="hljs-keyword">this</span>.amount);
+              <span class="hljs-keyword">if</span>(amt &lt;= <span class="hljs-number">0</span>){
+                alert(<span class="hljs-string">"0보다 큰 값을 인출 할 수 있습니다."</span>)
+              } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(amt &gt; <span class="hljs-keyword">this</span>.blance){
+                alert(<span class="hljs-string">"잔고보다 많은 금액을 인출할 수 없습니다."</span>)
+              } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">this</span>.blance -= amt;
+              }
+            }
+          }
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+        </code><p>Vue 인스턴스에 deposit, withdraw 메서드를 작성하여 유효성 검사 기능을 추가하였습니다.</p>
+        <h3 id="4-3-">4.3 이벤트 객체</h3>
+        <p>이벤트를 처리하는 메서드는 첫 번째 인자로 이벤트 객체를 전달받습니다.</p>
+        <p>Vue.js 이벤트 객체는 W3C 표준 HTML DOM Event 모델을 그대로 따르면서 추가적인 속성을 제공합니다.</p>
+        <h4 id="-">이벤트 객체의 주요 공통 속성</h4>
+        <ul>
+        <li>target : 이벤트가 발생한 HTML 요소를 반환합니다.</li>
+        <li>currentTarget : 이벤트리스너가 이벤트를 발생시키는 HTML 요소를 반환합니다.</li>
+        <li>path : 배열값, 이벤트 발생 HTML 요소로부터 document, window 객체로까지 거슬러 올라가는 경로를 나타냄.</li>
+        <li>bubbles : 현재 이벤트가 버블링을 일으키는 이벤트인지 여부를 리턴합니다.</li>
+        <li>cancelable : 기본 이벤트를 방지할 수 있는지 여부를 리턴합니다.</li>
+        <li>defaultPrevented : 기본 이벤트가 방지되었는지 여부를 나타냅니다.</li>
+        <li>eventPhase : 이벤트 흐름의 단계를 나타냅니다.<ol>
+        <li>포착(CAPTURING_PATH)</li>
+        <li>이벤트 발생(AT_TARGET)</li>
+        <li>버블링(BUBBLING_PHATH)</li>
+        </ol>
+        </li>
+        <li>srcElement : IE에서 사용되던 속성으로 target과 동일한 속성입니다.</li>
+        </ul>
+        <h4 id="-">키보드 이벤트 관련 속성</h4>
+        <ul>
+        <li>altKey : ALT 키가 눌러졌는지 여부를 나타냅니다.(true/false)</li>
+        <li>shiftKey : SHIFT 키가 눌러졌는지 여부를 나타냅니다.(true/false)</li>
+        <li>ctrlKey : CTRL 키가 눌러졌는지 여부를 나타냅니다.(true/false)</li>
+        <li>metaKey : 메타키가 눌러졌는지 여부를 나타냅니다. 윈도우에서는 Window Key, macOS에서는 Commend Key 입니다.</li>
+        <li>key : 이벤트에 의해 나타나는 키의 값을 리턴합니다.(대소문자를 구분합니다.)</li>
+        <li>code : 이벤트를 발생시킨 키의 값을 리턴 합니다.</li>
+        <li>keyCode : 이벤트를 발생시킨 키보드의 고유 키코드를 반환합니다.</li>
+        <li>charCode : keypress 이벤트가 발생했을 때 Unicode 캐릭터 코드를 리턴합니다.
+        location : 디바이스에서의 키 위치값, 일반 키보드는 이 값이 모두 0이므로 이용할 수 없습니다.</li>
+        </ul>
+        <h4 id="-">마우스 이벤트 관련 속성</h4>
+        <ul>
+        <li>altKey, shiftKey, ctrlKey, metaKey : 키보드 이벤트 속성 참조</li>
+        <li>button : 이벤트를 발생시킨 마우스 버튼<ul>
+        <li>0 : 마우스 왼쪽 버튼</li>
+        <li>1 : 마우스 휠</li>
+        <li>2 : 마우스 오른쪽 버튼</li>
+        </ul>
+        </li>
+        <li><p>buttons : 마우스 이벤트가 발생한 후에 눌러져 있는 마우스 버튼의 값을 리턴합니다.</p>
+        <ul>
+        <li>1 : 마우스 왼쪽 버튼</li>
+        <li>2 : 마우스 오른쪽 버튼</li>
+        <li>3 : 마우스 휠</li>
+        <li>4 : 4번째 마우스 버튼</li>
+        <li>5 : 5번째 마우스 버튼</li>
+        <li>ex) 마우스의 오른쪽 버튼, 휠을 누르고 있는 상태에서 왼쪽 버튼을 클릭할 경우 이 값은 6을 리턴합니다.</li>
+        <li>clientX, clientY : 마우스 이벤트가 일어났을 때의 뷰포트(viewPort) 영역상의 좌표, 이 좌표는 스크롤바를 내리더라도 좌푯값에 영향을 받지 않습니다.</li>
+        <li>layerX, layerY : 나우스 이벤트가 발생한 HTML 요소 영역상의 좌표, 이 좌표는 스크롤바를 내리더라도 좌푯값에 영향을 받지 않습니다.</li>
+        <li>offsetX, offsetY : 마우스 이벤트가 발생한 HTML 요소 영역상에서의 좌표(IE 브라우저 사용)</li>
+        <li>pageX, pageY : 마우스 이벤트가 일어났을 때의 HTML 문서 영역상의 좌표</li>
+        <li>screenX, screenY : 마우스 이벤트가 일어났을 때의 모니터 화면 영역상의 좌표</li>
+        </ul>
+        <h4 id="-">이벤트 객체의 주요 메서드</h4>
+        <ul>
+        <li>preventDefault() : 기본 이벤트의 자동 실행을 중지시킵니다.</li>
+        <li>stopPropagation() : 이벤트의 전파를 막습니다.</li>
+        </ul>
+        <h3 id="4-4-">4.4 기본 이벤트</h3>
+        <p>HTML 문서나 요소가 기본적으로 어떠한 기능을 실행하도록 설정되어 있는 이벤트를 기본 이벤트라고 합니다.</p>
+        <h4 id="-">대표적인 기본이벤트</h4>
+        <ul>
+        <li>&lt;a&gt; 요소를 클릭 했을 때 href 특성의 결로로 페이지를 이동시키는 이벤트</li>
+        <li>브라우저 화면을 마우슬 오른쪽 마우스 클릭했을 때 나타나는 내장 컨텍스트 메뉴</li>
+        <li>&lt;form&gt;요소 내부의 submit 버튼을 클릭했을 때 &lt;form&gt; 요소의 action 특성에 지정된 경로로 method 특성에 지정된 방식으로 내용을 전송하는 이벤트</li>
+        <li>&lt;input type=&#39;text&#39; .../&gt; 요소에 키보드를 누르면 입력한 문자가 텍스트 박스에 나타나는 이벤트.</li>
+        </ul>
+        </li>
+        </ul>
+        <p>기본 이벤트는 HTML마크업 만으로도 미리 정의된 기능을 실행 할 수 있기 떄문에 기본 이벤트를 중지시킬 수 있는 방법을 알아두어야 합니다.</p>
+        <code><span class="hljs-function"><span class="hljs-keyword">method</span> :</span> <span class="hljs-comment">{
+          eventStop : function(e){
+            e.preventDefault();
+          }</span>
+        }
+        </code><p>개발자가 메서드에 매번 e.preventDefault()를 작성하기에는 한계가 있습니다. 이러한 이벤트 관련 문제를 쉽게 해결하기 위해서 Vue.js에서는 이벤트 수식어라는 것을 제공합니다.</p>
+        <code>&lt;<span class="hljs-keyword">div</span> v-<span class="hljs-keyword">on</span>:contextmenu.prevent=<span class="hljs-string">"ctxStop"</span>&gt;
+        ...
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        </code><p>위의 코드처럼 이벤트 수식어를 사용하면 e.prventDefaullt()를 매번 사용하지 않아도 됩니다.
+        하지만 조건 논리식의 결과에 따라 기본 이벤트를 중지시켜야 할 경우에는 e.prventDefaullt()를 직접 호출해야 할 경우도 있습니다.</p>
+        <h3 id="4-5-">4.5 이벤트 전파와 버블링</h3>
+        <h4 id="html-3-">HTML 문서의 이벤트 처리 3단계</h4>
+        <ol>
+        <li>문서 내의 요소에서 이벤트가 발생했을 때 HTML 문서의 밖에서부터 이벤트를 발생시킨 HTML 요소까지 포착해 들어가는 이벤트 포착 단계(CAPTUREING_PHASE)</li>
+        <li>이벤트를 발생시킨 요소에 다다르면 요소의 이벤트에 연결된 함수를 직접 호출시키는 이벤트 발생(RAISING_PHASE: AT_TARGET)</li>
+        <li>이벤트가 발생한 요소로부터 상위 요소로 거슬러 올라가면서 동일한 이벤트를 호출시키는 버블링(BUBBLING_PHASE)</li>
+        </ol>
+        <p><img src="http://cfile2.uf.tistory.com/image/265FB641569499162CE4EC" alt="이벤트 전파에 관한 이미지"></p>
+        <p>내가 원하는 요소의 이벤트만 실행시키고자 할 경우 이벤트 전파를 막는 방법을 알아야합니다. 이 경우 stopPropagation() 메서드를 호출합니다.</p>
+        <code>methods : {
+          outerClick : <span class="hljs-keyword"><span class="hljs-keyword">function</span></span>(<span class="hljs-type">e</span>){
+            e.stopPropagation();
+          },
+          innerClick : <span class="hljs-keyword"><span class="hljs-keyword">function</span></span>(<span class="hljs-type">e</span>){
+            e.stopPropagation();
+          }
+        }
+        </code><p>위의 코드와 같이 stopPropagation 메서드를 직접 호출 할 수도 있지만 이벤트 수식어로 대체 할 수 있습니다.</p>
+        <code>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"outer"</span> @click.stop=<span class="hljs-string">"outerClick"</span>&gt;
+          &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"inner"</span> @click.stop=<span class="hljs-string">"innerClick"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        </code><ul>
+        <li>.stop : 이벤트 전파를 중단시킵니다.</li>
+        <li>.capture : CAPTURING_PHASE 단계에서만 이벤트가 발생합니다.</li>
+        <li>.self : RAISING_PHASE 단계일 때만 이벤트가 발생합니다.</li>
+        </ul>
+        <p>이벤트 수식어들은 단독으로 사용할 수도 있지만 이어붙여 여러개를 사용할 수도 있습니다.</p>
+        <code>&lt;<span class="hljs-selector-tag">div</span> @click<span class="hljs-selector-class">.capture</span><span class="hljs-selector-class">.stop</span>=<span class="hljs-string">"outerClick"</span>&gt;&lt;/div&gt;
+        </code><h3 id="4-6-">4.6 이벤트 수식어</h3>
+        <h4 id="4-6-1-once-">4.6.1 once 수식어</h4>
+        <p>once 수식어는 이벤트를 한 번만 실행시킵니다.</p>
+        <code>&lt;<span class="hljs-keyword">button</span> v-<span class="hljs-keyword">on</span>:click.once=<span class="hljs-string">"specialEvent"</span>&gt;&lt;/<span class="hljs-keyword">button</span>&gt;
+        </code><p>위 코드의 버튼을 클릭하면 단 한번만 실행이 됩니다.</p>
+        <h4 id="4-6-2-">4.6.2 키코드 수식어</h4>
+        <p>키보드의 키를 누를 떄 고유의 키코드 값을 가질 때만 이벤트를 발생시킬 수 있습니다.</p>
+        <code><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+          이름 : <span class="hljs-tag">&lt;<span class="hljs-name">inpiut</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-omn:keyup</span>=<span class="hljs-string">"search"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+          methods : {
+            search : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
+              <span class="hljs-keyword">if</span>(e.keyCode === <span class="hljs-number">13</span>){
+                <span class="hljs-keyword">var</span> val = e.target.value;
+                <span class="hljs-keyword">if</span>(val.length &gt;= <span class="hljs-number">2</span>){
+                  <span class="hljs-keyword">this</span>.fetchContacts();
+                }<span class="hljs-keyword">else</span>{
+                  <span class="hljs-keyword">this</span>.contactlist = [];
+                }
+              }
+            }
+          }
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        </code><p>keyup 이벤트가 발생하면 search메서드를 호출하고 엔터키(keyCode 13)가 keyup되었는지 확인하여 함수를 실행합니다.</p>
+        <code><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+          이름 : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-on:keyup.13</span>=<span class="hljs-string">"search"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+          methods : {
+            search : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
+              <span class="hljs-keyword">var</span> val = e.target.value;
+              <span class="hljs-keyword">if</span>(val.length &gt;- <span class="hljs-number">2</span>){
+                <span class="hljs-keyword">this</span>.fetcjContacts();
+              } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">this</span>.contactlist = [];
+              }
+            }
+          }
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        </code><p>위의 코드와 같이 수식어를 적용하여 코드를 간략하게 만들 수 있습니다. 또 키코드를 다 기억할 수 없기 때문에 Vue.js에서는 키코드 별칭을 제공합니다.</p>
+        <ul>
+        <li>.enter</li>
+        <li>.tab</li>
+        <li>.delete</li>
+        <li>.esc</li>
+        <li>.space</li>
+        <li>.up</li>
+        <li>.down</li>
+        <li>.left</li>
+        <li>.right</li>
+        <li>.ctrl</li>
+        <li>.alt</li>
+        <li>.shift</li>
+        <li>.meta</li>
+        </ul>
+        <p>또 키코드를 여러가지 조합하여 사용 할 수도 있습니다.
+        Crtl + C 를 구현 하려면 v-on:keyup.ctrl.67=&quot;copy&quot; 로 지정할 수 있습니다.</p>
+        <h4 id="4-6-3-">4.6.3 마우스 버튼 수식어</h4>
+        <p>마우스 버튼도 수식어를 제공합니다.</p>
+        <ul>
+        <li>.left</li>
+        <li>.right</li>
+        <li>.middle</li>
+        </ul>
+        `
+      },
+      {
+        img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
         date: '2017-10-16',
         title: '제 3장 Vue 인스턴스',
         description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 3.1 el, data, computed 옵션, 3.2 매서드, 3.3 관찰 속성, 3.4 v-cloak 디렉티브, 3.5 Vue 인스턴스 라이프 사이클',
+        tag: '#JavaScript',
         content: `<h2 id="vue">Vue 인스턴스</h2>
         
         <h3 id="31eldatacomputed">3.1 el, data, computed 옵션</h3>
@@ -194,6 +434,7 @@ export const store = new Vuex.Store({
         date: '2017-10-10',
         title: '제 2장 Vue.js 기초',
         description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 2.1 hellovuejs, 2.2 기본 디렉티브, 2.3 반복 랜더링 디렉티브, 2.4 기타 디렉티브',
+        tag: '#JavaScript',
         content: `<h2 id="-2-vue-js-">제 2장 Vue.js 기초</h2>
         <h3 id="2-1-hellovuejs-">2.1 hellovuejs 예제분석</h3>
         <code><span class="hljs-attribute">var</span> model = {
@@ -332,6 +573,7 @@ export const store = new Vuex.Store({
         date: '2017-09-28',
         title: '제 1장 시작하기',
         description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 1.1 Vue.js란?, 1.2 개발 환경 설정, 1.3 첫 번째 Vue.js 애플리케이션',
+        tag: '#JavaScript',
         content: `<h2>제 1장 시작하기</h2>
         
         <h3>1.1 Vue.js란?</h3>
