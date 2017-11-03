@@ -11,6 +11,14 @@ export const store = new Vuex.Store({
   state: {
     applogo: logo,
     posting_data: [
+      // {
+      //   img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
+      //   date: '2017-10-20',
+      //   title: '제 5장 스타일',
+      //   description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 5.1 스타일 적용, 5.2 인라인 스타일, 5.3 CSS 클래스 바인딩, 5.4 계산형 속성, 메서드를 이용한 스타일 적용, 5.5 컴포넌트에서의 스타일 적용, 5.6 스타일 예제',
+      //   tag: '#JavaScript',
+      //   content: ``
+      // },
       {
         img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
         date: '2017-10-19',

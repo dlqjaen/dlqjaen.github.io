@@ -18,15 +18,23 @@
 </template>
 
 <script>
+import dlqjaen from '../../assets/dlqjaen-github-io.png'
 import weatherSound from '../../assets/front-weather-sound.png'
-import dada36 from '../../assets/dada36.com.png'
+// import dada36 from '../../assets/dada36.com.png'
 import singleSingle from '../../assets/single-single.jpg'
 import donga from '../../assets/donga.png'
-import ksw from '../../assets/k-sw.png'
+// import ksw from '../../assets/k-sw.png'
 export default {
   data () {
     return {
       portfolioData: [
+        {
+          'link': 'http://dlqjaen.github.io',
+          'img': dlqjaen,
+          'info': '블로그 개발 | 기간 : 17.09 ~ 17.09 (10일) | 기여도 : 100%',
+          'title': '개인 블로그 제작',
+          'content': '포트폴리오 링크를 보존하기위한 개인 블로그를 제작했습니다. 반응형으로 제작하여 모바일에서도 접근이 가능하며, mail.js, DISQUS 서비스를 이용하여 메일과 댓글로 연락이 가능합니다.'
+        },
         {
           'link': 'http://front.weather-sound.com/',
           'img': weatherSound,
@@ -34,13 +42,13 @@ export default {
           'title': '협업 프로젝트 : Weater-Sound',
           'content': '날씨에 따라 음악을 추천해보자! 라는 생각으로 시작한 프로젝트입니다. 3명의 Front-End-Developer, 2명의 Back-End-Developer, 3명의 IOS-Developer로 구성된 팀으로 저는 Front-End팀 팀장의 역할을 수행했습니다. SPA로 제작하여 웹접근성을 최대한 준수한 뮤직플레이 사이트입니다.'
         },
-        {
-          'link': 'http://dada36.com',
-          'img': dada36,
-          'info': '프론트엔드 개발 | 기간 : 16.03 ~ 16.10 (7개월) | 기여도 : 100%',
-          'title': '동아대학교 산업디자인학과 36회 졸업전시회',
-          'content': '3명의 디자이너와 1명의 개발자로 구성된 팀으로 저는 팀원팀장(개발)을 담당 했습니다. 개발에 사용된 기술로는 HTML, CSS, JavaScript(jQuery)가 있습니다.'
-        },
+        // {
+        //   'link': 'http://dada36.com',
+        //   'img': dada36,
+        //   'info': '프론트엔드 개발 | 기간 : 16.03 ~ 16.10 (7개월) | 기여도 : 100%',
+        //   'title': '동아대학교 산업디자인학과 36회 졸업전시회',
+        //   'content': '3명의 디자이너와 1명의 개발자로 구성된 팀으로 저는 팀원팀장(개발)을 담당 했습니다. 개발에 사용된 기술로는 HTML, CSS, JavaScript(jQuery)가 있습니다.'
+        // },
         {
           'link': 'https://youtu.be/1O6xeknSTv0',
           'img': singleSingle,
@@ -54,14 +62,14 @@ export default {
           'info': '프론트엔드 개발 | 기간 : 15.09 ~ 15.11 (3개월) | 기여도 : 70%',
           'title': '동아대학교 경영대학 웹사이트 리뉴얼',
           'content': '디자이너 1명, 백엔드 개발자 1명, 프론트엔드 개발자 1명으로 이루어져 프론트엔드 개발에 참여하였습니다. 프로젝트의 기획부터 최종 배포까지 다 함께 의논하고 참여했습니다.'
-        },
-        {
-          'link': 'http://www.k-software.kr/',
-          'img': ksw,
-          'info': '보조디자이너/프론트엔드 개발 | 기간 : 15.04 ~ 16.04 (12개월) | 기여도 : 50%',
-          'title': 'K-SW포럼 웹 경진대회',
-          'content': 'K-SW포럼 웹 경진대회 보조디자이너로 참여하여 대상을 수상하였습니다. 그 후 실제 웹사이트로 제작까지 맡아 처음으로 프론트엔드개발에 참여했습니다.'
         }
+        // {
+        //   'link': 'http://www.k-software.kr/',
+        //   'img': ksw,
+        //   'info': '보조디자이너/프론트엔드 개발 | 기간 : 15.04 ~ 16.04 (12개월) | 기여도 : 50%',
+        //   'title': 'K-SW포럼 웹 경진대회',
+        //   'content': 'K-SW포럼 웹 경진대회 보조디자이너로 참여하여 대상을 수상하였습니다. 그 후 실제 웹사이트로 제작까지 맡아 처음으로 프론트엔드개발에 참여했습니다.'
+        // }
       ],
       carouselMove: {},
       carouselCount: 0
