@@ -11,14 +11,67 @@ export const store = new Vuex.Store({
   state: {
     applogo: logo,
     posting_data: [
-      // {
-      //   img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
-      //   date: '2017-10-20',
-      //   title: '제 5장 스타일',
-      //   description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 5.1 스타일 적용, 5.2 인라인 스타일, 5.3 CSS 클래스 바인딩, 5.4 계산형 속성, 메서드를 이용한 스타일 적용, 5.5 컴포넌트에서의 스타일 적용, 5.6 스타일 예제',
-      //   tag: '#JavaScript',
-      //   content: ``
-      // },
+      {
+        img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
+        date: '2017-10-20',
+        title: '제 5장 스타일',
+        description: '책으로 Vue 공부하기! (Vue.js Quick Start | 원형섭 지음) 5.1 스타일 적용, 5.2 인라인 스타일, 5.3 CSS 클래스 바인딩',
+        tag: '#JavaScript',
+        content: `<h2>스타일</h2>
+
+          <h3>5.1 스타일 적용</h3>
+
+          <p>HTML의 요소 특성을 케밥 표기법을 사용합니다.</p>
+
+          <blockquote>
+            <p>'font-size'
+          케밥 표기법을 사용하는 이유는 HTML에서는 대소문자를 구별하지 않기 때문입니다.</p>
+          </blockquote>
+
+          <p>스타일이 적용되는 순서는 &lt;style&gt;&lt;/style&gt; 태그에 작성된 순서대로 CSS 클래스의 스타일이 적용된 후 HTML 요소에 특성을 이용하는 인라인 스타일이 적용됩니다.</p>
+
+          <h3>5.2 인라인 스타일</h3>
+
+          <p>기존 HTML에서는 인라인 스타일의 사용을 권장하지 않았습니다.
+          Vue.js도 마찬가지 이지만 인라인 스타일을 사용해야할 경우도 있습니다.</p>
+
+          <p>인라인 스타일은 v-bind:style로 작성합니다. 스타일 속성은 카멜 표기법(camel casing)을 사용합니다.</p>
+
+          <p><code>
+          data : {
+            style : {
+              backgroundColor : 'aqua',
+              border : 'solid 1px gray',
+              width : '100px',
+              textAlign : 'center'
+            }
+          }
+          </code></p>
+
+          <p>스타일 객체를 사용할 때 한 번에 여러 개의 스타일 객체를 바인딩 할 수도 있습니다.</p>
+
+          <p><code>
+          &lt;button v-bind:style="style, myColor"&gt;
+          </code></p>
+
+          <h3>5.3 CSS 클래스 바인딩</h3>
+
+          <p>CSS 클래스를 바인딩하기 위해서는 v-bind:class를 사용합니다.</p>
+
+          <p><code>
+          &lt;button v-bind:class="mystyle"&gt;
+
+          data : {
+            mystyle : {
+              set1: false,
+              set2: false,
+              set3: false
+            }
+          }
+          </code></p>
+
+          <p>클래스명을 객체로 바인딩 할 수 있습니다. 이 때 속성값이 true일 경우에 해당 속성이 클래스로 바인딩 됩니다.</p>`
+      },
       {
         img: 'https://i0.wp.com/hellskitchen.blog/wp-content/uploads/2017/03/new_02238_.png?fit=650%2C270&ssl=1',
         date: '2017-10-19',
