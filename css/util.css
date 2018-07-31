@@ -1,0 +1,27 @@
+/* visible */
+.a11y-hidden {
+  position: absolute;
+  margin: -1;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* width */
+.w20p {width: 20%;}
+.w80p {width: 80%;}
+
+/* height */
+.h100p {height: 100%;}
+
+/* padding */
+.pt30 {padding-top: 30px;}
+
+.ptb20 {padding: 20px 0}
+
+.p5p {padding: 5%;}
+
+/* margin */
+.mt30 {margin-top: 30px;}

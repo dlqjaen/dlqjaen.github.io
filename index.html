@@ -1,76 +1,50 @@
-<!DOCTYPE html><html lang=ko-KR><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=keywords content="HTML, CSS, JavaScript, Blog, 이범두, Vue.js, Front-End"><meta name=description content="Front-End 개발자 이범두의 블로그 입니다."><title>DuDu's blog</title><link rel=apple-touch-icon href=static/img/applogo.fe26fa2.png><link rel="shortcut icon" href=static/img/applogo.fe26fa2.png><script async src="https://www.googletagmanager.com/gtag/js?id=UA-108372888-1"></script><script>window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-108372888-1');</script><script src=https://use.fontawesome.com/fb8b528a72.js></script><script type=text/javascript src=https://cdn.emailjs.com/dist/email.min.js></script><script type=text/javascript>(function(){
-        window.emailjs.init("user_KgbZm8xlGi0xEEhZXJyQW");
-        window.emailjs = emailjs;
-      })();</script><script>/**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://https-dlqjaen-github-io.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();</script><style>.posting-content{
-      line-height: 1.6;
-    }
-    .posting-content h3{
-      font-size: 1.4rem;
-      margin-top: 20px;
-    }
-    .posting-content h3:first-child{
-      margin-top: 0;
-    }
-    .posting-content strong{
-      background: rgb(255, 251, 217);
-      color: #0C358D;
-      font-weight: normal;
-      border-radius: 3px;
-      padding: 2px 4px;
-    }
-    .posting-content li{
-      list-style: disc;
-      margin: 5px 0 5px 20px;
-    }
-    .posting-content table{
-      width: 100%;
-      background: rgb(228, 230, 231);
-      border-radius: 5px;
-    }
-    .posting-content tr{
-      background: #fff;
-    }
-    .posting-content tr:first-child{
-      background: rgb(255, 251, 217);
-    }
-    .posting-content td{
-      padding: 3px 5px;
-    }
-    .posting-content code{
-      box-sizing: border-box;
-      white-space: pre-wrap;
-      display: block;
-      font-size: 1.2rem;
-      padding: 10px;
-      background: rgb(228, 230, 231);
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .posting-content p{
-      width: 100%;
-    }
-    .posting-content img{
-      width: 500px;
-    }
-    @media screen and (max-width: 600px){
-      .posting-content img{
-        width: 100%;
-      }
-    }</style><link href=static/css/app.044e732ade481a923185a9b9fa5b7981.css rel=stylesheet></head><body><h1 class=a11y-hidden>DuDu's blog</h1><div id=app></div><script id=dsq-count-scr src=//https-dlqjaen-github-io.disqus.com/count.js async></script><script type=text/javascript src=static/js/manifest.01bb41bb1a19d075d8d5.js></script><script type=text/javascript src=static/js/vendor.5868dc1e9e78e6c2d419.js></script><script type=text/javascript src=static/js/app.d105eab8b7506e42fcfb.js></script></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DuDu's blog</title>
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/bundle/app.css">
+  <link rel="icon" href="./img/favicon.png">
+  <!-- <link rel="apple-touch-icon" href="./picture/apple-icon-60x60.png"> -->
+  <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon.png">
+  <!-- <link rel="apple-touch-icon" sizes="120x120" href="./picture/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./picture/apple-icon-152x152.png"> -->
+</head>
+<body>
+  <section id="app">
+    <header class="w20p h100p pt30" id="header">
+        <h1 class="a11y-hidden">Lee Beom-du Blog Header</h1>
+        <article id="profile">
+          <img src="./img/profile.jpg" alt="profile img"  class="profile-img">
+          <ul class="profile-list">
+            <li>Lee Beom-du</li>
+            <li>phone: 82+ 010-5525-5417</li>
+            <li>email: a01055255417@gmail.com</li>
+          </ul>
+        </article>
+        <nav class="mt30">
+          <h2 class="a11y-hidden">Lee Beom-du Blog navigation</h2>
+          <ul>
+            <li><a href="#posting" class="ptb20" @click.stop="changeTab('posting')">Posting</a></li>
+            <li><a href="#contact" class="ptb20" @click.stop="changeTab('contact')">Contact</a></li>
+            <li><a href="https://github.com/dlqjaen" target="_blank" class="ptb20">Github</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="p5p" id="contents">
+        <h2 class="a11y-hidden">contents section</h2>
+        <article id="posting" v-show="page_list.posting">
+          <h3>posting test</h3>
+          <p v-for="list in posting_list">
+            {{list.name}}
+          </p>
+        </article>
+        <article id="contact" v-show=page_list.contact>contact test</article>
+      </section>
+  </section>
+  <script src="./dist/bundle/app.js"></script>
+</body>
+</html>
