@@ -1,17 +1,19 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const bundlePath = path.resolve(__dirname , './dist/bundle');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const bundlePath = path.resolve('./../app/public/bundle');
 
 module.exports = {
   mode: "development",
   entry: {
     app: [
       './js/app.js',
-      './js/posting.js',
       './css/init.css',
       './css/util.css',
-      './css/header.css'
-    ],
+      './css/header.css',
+      './css/posting.css',
+      './css/contact.css'
+    ]
   },
   output: {
     path: bundlePath,
@@ -35,5 +37,9 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
+    new CleanWebpackPlugin('*.*', {
+      root: bundlePath,
+      verbose: false // Show/Hide logs to console.
+    }),
   ]
 }

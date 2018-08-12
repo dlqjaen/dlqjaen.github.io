@@ -9,6 +9,19 @@
   clip: rect(0,0,0,0);
 }
 
+/* 멀티 라인 말줄임 */
+.line-clamp3 {
+  white-space: normal;
+  line-height: 1.2;
+  height: 3.6em;
+  text-align: left;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* width */
 .w20p {width: 20%;}
 .w80p {width: 80%;}

@@ -18,3 +18,13 @@ header {
   text-align: left;
   margin: 0 auto;
 }
+.nav-list{
+  transition: border 0.2s;
+}
+.nav-list:hover {
+  border-right: 10px solid rgb(107, 137, 228);
+  background-color: #3a4052;
+}
+.nav-list.active {
+  background-color: rgb(107, 137, 228);
+}

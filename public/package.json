@@ -5,12 +5,14 @@
   "author": "Lee BeomDu <a01055255417@gmail.com>",
   "private": true,
   "scripts": {
-    "build": "webpack --config ./webpack.config.local.js --watch"
+    "local": "webpack --config ./webpack.config.local.js --watch",
+    "with_app": "webpack --config ./webpack.config.local.js"
   },
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "style-loader": "^0.21.0",

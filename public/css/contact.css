@@ -1,0 +1,28 @@
+#contact .mail-form {
+  padding: 20px;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 7px;
+}
+#contact label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#contact #mail-adress, #contact #mail-content, #contact .mail-submit {
+  font-size: 1rem;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 7px;
+  outline: none;
+}
+#contact #mail-adress, #contact #mail-content {
+  background-color: rgba(107, 137, 228, 0.2);
+  margin-bottom: 20px;
+}
+#contact .mail-submit {
+  color: white;
+  cursor: pointer;
+  background-color: rgb(107, 137, 228);
+}

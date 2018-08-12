@@ -9,15 +9,16 @@ ul, li {
   list-style: none;
 }
 a{
-  background-color: royalblue;
   display: block;
 }
 a:link, a:visited{
   text-decoration: none;
   color: inherit;
 }
-a:hover {
-  background-color: brown
+button {
+  background-color: none;
+  box-shadow: none;
+  outline: none;
 }
 
 /* custom */
