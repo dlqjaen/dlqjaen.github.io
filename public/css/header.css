@@ -6,6 +6,7 @@ header {
   background-color: #2f323a;
   color: white;
   box-shadow: 2px 0px 12px 2px rgba(0,0,0,0.3);
+  min-width: 260px;
 }
 .profile-img {
   width: 50%;
@@ -27,4 +28,7 @@ header {
 }
 .nav-list.active {
   background-color: rgb(107, 137, 228);
+}
+[v-cloak] {
+  visibility: hidden;
 }

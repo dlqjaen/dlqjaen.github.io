@@ -7,7 +7,7 @@
 #contact label {
   display: block;
   font-size: 1.1rem;
-  font-weight: bold;
+  margin-bottom: 10px;
 }
 #contact #mail-adress, #contact #mail-content, #contact .mail-submit {
   font-size: 1rem;
@@ -17,12 +17,21 @@
   border-radius: 7px;
   outline: none;
 }
-#contact #mail-adress, #contact #mail-content {
-  background-color: rgba(107, 137, 228, 0.2);
+#contact .input-wrap {
   margin-bottom: 20px;
+}
+#contact #mail-adress, #contact #mail-content {
+  background-color: #f5f8fd;
+  border: 1px solid #c1cce6;
 }
 #contact .mail-submit {
   color: white;
   cursor: pointer;
   background-color: rgb(107, 137, 228);
+}
+#contact .error input, #contact .error textarea {
+  border: 1px solid red !important;
+}
+#contact .error .error-message {
+  color: red;
 }

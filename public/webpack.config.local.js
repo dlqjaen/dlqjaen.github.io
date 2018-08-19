@@ -12,6 +12,7 @@ module.exports = {
       './css/util.css',
       './css/header.css',
       './css/posting.css',
+      './css/posting_content.css',
       './css/contact.css'
     ]
   },
@@ -33,6 +34,17 @@ module.exports = {
           use: 'css-loader'
         })
       },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: "html-loader"
+          },
+          {
+            loader: "markdown-loader"
+          }
+        ]
+      }
     ]
   },
   plugins: [

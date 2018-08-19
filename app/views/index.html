@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DuDu's blog</title>
-  <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="./bundle/app.css">
   <link rel="icon" href="./img/favicon.png">
   <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon.png">
@@ -33,10 +33,10 @@
       </header>
       <section class="p5p" id="contents">
         <h2 class="a11y-hidden">contents section</h2>
-        <article id="posting" v-show="page_list.posting">
+        <article id="posting" v-show="page_list.posting && !page_list.posting_content">
           <h3 class="a11y-hidden">posting test</h3>
           <% posting_feed.forEach((posting) => { %>
-            <button type="button" class="posting-feed">
+            <button type="button" class="posting-feed" @click="enterPosting('<%- posting.key %>')">
               <img src="<%- posting.img %>" alt="<%- posting.title %> 이미지" width="100%" height="auto">
               <h4 class="posting-title"><%- posting.title %></h4>
               <p class="line-clamp3 posting-contents"><%- posting.contents %></p>
@@ -44,29 +44,26 @@
             </button>
           <% }) %>
         </article>
-        <article id="contact" v-show=page_list.contact>
+        <article id="posting_content" v-show="page_list.posting_content" v-html="posting_content"></article>
+        <article id="contact" v-show="page_list.contact" v-cloak>
           <h3 class="a11y-hidden">contact test</h3>
-          <form class="mail-form" onclick="return false;">
-            <div>
+          <form class="mail-form" method="POST" action="https://formspree.io/a01055255417@gmail.com">
+            <div class="input-wrap" :class="{error: contact.email_check}">
               <label for="mail-adress">mail</label>
-              <input type="email" data-target="mail" v-model="contact.mail" id="mail-adress" placeholder="메일 주소를 입력해주세요." @input="setData"/>
+              <input type="email" name="email" data-target="mail" v-model="contact.mail" required id="mail-adress" placeholder="메일 주소를 입력해주세요." @input="setData"/>
+              <span v-show="contact.email_check" class="error-message">형식에 맞는 메일 주소를 입력해 주세요.</span>
             </div>
-            <div>
+            <div class="input-wrap" :class="{error: contact.content_check}">
               <label for="mail-content">content</label>
-              <textarea id="mail-content" data-target="content" v-model="contact.content" cols="30" rows="10" placeholder="메일 내용을 입력해주세요." @input="setData"></textarea>
+              <textarea id="mail-content" name="message" data-target="content" required v-model="contact.content" cols="30" rows="10" placeholder="메일 내용을 입력해주세요." @input="setData"></textarea>
+              <span v-show="contact.content_check" class="error-message">보내시려는 내용을 입력해 주세요.</span>
             </div>
-            <button type="submit" class="mail-submit" @click.stop="sendEmail">send mail</button>
+            <button type="submit" class="mail-submit" @click="sendEmail">send mail</button>
           </form>
         </article>
       </section>
   </section>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function(){
-      window.emailjs.init("user_KgbZm8xlGi0xEEhZXJyQW");
-      window.emailjs = emailjs;
-    })();
-  </script>
-  <script src="./bundle/app.js"></script>
+  <script src="https://smtpjs.com/v2/smtp.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="./bundle/app.js"></script>
 </body>
 </html>
