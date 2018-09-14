@@ -19,4 +19,10 @@ module.exports = (app, fs) => {
   app.get('/', (req, res) => {
     res.render('index.html', {posting_feed});
   })
+  app.get('/posting', (req, res) => {
+    res.render('index.html', {posting_feed});
+  })
+  app.get('/posting', (req, res) => {
+    res.render('index.html', {contact_active: true});
+  })
 }

@@ -36,12 +36,12 @@
         <article id="posting" v-show="page_list.posting && !page_list.posting_content">
           <h3 class="a11y-hidden">posting test</h3>
           <% posting_feed.forEach((posting) => { %>
-            <button type="button" class="posting-feed" @click="enterPosting('<%- posting.key %>')">
+            <a href="#posting#<%- posting.key %>" type="button" class="posting-feed" @click="enterPosting('<%- posting.key %>')">
               <img src="<%- posting.img %>" alt="<%- posting.title %> 이미지" width="100%" height="auto">
               <h4 class="posting-title"><%- posting.title %></h4>
               <p class="line-clamp3 posting-contents"><%- posting.contents %></p>
               <p class="posting-date"><%- posting.date %></p>
-            </button>
+            </a>
           <% }) %>
         </article>
         <article id="posting_content" v-show="page_list.posting_content" v-html="posting_content"></article>

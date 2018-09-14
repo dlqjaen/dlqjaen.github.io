@@ -2,8 +2,6 @@ import Vue from 'vue/dist/vue.common.js'
 import webpack_custom from '../md/webpack_custom.md'
 import profile_page_test from '../md/profile_page_testcase.md'
 
-var httpRequest = new XMLHttpRequest(); 
-
 new Vue({
   el: '#app',
   data: {
@@ -57,22 +55,6 @@ new Vue({
     contentCheck: function() {
       this.contact.content_check = this.contact.content.length == 0;
     },
-    httpRequest: function() {
-      const _this = this;
-
-      httpRequest.onreadystatechange = viewMessage;
-      httpRequest.open('POST', `https://formspree.io/a01055255417@gmail.com`, true);
-      httpRequest.send(`email=${_this.contact.mail}&message=${_this.contact.content}`);
-
-      function viewMessage() {
-        if (httpRequest.status == 200) {
-          console.log(httpRequest);
-        } else {
-          console.log(httpRequest.status);
-        }
-        return;
-      } 
-    },
     sendEmail: function() {
       this.emailCheck()
       this.contentCheck()
@@ -80,8 +62,7 @@ new Vue({
       if (this.contact.email_check || this.contact.content_check) {
         return;
       }
-      this.httpRequest();
     }
-  }
+  },
 })
 
