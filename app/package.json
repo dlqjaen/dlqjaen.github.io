@@ -1,0 +1,12 @@
+{
+  "name": "blog.server",
+  "version": "1.0.0",
+  "author": "BeomduLee",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}
