@@ -3,8 +3,8 @@ bg: "tag.jpg"
 layout: page
 permalink: /posts/
 title: "Archive"
-crawlertitle: "All articles"
-summary: "Posts about jekyll"
+crawlertitle: "DuDu's Archives"
+summary: "Develop Issue & Know How"
 active: archive
 ---
 
@@ -12,22 +12,21 @@ active: archive
   {% assign t = tag | first %}
   {% assign posts = tag | last %}
 
-  <h2 class="category-key" id="{{ t | downcase }}">{{ t | capitalize }}</h2>
+  {% for post in posts %}
+  <h2 class="category-key" id="{{ t | downcase }}"><a href="{{ post.url | relative_url}}">{{ t | capitalize }}</a></h2>
 
   <ul class="year">
-    {% for post in posts %}
       {% if post.tags contains t %}
         <li>
           {% if post.lastmod %}
-            <a href="{{ post.url | relative_url}}">{{ post.title }}</a>
+            <p>{{ post.title }}</p>
             <span class="date">{{ post.lastmod | date: "%d-%m-%Y"  }}</span>
           {% else %}
-            <a href="{{ post.url | relative_url}}">{{ post.title }}</a>
+            <p>{{ post.title }}</p>
             <span class="date">{{ post.date | date: "%d-%m-%Y"  }}</span>
           {% endif %}
         </li>
       {% endif %}
-    {% endfor %}
   </ul>
-
+  {% endfor %}
 {% endfor %}

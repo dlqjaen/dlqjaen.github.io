@@ -164,7 +164,7 @@ a {
   color: #fff;
   text-shadow: 2px 0 5px #333;
   position: absolute;
-  bottom: 20%;
+  top: 20%;
   width: 80%;
   left: 10%;
   .heading a {
@@ -258,8 +258,13 @@ article {
 /*
 * Archive
 * ========================================================================== */
+.category-key {
+  margin: 0;
+}
+
 .year {
   padding: 0;
+  margin: 0;
   list-style: none;
   text-transform: uppercase;
   font-size: 13px
@@ -282,7 +287,7 @@ article {
 .date {
   text-align: right;
   float: right;
-  color: #d4d4d4;
+  color: #666;
   display: none;
 }
 
@@ -324,7 +329,7 @@ article {
     color: #333;
     margin: 10px 0;
   }
-  
+
   &__title {
     font-size: 1em;
     font-weight: bold;
