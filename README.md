@@ -1,24 +1,3 @@
 [Beomdu's Blog](https://dlqjaen.github.io/#/)
 =============================
-## Index
-> HTML
-  - DOCTYPE
-
-> CSS
-  - Image Sprite 기법
-
-> JavaScript
-  - Vue.js Quick Start 제 1장 시작하기
-  - Vue.js Quick Start 제 2장 Vue.js 기초
-  - Vue.js Quick Start 제 3장 Vue 인스턴스
-  - Vue.js Quick Start 제 4장 이벤트 처리
-  - Vue.js Quick Start 제 5장 스타일
-  - jQuery VS Vue.js
-  - DOM VS Virtual DOM
-  - 동기통신과 비동기통신
-
-> 웹 표준
-  - 웹 표준이란
-  - 시맨틱 마크업
-
-> 웹 접근성
+평소 개발을 진행하면서 시행착오 및 개발경험을 기록하기 위해서 저장소의 역할을 할 수 있는 블로그를 제작한다.
