@@ -207,7 +207,7 @@ main {
 }
 
 article {
-  padding: 2em 1em;
+  padding: 1em 1em;
   img,
   embed,
   object,
@@ -258,8 +258,12 @@ article {
 /*
 * Archive
 * ========================================================================== */
-.category-key {
+.category-key:first-child {
   margin: 0;
+}
+
+.category-key {
+  margin: 1em 0 0 0;
 }
 
 .year {
@@ -270,9 +274,15 @@ article {
   font-size: 13px
 }
 
+.year .description {
+  width: 80%;
+  display: inline-block;
+  line-height: 2;
+}
+
 .year li {
-  padding: 5px;
-  padding: 8px 10px;
+  margin-top: 15px;
+  padding-bottom: 30px;
   border-bottom: 1px dotted #eae4da
 }
 
