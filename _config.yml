@@ -9,9 +9,9 @@
 title: Beomdu's Blog
 email: a01055255417@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  프론트엔드 개발자 이범두의 Archives입니다.
+  프론트개발을 하면서 생겼던 이슈, 개발 과정을 기록하는 저장고 입니다.
+keywords: "이범두, dlqjaen, beomdu, front-end, frontend, Frontend, archives, developer"
 baseurl: "" # the subpath of your site, e.g. /blog
 lang: "ko"
 url: "http://localhost:4000" # the base hostname & protocol for your site
@@ -25,7 +25,7 @@ permalink: /:categories/:title/
 
 # Posts settings
 future: true
-safe: false
+safe: true
 lsi: false
 excerpt_separator: "\n\n"
 

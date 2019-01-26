@@ -3,9 +3,10 @@ bg: "tools.jpg"
 layout: post
 title:  "Webpack 커스텀해보기!"
 summary: "webpack-custom"
-date:   2019-01-07 18:09:47 +0700
+date: 2019-01-07 18:09:47 +0700
 categories: posts
 tags: 'webpack'
+description: 'webpack의 구성과 각 라이브러리들의 용도를 파악하고 관리가 가능하도록 webpack을 처음부터 설치 - 설정 하는과정을 기록한다.'
 author: beomdu
 ---
 ## Webpack 커스터마이징
@@ -212,7 +213,7 @@ css-loader가 먼저 실행되어야 하기 때문에 배열의 마지막에 css
 
 
 
->CSS파일만 따로 뽑아내기
+#### CSS파일만 따로 뽑아내기
 
 보통 프로젝트 개발을 하게되면 URL하나에 HTML, CSS, JS 한 묶으로 만들어지게 된다. 이렇게 작업된 다수의 파일들을 배포하기 위해 webpack으로 번들링하게 되고 이때 하나의 이름으로 JS파일 HTML파일 CSS파일을 따로 관리할 필요성이 생긴다. 이번에는 각 형식의 파일들을 따로 뽑아내보도록 한다.
 
