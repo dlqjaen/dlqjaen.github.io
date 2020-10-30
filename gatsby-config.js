@@ -5,6 +5,7 @@ module.exports = {
     author: `Beomdu.Lee`,
     email: `a01055255417@gmail.com`
   },
+  pathPrefix: "/dlqjaen",
   plugins: [
     `gatsby-plugin-less`,
     `gatsby-plugin-react-helmet`,
