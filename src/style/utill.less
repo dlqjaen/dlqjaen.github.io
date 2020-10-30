@@ -1,0 +1,22 @@
+.content {
+  transition: padding-left 0.3s ease-in-out;
+  @media screen and (max-width: 425px) {
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    padding-left: 200px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding-left: 250px;
+  }
+}
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0); /* IE 6,7 */
+  clip: rect(0,0,0,0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
