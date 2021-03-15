@@ -5,7 +5,6 @@ import PropTypes from "prop-types"
 import SideMenu from "./side-menu"
 import "../style/reset.less"
 import "../style/utill.less"
-import "../style/header.less"
 
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
@@ -20,9 +19,6 @@ const Layout = ({ children, location }) => {
   `)
   return (
     <>
-      <header className="header">
-
-      </header>
       <SideMenu siteData={ data.site.siteMetadata } location={ location || '' } />
       <main className="content">{ children }</main>
     </>

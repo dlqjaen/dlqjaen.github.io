@@ -8,6 +8,7 @@
   }
 
   &__img {
+    display: inline-block;
     width: 70px;
     border-radius: 10px;
   }
@@ -82,7 +83,21 @@
   }
 
   @media screen and (max-width: 425px) {
+    text-align: center;
     grid-template-columns: repeat(1, 1fr);
+
+    &__menu {
+      margin-top: 15px;
+    }
+
+    &__production-period {
+      display: none;
+    }
+
+    &__profile {
+      padding: 20px 0;
+      border-bottom: 2px solid #7f808a;
+    }
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     width: 200px;
