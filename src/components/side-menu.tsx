@@ -18,7 +18,7 @@ const SideMenu = ({ siteData, location }) => {
 
   const menuList = [
     {name: 'Posting', url: '/', active: ['/', '/posting']},
-    {name: 'Profile', url: '/profile', active: ['/profile']}
+    // {name: 'Profile', url: '/profile', active: ['/profile']}
   ]
   const menuElements = menuList.map( v => (
     <li key={ v.name }>

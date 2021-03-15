@@ -1,5 +1,6 @@
 _site
 .sass-cache
+/public
 /node_modules
 .cache
 .DS_Store
