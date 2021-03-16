@@ -1,5 +1,6 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
+import { RecoilRoot } from 'recoil'
 
 import Layout from './layout'
 import SEO from "./seo"
@@ -22,6 +23,7 @@ const Posting: React.FC<PageProps<IPosting>> = ({ data }) => {
   const { markdownRemark: { frontmatter, html } } = data
 
   return (
+    <RecoilRoot>
     <Layout location="/posting">
       <SEO title={ frontmatter.title } description={ frontmatter.description } />
       <section className="posting">
@@ -37,6 +39,7 @@ const Posting: React.FC<PageProps<IPosting>> = ({ data }) => {
         <article className="posting__content" dangerouslySetInnerHTML={{ __html: html }} />
       </section>
     </Layout>
+    </RecoilRoot>
   )
 }
 
