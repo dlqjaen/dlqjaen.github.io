@@ -1,6 +1,6 @@
 .side-menu {
   background-color: #353744;
-  transition: width 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
 
   &__profile {
     padding-bottom: 40px;
@@ -82,7 +82,8 @@
     color: #6a6c78;
   }
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 767px) {
+    position: relative;
     text-align: center;
     grid-template-columns: repeat(1, 1fr);
 
@@ -95,8 +96,31 @@
     }
 
     &__profile {
+      max-height: 0;
+      padding: 0;
+      overflow: hidden;
+      border-width: 0;
+      transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, border 0.3s ease-in-out;
+    }
+
+    &.open &__profile {
+      max-height: 235px;
       padding: 20px 0;
       border-bottom: 2px solid #7f808a;
+    }
+
+    &__toggle {
+      cursor: pointer;
+      display: inline-block;
+      border: none;
+      outline: none;
+      border-radius: 0 5px 5px 0;
+      background-color: #353744;
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 2rem;
+      padding: 5px 10px;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -106,6 +130,25 @@
     position: fixed;
     top: 0;
     bottom: 0;
+    left: -200px;
+
+    &.open {
+      left: 0;
+    }
+
+    &__toggle {
+      cursor: pointer;
+      display: inline-block;
+      border: none;
+      outline: none;
+      border-radius: 0 5px 5px 0;
+      background-color: #353744;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      font-size: 2rem;
+      padding: 5px 10px;
+    }
   }
   @media screen and (min-width: 1024px) {
     width: 250px;
@@ -113,6 +156,25 @@
     box-shadow: 2px 1px 5px #00000010;
     position: fixed;
     top: 0;
+    left: -250px;
     bottom: 0;
+
+    &.open {
+      left: 0;
+    }
+
+    &__toggle {
+      cursor: pointer;
+      display: inline-block;
+      border: none;
+      outline: none;
+      border-radius: 0 5px 5px 0;
+      background-color: #353744;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      font-size: 2rem;
+      padding: 5px 10px;
+    }
   }
 }

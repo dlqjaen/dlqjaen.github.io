@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { RecoilRoot } from 'recoil'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,13 +12,15 @@ const IndexPage = ({ data }) => {
   const { allMarkdownRemark: { edges } } = data
 
   return (
-  <Layout location="/">
-    <SEO title="Posting" />
-    <section className="home">
-      <TagFilter />
-      <PostingList postingList={ edges } />
-    </section>
-  </Layout>
+    <RecoilRoot>
+    <Layout location="/">
+      <SEO title="Posting" />
+      <section className="home">
+        <TagFilter />
+        <PostingList postingList={ edges } />
+      </section>
+    </Layout>
+    </RecoilRoot>
   )
 }
 

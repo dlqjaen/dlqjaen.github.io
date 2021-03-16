@@ -1,4 +1,6 @@
 import React from "react"
+import { useRecoilState } from 'recoil'
+import { recoil_open } from '../recoil/side-toggle'
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import "../style/side-menu.less"
@@ -17,8 +19,7 @@ const SideMenu = ({ siteData, location }) => {
   `)
 
   const menuList = [
-    {name: 'Posting', url: '/', active: ['/', '/posting']},
-    // {name: 'Profile', url: '/profile', active: ['/profile']}
+    {name: '📒 Posting', url: '/', active: ['/', '/posting']}
   ]
   const menuElements = menuList.map( v => (
     <li key={ v.name }>
@@ -27,9 +28,13 @@ const SideMenu = ({ siteData, location }) => {
       >{ v.name }</Link>
     </li>
   ))
+  const [isOpen, setIsOpen] = useRecoilState(recoil_open);
+  function onSideMenuToggle() {
+    setIsOpen(!isOpen)
+  }
 
   return (
-    <aside className="side-menu">
+    <aside className={ `side-menu ${isOpen ? 'open' : ''}` }>
       <article className="side-menu__profile">
         <Img className="side-menu__img" fluid={imgData.placeholderImage.childImageSharp.fluid } />
         <h3 className="side-menu__name">{ siteData.author }</h3>
@@ -48,6 +53,9 @@ const SideMenu = ({ siteData, location }) => {
         <p>© 2020 - { new Date().getFullYear() } Built width Gatsby</p>
         <p>Edited by { siteData.author }</p>
       </article>
+      <button className="side-menu__toggle" onClick={ onSideMenuToggle }>
+        { isOpen ? '📕' : '📖' }
+      </button>
     </aside>
   )
 }
