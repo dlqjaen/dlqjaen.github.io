@@ -1,3 +1,5 @@
+@import './system/index.less';
+
 .side-menu {
   background-color: #353744;
   transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
@@ -19,8 +21,9 @@
   }
 
   &__email {
+    display: inline-block;
     color: #6a6c78;
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     margin-top: 10px;
     transition: color 0.2s ease-in-out;
 
@@ -33,7 +36,7 @@
     display: inline-block;
     margin-top: 10px;
     margin-right: 5px;
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     padding: 3px 5px;
     border: 1px solid #9a9da8;
     color: #9a9da8;
@@ -56,7 +59,7 @@
     color: #6a6c78;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 2rem;
     padding: 5px 0;
     transition: color 0.2s ease-in-out,
       padding 0.2s ease-in-out;
@@ -68,7 +71,7 @@
     &.active {
       color: #edc9a5;
       padding: 15px 0;
-      font-size: 1.5rem;
+      font-size: 2.4rem;
     }
     &:first-of-type.active {
       padding-top: 0;
@@ -78,7 +81,7 @@
   &__production-period {
     position: absolute;
     bottom: 30px;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     color: #6a6c78;
   }
 
@@ -119,8 +122,8 @@
       position: absolute;
       bottom: 5px;
       right: 5px;
-      font-size: 2rem;
       padding: 5px 10px;
+      .font_7040();
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -146,8 +149,8 @@
       position: absolute;
       left: 100%;
       top: 0;
-      font-size: 2rem;
       padding: 5px 10px;
+      .font_7040();
     }
   }
   @media screen and (min-width: 1024px) {
@@ -173,8 +176,8 @@
       position: absolute;
       left: 100%;
       top: 0;
-      font-size: 2rem;
       padding: 5px 10px;
+      .font_7040();
     }
   }
 }
