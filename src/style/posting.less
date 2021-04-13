@@ -1,5 +1,4 @@
 .posting {
-  padding: 50px;
   color: #fff;
 
   &__title {}
@@ -43,20 +42,21 @@
   &__content {
     margin-top: 20px;
   }
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 20px;
+  h1 {
+    margin-top: 0;
+  }
+  h2, h3, h4, h5, h6 {
+    margin-top: 30px;
   }
   pre {
     margin-top: 20px;
     background-color: #00000030;
 
     code {
-      font-size: 0.75rem;
       color: #a4aab9;
     }
   }
   p {
-    font-size: 0.875rem;
     margin-top: 20px;
     line-height: 1.5rem;
 
@@ -64,7 +64,6 @@
       color: #edc9a5;
       padding: 3px 5px;
       background-color: #00000030;
-      font-size: 0.75rem;
 
       &::before,
       &::after {
@@ -80,9 +79,9 @@
     padding: 30px;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    padding: 30px;
+    padding: 60px;
   }
   @media screen and (min-width: 1024px) {
-    padding: 50px;
+    padding: 60px;
   }
 }

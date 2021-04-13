@@ -37,7 +37,7 @@ const SideMenu = ({ siteData, location }) => {
     <aside className={ `side-menu ${isOpen ? 'open' : ''}` }>
       <article className="side-menu__profile">
         <Img className="side-menu__img" fluid={imgData.placeholderImage.childImageSharp.fluid } />
-        <h3 className="side-menu__name">{ siteData.author }</h3>
+        <h5 className="side-menu__name">{ siteData.author }</h5>
         <a className="side-menu__email" href={ `mailto: ${siteData.email}` }>{ siteData.email }</a>
         <p>
           <a className="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://github.com/dlqjaen">Github</a>
