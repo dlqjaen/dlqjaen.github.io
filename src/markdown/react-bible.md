@@ -1,3 +1,11 @@
+---
+path: '/posting/react-bible'
+date: '2021-04-09'
+title: '리액트 교과서'
+description: '코로나 격리기간 동안 공부'
+tags: ['React']
+---
+
 ### 1장
 
 React.createElement(elementName, data, child)
