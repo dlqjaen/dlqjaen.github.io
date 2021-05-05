@@ -1,11 +1,9 @@
 ---
 path: '/posting/programmers-number-game'
 date: '2021-04-16'
-title: '프로그래머스 - 기지국 설치'
+title: '프로그래머스 - 숫자 게임'
 description: 'A 팀원들이 부여받은 수가 출전 순서대로 나열되어있는 배열 A와 i번째 원소가 B팀의 i번 팀원이 부여받은 수를 의미하는 배열 B가 주어질 때, B 팀원들이 얻을 수 있는 최대 승점을 return 하도록 solution 함수를 완성해주세요.'
 tags: ['JS', 'Algorithm']
-
-
 ---
 
 ```javascript
@@ -41,7 +39,7 @@ function solution(A,B){
     B = B.sort(function(a,b){return a-b});
 var temp=0;
     for(var i=0; i<A.length; i++){
-        for(var j=temp;j<B.length;j++){       
+        for(var j=temp;j<B.length;j++){
            // console.log("a-"+i+"/b"+j);
         if(A[i]<B[j]){
             point++;
