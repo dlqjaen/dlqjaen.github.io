@@ -21,10 +21,10 @@ const PostLink = ({ postingList }: { postingList: IPostingList[] }) => {
       key={`${index}_${posting.node.frontmatter.title}`}
       to={ posting.node.frontmatter.path }
     >
-      <h3 className="posting-list__top">
+      <h4 className="posting-list__top">
         <span className={ `posting-list__marking ${posting.node.frontmatter.tags[0].toLowerCase()}` }></span>
         <span className="posting-list__title">{ posting.node.frontmatter.title }</span>
-      </h3>
+      </h4>
       <p className="posting-list__date">{ posting.node.frontmatter.date }</p>
       <p className="posting-list__description">{ posting.node.frontmatter.description }</p>
       <p className="posting-list__tag-wrapper">
