@@ -1,6 +1,6 @@
 ---
 path: '/posting/queue'
-date: '2020-04-24'
+date: '2021-04-24'
 title: '큐'
 description: '데이터를 넣을 수 있는 선형구조, 먼저 넣은 데이터가 먼저 나오는 FIFO(First In First Out)'
 tags: ['JS', 'dataStructure']

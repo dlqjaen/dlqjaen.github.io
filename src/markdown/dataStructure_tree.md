@@ -1,6 +1,6 @@
 ---
 path: '/posting/tree'
-date: '2020-04-24'
+date: '2021-04-24'
 title: '트리'
 description: '여러 데이터가 계층 구조에서 연결을 가질때 사용하며 계층구조를 표현하거나 계층구조를 이용한 알고리즘의 효율을 높일 때 사용'
 tags: ['JS', 'dataStructure']

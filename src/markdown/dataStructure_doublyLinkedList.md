@@ -1,6 +1,6 @@
 ---
 path: '/posting/doubly-linked-list'
-date: '2020-05-05'
+date: '2021-05-05'
 title: '이중연결리스트'
 description: '기본적으로 연결리스트와 같이 떨어져있는 데이터를 연결해서 관리하는 데이터구조, 연결리스트와 다르게 양방향으로 연결되어서 노드 탐색 및 추가/삭제가 가능하다.'
 tags: ['JS', 'dataStructure']

@@ -1,9 +1,9 @@
 ---
 path: '/posting/linked-list'
-date: '2020-05-05'
+date: '2021-05-05'
 title: '연결리스트'
 description: '떨어져있는 데이터를 연결해서 관리하는 데이터 구조 Linked List의 경우 다른 자료구조를 표현할 때 많이 사용된다.'
-tags: ['JS']
+tags: ['JS', 'dataStructure']
 ---
 
 # 연결리스트 (Linked List)

@@ -1,6 +1,6 @@
 ---
 path: '/posting/stack'
-date: '2020-04-24'
+date: '2021-04-24'
 title: '스택'
 description: '데이터를 넣을 수 있는 선형구조, 나중에 넣은 데이터가 먼저 나오는 LIFO(Last In First Out)'
 tags: ['JS', 'dataStructure']
