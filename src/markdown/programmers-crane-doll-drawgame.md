@@ -47,12 +47,6 @@ function solution(board, moves) {
 - 히든 케이스 1,2번이 실패해서 이유를 알아보다 바구니의 갯수가 2개가 아닐 경우에도 카운트를 실행하는 경우가 발생할 수 있다는 것을 알았다. (moves가 인형이 없는 부분을 선택했을 경우) 예상하지 못한 변수에 대해서 어떻게 대비할 수 있을까?
 
 - `slice`로 반환되는 `array` 를 재할당 하지 않고 splice 를 이용해 뒤쪽에서 2개를 제거하는 로직이었을 때는 미세한 차이이지만 속도가 좀 더 느려졌다.
-  `Slice`
-
-  ![slice-speed](/Users/ibeomdu/dlqjaen.github.io/src/images/markdown/programmers-crane-doll-drawgame/slice-speed.png)
-
-  `Splice`
-  ![splice-speed](/Users/ibeomdu/dlqjaen.github.io/src/images/markdown/programmers-crane-doll-drawgame/splice-speed.png)
 
 
 
