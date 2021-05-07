@@ -2,57 +2,48 @@
 /static/5760030726ebc7666125669dc9e08c82/2244e/profile.jpg 400w,
 /static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg 460w" sizes="(max-width: 460px) 100vw, 460px" /><img loading="lazy" sizes="(max-width: 460px) 100vw, 460px" srcset="/static/5760030726ebc7666125669dc9e08c82/f836f/profile.jpg 200w,
 /static/5760030726ebc7666125669dc9e08c82/2244e/profile.jpg 400w,
-/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg 460w" src="/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h5 class="side-menu__name">Beomdu.Lee</h5><a class="side-menu__email" href="mailto: a01055255417@gmail.com">a01055255417@gmail.com</a><p><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://github.com/dlqjaen">Github</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.hackerrank.com/a01055255417">Hackerrank</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dlqjaen/">Instagram</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://flitto.com">Flitto</a></p></article><ul class="side-menu__menu"><li><a class="side-menu__link active" href="/">📒 Posting</a></li></ul><article class="side-menu__production-period"><p>© 2020 - <!-- -->2021<!-- --> Built width Gatsby</p><p>Edited by <!-- -->Beomdu.Lee</p></article><button class="side-menu__toggle">📖</button></aside><main class="content "><section class="posting"><h1 class="posting__title"><span>프로그래머스 - 기능개발</span><span class="posting__date">2021-04-08</span></h1><p class="posting__tag-wrapper"><span class="posting__tag js">#JS</span><span class="posting__tag algorithm">#Algorithm</span></p><article class="posting__content"><pre><code class="language-javascript">function solution(skillBuild, userSkillTrees) {
-    let count = 0
-    
-    for (let userSkill of userSkillTrees) {
-        let lastIndex = null
-        
-        for (let skill of skillBuild) {
-            let findIndex = userSkill.indexOf(skill)
+/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg 460w" src="/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h5 class="side-menu__name">Beomdu.Lee</h5><a class="side-menu__email" href="mailto: a01055255417@gmail.com">a01055255417@gmail.com</a><p><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://github.com/dlqjaen">Github</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.hackerrank.com/a01055255417">Hackerrank</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dlqjaen/">Instagram</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://flitto.com">Flitto</a></p></article><ul class="side-menu__menu"><li><a class="side-menu__link active" href="/">📒 Posting</a></li></ul><article class="side-menu__production-period"><p>© 2020 - <!-- -->2021<!-- --> Built width Gatsby</p><p>Edited by <!-- -->Beomdu.Lee</p></article><button class="side-menu__toggle">📖</button></aside><main class="content "><section class="posting"><h1 class="posting__title"><span>프로그래머스 - 기능개발</span><span class="posting__date">2021-04-08</span></h1><p class="posting__tag-wrapper"><span class="posting__tag js">#JS</span><span class="posting__tag algorithm">#Algorithm</span></p><article class="posting__content"><p><a href="https://programmers.co.kr/learn/courses/30/lessons/42586">링크</a></p>
+<pre><code class="language-javascript">function solution(progresses, speeds) {
+    let deployDay = 0
+    let result = []
 
-            if ((lastIndex === -1) &#x26;&#x26; (findIndex !== -1)) { break }
-            if ((lastIndex !== -1) &#x26;&#x26; (findIndex !== -1) &#x26;&#x26; (lastIndex > findIndex)) { break }
-            if (skillBuild[skillBuild.length -1] === skill) {
-                count += 1
-                break
-            }
-            lastIndex = findIndex
+    for (let i = 0, l = progresses.length; i &#x3C; l; i++) {
+        const day = Math.ceil((100 - progresses[i]) / speeds[i])
+        if (day > deployDay) {
+            result.push(1)
+            deployDay = day
+        } else {
+            result[result.length - 1] += 1
         }
     }
-    
-    return count
+
+    return result
 }
 </code></pre>
 <h3>문제풀이 생각</h3>
 <ol>
-<li>주어진 스킬트리를 순회하면서 주어진 스킬에 해당하는 인덱스를 저장한다.</li>
-<li>선행 스킬을 배우지 않은 스킬트리로 카운트를 쌓지 않는다.
-(저장된 이전 스킬 인덱스가 -1이고 현재 스킬 인덱스가 -1이 아닌 경우)</li>
-<li>선행 스킬이 나중에 배우게 되면 카운트를 쌓지 않는다.
-(저장된 이전 스킬 인덱스가 -1이 아니고 현재 스킬 인덱스가 -1이 아니면서 저장된 이전 스킬의 인덱스가 현재 스킬 인덱스보다 값이 클 경우)</li>
-<li>조건을 다 거치고 마지막 확인이 된 경우 카운트 하나 쌓는다.</li>
-<li>카운트를 반환한다.</li>
+<li>소수점 올림처리((100-진행도) / 하루당 진행률)를 해서 각 작업의 작업완료 날짜를 구한다.</li>
+<li>저장되어있는 배포날보다 현재 작업완료 날이 더 크다면 결과 배열에 카운트1짜리 값을 추가한다.</li>
+<li>저장되어있는 배포날보다 현재 작업완료 날이 더 작다면 결과 배열 마지막 값에 1을 추가한다.</li>
+<li>결과값을 반환한다.</li>
 </ol>
 <h3>다른 사람의 풀이 (<strong>iRequestUResponse , milliwonaire , 박하영</strong>)</h3>
-<pre><code class="language-javascript">function solution(skill, skill_trees) {
-    function isCorrect(n) {
-        // const test = '[' + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').filter(v => !skill.includes(v)).join('') + ']*';
-        let test = skill.split('');
-        for (var i = 0; i &#x3C; n.length; i++) {
-            if (!skill.includes(n[i])) continue;
-            if (n[i] === test.shift()) continue;
-            return false;
-        }
-        return true;
-    }    
+<pre><code class="language-javascript">function solution(progresses, speeds) {
+    let answer = [0];
+    let days = progresses.map((progress, index) => Math.ceil((100 - progress) / speeds[index]));
+    let maxDay = days[0];
 
-    return skill_trees.filter(isCorrect).length;
+    for(let i = 0, j = 0; i&#x3C; days.length; i++){
+        if(days[i] &#x3C;= maxDay) {
+            answer[j] += 1;
+        } else {
+            maxDay = days[i];
+            answer[++j] = 1;
+        }
+    }
+
+    return answer;
 }
 </code></pre>
 <h3>알게된 점</h3>
-<ol>
-<li>조건에 충족하지 못하는 것을 거르는 방식으로 생각했지만 조건을 충족하는 방식으로도 생각해볼 수 있구나</li>
-<li>Array.prototype.includes 를 이용해보자</li>
-<li>Array.prototype.shift 를 이용해보자</li>
-</ol></article></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posting/programmers-function-implementation";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-0610ffb5df8325885ce5.js"],"app":["/app-47b169e3ccebdb59a97e.js"],"component---src-components-posting-tsx":["/component---src-components-posting-tsx-e506a57a33c45f2f1ac6.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e6cad4d7d4ea49a448a1.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-0482641434527dae8821.js"]};/*]]>*/</script><script src="/polyfill-0610ffb5df8325885ce5.js" nomodule=""></script><script src="/component---src-components-posting-tsx-e506a57a33c45f2f1ac6.js" async=""></script><script src="/commons-e0d8d8de16491f22bc0e.js" async=""></script><script src="/0a301732-fac2f791edec8ebf0fcd.js" async=""></script><script src="/styles-7d4153d260c0197f0043.js" async=""></script><script src="/app-47b169e3ccebdb59a97e.js" async=""></script><script src="/framework-e2d419ac45d8ae41957a.js" async=""></script><script src="/webpack-runtime-239e42e35fd587b48952.js" async=""></script></body></html>
+<p>1.</p></article></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posting/programmers-function-implementation";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-0610ffb5df8325885ce5.js"],"app":["/app-47b169e3ccebdb59a97e.js"],"component---src-components-posting-tsx":["/component---src-components-posting-tsx-e506a57a33c45f2f1ac6.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e6cad4d7d4ea49a448a1.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-0482641434527dae8821.js"]};/*]]>*/</script><script src="/polyfill-0610ffb5df8325885ce5.js" nomodule=""></script><script src="/component---src-components-posting-tsx-e506a57a33c45f2f1ac6.js" async=""></script><script src="/commons-e0d8d8de16491f22bc0e.js" async=""></script><script src="/0a301732-fac2f791edec8ebf0fcd.js" async=""></script><script src="/styles-7d4153d260c0197f0043.js" async=""></script><script src="/app-47b169e3ccebdb59a97e.js" async=""></script><script src="/framework-e2d419ac45d8ae41957a.js" async=""></script><script src="/webpack-runtime-239e42e35fd587b48952.js" async=""></script></body></html>

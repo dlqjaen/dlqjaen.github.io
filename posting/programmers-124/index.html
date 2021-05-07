@@ -2,7 +2,8 @@
 /static/5760030726ebc7666125669dc9e08c82/2244e/profile.jpg 400w,
 /static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg 460w" sizes="(max-width: 460px) 100vw, 460px" /><img loading="lazy" sizes="(max-width: 460px) 100vw, 460px" srcset="/static/5760030726ebc7666125669dc9e08c82/f836f/profile.jpg 200w,
 /static/5760030726ebc7666125669dc9e08c82/2244e/profile.jpg 400w,
-/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg 460w" src="/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h5 class="side-menu__name">Beomdu.Lee</h5><a class="side-menu__email" href="mailto: a01055255417@gmail.com">a01055255417@gmail.com</a><p><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://github.com/dlqjaen">Github</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.hackerrank.com/a01055255417">Hackerrank</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dlqjaen/">Instagram</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://flitto.com">Flitto</a></p></article><ul class="side-menu__menu"><li><a class="side-menu__link active" href="/">📒 Posting</a></li></ul><article class="side-menu__production-period"><p>© 2020 - <!-- -->2021<!-- --> Built width Gatsby</p><p>Edited by <!-- -->Beomdu.Lee</p></article><button class="side-menu__toggle">📖</button></aside><main class="content "><section class="posting"><h1 class="posting__title"><span>프로그래머스 - 124 나라의 숫자</span><span class="posting__date">2021-04-05</span></h1><p class="posting__tag-wrapper"><span class="posting__tag js">#JS</span><span class="posting__tag algorithm">#Algorithm</span></p><article class="posting__content"><blockquote>
+/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg 460w" src="/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h5 class="side-menu__name">Beomdu.Lee</h5><a class="side-menu__email" href="mailto: a01055255417@gmail.com">a01055255417@gmail.com</a><p><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://github.com/dlqjaen">Github</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.hackerrank.com/a01055255417">Hackerrank</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dlqjaen/">Instagram</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://flitto.com">Flitto</a></p></article><ul class="side-menu__menu"><li><a class="side-menu__link active" href="/">📒 Posting</a></li></ul><article class="side-menu__production-period"><p>© 2020 - <!-- -->2021<!-- --> Built width Gatsby</p><p>Edited by <!-- -->Beomdu.Lee</p></article><button class="side-menu__toggle">📖</button></aside><main class="content "><section class="posting"><h1 class="posting__title"><span>프로그래머스 - 124 나라의 숫자</span><span class="posting__date">2021-04-05</span></h1><p class="posting__tag-wrapper"><span class="posting__tag js">#JS</span><span class="posting__tag algorithm">#Algorithm</span></p><article class="posting__content"><p><a href="https://programmers.co.kr/learn/courses/30/lessons/12899">링크</a></p>
+<blockquote>
 <p>자연수?</p>
 </blockquote>
 <p><code>양의 정수</code>의 총칭. 곧 1부터 시작하여 하나씩 더하여 얻는 수.</p>
@@ -14,8 +15,8 @@
         const number = m/3
         const share = Math.floor(number)
         const remainder = m%3
-        
-        
+
+
         if (remainder === 0)  {
             if (number > 1) {
                 divide(share - 1)
@@ -23,7 +24,7 @@
             result += '4'
         } else {
             if (number > 1) {
-                divide(share)   
+                divide(share)
             }
             result += remainder === 3 ? '4' : String(remainder)
         }
@@ -33,14 +34,15 @@
 }
 </code></pre>
 <h3>문제풀이 생각</h3>
-<pre><code>   1. 주어진 수를 3진법으로 만들어서 구하자!
-   2. 10진수를 3진수로 만드는 방법은 주어진 수를 3으로 나누어 나머지를 저장한다.
-   3. 나온 몫을 다시 3으로 나눈다.
-   4. 2~3의 방법을 반복하여 더 이상 나누어진 수가 1보다 크지 않을경우 반복을 중단한다.
-   5. 2~3의 반복으로 가장 마지막에 계산된 나머지부터 문자열로 저장한다.
-   6. 이 때, 3은 4로 치환한다.
-   7. 만약 2번을 진행했을 때 나머지가 없다면 '4'를 저장하고 몫에서 1을 뺀 값으로 2~3을 반복한다.
-</code></pre>
+<ol>
+<li>주어진 수를 3진법으로 만들어서 구하자!</li>
+<li>10진수를 3진수로 만드는 방법은 주어진 수를 3으로 나누어 나머지를 저장한다.</li>
+<li>나온 몫을 다시 3으로 나눈다.</li>
+<li>2~3의 방법을 반복하여 더 이상 나누어진 수가 1보다 크지 않을경우 반복을 중단한다.</li>
+<li>2~3의 반복으로 가장 마지막에 계산된 나머지부터 문자열로 저장한다.</li>
+<li>이 때, 3은 4로 치환한다.</li>
+<li>만약 2번을 진행했을 때 나머지가 없다면 '4'를 저장하고 몫에서 1을 뺀 값으로 2~3을 반복한다.</li>
+</ol>
 <h3>다른 사람의 풀이 (- , - , -)</h3>
 <pre><code class="language-javascript">function change124(n) {
   var answer = "";
