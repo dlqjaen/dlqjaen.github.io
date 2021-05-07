@@ -4,9 +4,9 @@ date: '2021-04-05'
 title: '프로그래머스 - 124 나라의 숫자'
 description: '자연수 n이 매개변수로 주어질 때, n을 124 나라에서 사용하는 숫자로 바꾼 값을 return 하도록 solution 함수를 완성해 주세요.'
 tags: ['JS', 'Algorithm']
-
-
 ---
+
+[링크](https://programmers.co.kr/learn/courses/30/lessons/12899)
 
 > 자연수?
 
@@ -23,8 +23,8 @@ function solution(n) {
         const number = m/3
         const share = Math.floor(number)
         const remainder = m%3
-        
-        
+
+
         if (remainder === 0)  {
             if (number > 1) {
                 divide(share - 1)
@@ -32,7 +32,7 @@ function solution(n) {
             result += '4'
         } else {
             if (number > 1) {
-                divide(share)   
+                divide(share)
             }
             result += remainder === 3 ? '4' : String(remainder)
         }
@@ -44,13 +44,13 @@ function solution(n) {
 
 ### 문제풀이 생각
 
-       1. 주어진 수를 3진법으로 만들어서 구하자!
-       2. 10진수를 3진수로 만드는 방법은 주어진 수를 3으로 나누어 나머지를 저장한다.
-       3. 나온 몫을 다시 3으로 나눈다.
-       4. 2~3의 방법을 반복하여 더 이상 나누어진 수가 1보다 크지 않을경우 반복을 중단한다.
-       5. 2~3의 반복으로 가장 마지막에 계산된 나머지부터 문자열로 저장한다.
-       6. 이 때, 3은 4로 치환한다.
-       7. 만약 2번을 진행했을 때 나머지가 없다면 '4'를 저장하고 몫에서 1을 뺀 값으로 2~3을 반복한다.
+1. 주어진 수를 3진법으로 만들어서 구하자!
+2. 10진수를 3진수로 만드는 방법은 주어진 수를 3으로 나누어 나머지를 저장한다.
+3. 나온 몫을 다시 3으로 나눈다.
+4. 2~3의 방법을 반복하여 더 이상 나누어진 수가 1보다 크지 않을경우 반복을 중단한다.
+5. 2~3의 반복으로 가장 마지막에 계산된 나머지부터 문자열로 저장한다.
+6. 이 때, 3은 4로 치환한다.
+7. 만약 2번을 진행했을 때 나머지가 없다면 '4'를 저장하고 몫에서 1을 뺀 값으로 2~3을 반복한다.
 
 
 

@@ -4,7 +4,6 @@ date: '2021-04-01'
 title: '프로그래머스 - 두 개 뽑아서 더하기'
 description: '정수 배열 numbers가 주어집니다. numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요.'
 tags: ['JS', 'Algorithm']
-
 ---
 
 [링크](https://programmers.co.kr/learn/courses/30/lessons/68644?language=javascript)
@@ -15,7 +14,7 @@ function solution(numbers) {
     numbers.forEach((item, index) => {
         numbers.slice(index+1).forEach(item2 => sumList.push(item + item2))
     })
-    
+
     return [...new Set(sumList)].sort((a,b) => a - b)
 }
 ```

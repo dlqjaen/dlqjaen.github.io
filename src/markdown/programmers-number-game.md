@@ -6,6 +6,8 @@ description: 'A 팀원들이 부여받은 수가 출전 순서대로 나열되�
 tags: ['JS', 'Algorithm']
 ---
 
+[링크](https://programmers.co.kr/learn/courses/30/lessons/12987)
+
 ```javascript
 function solution(A, B) {
   let sortA = A.sort((a, b) => a - b)

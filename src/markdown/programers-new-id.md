@@ -1,12 +1,12 @@
 ---
 path: '/posting/programmers-new-id'
 date: '2021-04-13'
-title: '프로그래머스 - 신규 아이디 추처'
+title: '프로그래머스 - 신규 아이디 추천'
 description: '신규 유저가 입력한 아이디를 나타내는 new_id가 매개변수로 주어질 때, "네오"가 설계한 7단계의 처리 과정을 거친 후의 추천 아이디를 return 하도록 solution 함수를 완성해 주세요.'
 tags: ['JS', 'Algorithm']
-
-
 ---
+
+[링크](https://programmers.co.kr/learn/courses/30/lessons/72410)
 
 ```javascript
 function solution(new_id) {
@@ -73,7 +73,7 @@ function solution(new_id) {
 ### 알게된 점
 
 1. replace를 연속해서 사용할 수 있었지!
-2. **charAt()** 함수는 문자열에서 특정 인덱스에 위치하는 유니코드 단일문자를 반환합니다. 
+2. **charAt()** 함수는 문자열에서 특정 인덱스에 위치하는 유니코드 단일문자를 반환합니다.
 3. **`repeat()`** 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환합니다.
 
 

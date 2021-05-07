@@ -2,7 +2,7 @@
 path: '/posting/backend-understanding'
 date: '2021-01-25'
 title: '백엔드 용어 정리'
-description: ''
+description: '회의시간에 들었던 지나가는 이야기로 들리던 백엔드 개발자들이 말하는 단어 및 용어에 대해 맛보기해보자!'
 tags: ['Basic']
 ---
 

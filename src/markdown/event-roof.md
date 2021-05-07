@@ -2,10 +2,9 @@
 path: '/posting/event-roof'
 date: '2020-01-03'
 title: '이벤트 루프'
-description: ''
+description: '자바스크립트의 event-roof에 대해서 알아보자!'
 tags: ['JS']
 ---
-
 ## Event Roof
 
 ![img](https://miro.medium.com/max/2048/1*4lHHyfEhVB0LnQ3HlhSs8g.png)
@@ -13,7 +12,7 @@ tags: ['JS']
 출처 [How JavaScript works: an overview of the engine, the runtime, and the call stack](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
 
 - 자바스크립트는 '단일 스레드'
-- 자바스크립트는 어떻게 '동시성'을 지원하는 걸까
+- 자바스크립트는 어떻게 '동시성'을 지원하는 걸i까
 - 비동기 요청은 자바스크립트의 구동환경(브라우저나 node.js)에서 이루어진다
 - Run to Completion: 하나의 함수가 실행되면 이 함수가 끝날 때까지는 다른 어떤 작업도 끼어들지 못한다.
 - Node.js에서는 비동기 IO를 지원하기 위해 libuv 라이브러리를 사용하며 libuv 라이브러리가 이벤트루프를 제공

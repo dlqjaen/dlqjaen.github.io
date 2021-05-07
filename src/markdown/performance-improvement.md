@@ -2,7 +2,7 @@
 path: '/posting/performance-improvement'
 date: '2020-10-27'
 title: 'WEB 성능개선 방법'
-description: ''
+description: 'Web의 성능을 개선하는 방법에는 어떤 것들이 있을까?'
 tags: ['JS', 'Service']
 ---
 ### 사용자의 느낌을 개선

@@ -4,22 +4,22 @@ date: '2021-04-16'
 title: '프로그래머스 - 기지국 설치'
 description: '아파트의 개수 N, 현재 기지국이 설치된 아파트의 번호가 담긴 1차원 배열 stations, 전파의 도달 거리 W가 매개변수로 주어질 때, 모든 아파트에 전파를 전달하기 위해 증설해야 할 기지국 개수의 최솟값을 리턴하는 solution 함수를 완성해주세요'
 tags: ['JS', 'Algorithm']
-
-
 ---
+
+[링크](https://programmers.co.kr/learn/courses/30/lessons/12979)
 
 ```javascript
 function solution(n, stations, w) {
     let section = 1
     let count = 0
     const range = (w*2)+1
-    
+
     for (let i=0, l=stations.length; i<l; i++) {
         let min = stations[i]-w
         let max = stations[i]+w
-        
+
         if (section < min) {
-            count += Math.ceil((min-section)/range)        
+            count += Math.ceil((min-section)/range)
         }
         if ((n-max > 0) && (i === l-1)) {
             count += Math.ceil((n-max)/range)
@@ -56,7 +56,7 @@ function solution(n, stations, w) {
         answer += Math.ceil((toReachIndex - startIndex) / ((2 * w) + 1));
         startIndex = stations[i] + w;
     }
-    answer += Math.ceil((n - startIndex) / ((2 * w) + 1));  
+    answer += Math.ceil((n - startIndex) / ((2 * w) + 1));
     return answer;
 }
 ```

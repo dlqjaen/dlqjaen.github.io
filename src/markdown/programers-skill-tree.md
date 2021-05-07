@@ -1,19 +1,20 @@
 ---
-path: '/posting/programmers-function-implementation'
+path: '/posting/programmers-skill-tree'
 date: '2021-04-08'
-title: '프로그래머스 - 기능개발'
-description: '먼저 배포되어야 하는 순서대로 작업의 진도가 적힌 정수 배열 progresses와 각 작업의 개발 속도가 적힌 정수 배열 speeds가 주어질 때 각 배포마다 몇 개의 기능이 배포되는지를 return 하도록 solution 함수를 완성하세요.'
+title: '프로그래머스 - 스킬트리'
+description: '선행 스킬 순서 skill과 유저들이 만든 스킬트리1를 담은 배열 skill_trees가 매개변수로 주어질 때, 가능한 스킬트리 개수를 return 하는 solution 함수를 작성해주세요.'
 tags: ['JS', 'Algorithm']
-
 ---
+
+[링크](https://programmers.co.kr/learn/courses/30/lessons/49993)
 
 ```javascript
 function solution(skillBuild, userSkillTrees) {
     let count = 0
-    
+
     for (let userSkill of userSkillTrees) {
         let lastIndex = null
-        
+
         for (let skill of skillBuild) {
             let findIndex = userSkill.indexOf(skill)
 
@@ -26,7 +27,7 @@ function solution(skillBuild, userSkillTrees) {
             lastIndex = findIndex
         }
     }
-    
+
     return count
 }
 ```
@@ -58,7 +59,7 @@ function solution(skill, skill_trees) {
             return false;
         }
         return true;
-    }    
+    }
 
     return skill_trees.filter(isCorrect).length;
 }

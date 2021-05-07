@@ -2,7 +2,7 @@
 path: '/posting/this'
 date: '2020-11-10'
 title: 'This'
-description: ''
+description: '자바스크립트의 this에 대해서 알아보자!'
 tags: ['JS']
 ---
 
