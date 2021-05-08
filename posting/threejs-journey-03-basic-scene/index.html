@@ -4,8 +4,8 @@
 /static/5760030726ebc7666125669dc9e08c82/2244e/profile.jpg 400w,
 /static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg 460w" src="/static/5760030726ebc7666125669dc9e08c82/d3376/profile.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h5 class="side-menu__name">Beomdu.Lee</h5><a class="side-menu__email" href="mailto: a01055255417@gmail.com">a01055255417@gmail.com</a><p><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://github.com/dlqjaen">Github</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.hackerrank.com/a01055255417">Hackerrank</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/dlqjaen/">Instagram</a><a class="side-menu__tag" rel="noopener noreferrer" target="_blank" href="https://flitto.com">Flitto</a></p></article><ul class="side-menu__menu"><li><a class="side-menu__link active" href="/">📒 Posting</a></li></ul><article class="side-menu__production-period"><p>© 2020 - <!-- -->2021<!-- --> Built width Gatsby</p><p>Edited by <!-- -->Beomdu.Lee</p></article><button class="side-menu__toggle">📖</button></aside><main class="content "><section class="posting"><h1 class="posting__title"><span>threejs-journey 03-basic-scene</span><span class="posting__date">2021-04-28</span></h1><p class="posting__tag-wrapper"><span class="posting__tag three.js">#three.js</span></p><article class="posting__content"><p><a href="https://threejs-journey.xyz/lessons/3">Link</a></p>
 <ol>
-<li><code>three.js</code> 적용하려면 우선은 html에 <code>three.js</code> 라이브러리를 연결해 줘야합니다.</li>
-<li></li>
+<li><code>three.js</code> 적용하려면 우선은 html에 <code>three.js</code> 라이브러리를 연결해 줘야한다.</li>
+<li><code>section</code> 다음에 스크립트를 로드하는 이유는 <a href="https://dlqjaen.github.io/posting/performance-improvement">Web성능 최적화</a> 를 참고</li>
 </ol>
 <pre><code class="language-html">&#x3C;!-- index.html -->
 &#x3C;body>
@@ -14,23 +14,23 @@
   &#x3C;script src="./script.js">&#x3C;/script>
 &#x3C;/body>
 </code></pre>
+<h3>공간생성</h3>
 <pre><code class="language-javascript">// script.js
+const scene = new THREE.Scene()
 </code></pre>
-<pre><code class="language-javascript">const scene = new THREE.Scene()
-const geometry = new THREE.BoxGeometry(1, 1, 1)
+<p><code>THREE</code> 객체를 이용해서 <code>scene</code> 을 생성한다. (공간)</p>
+<h3>오브젝트 생성</h3>
+<pre><code class="language-javascript">const geometry = new THREE.BoxGeometry(1, 1, 1)
 const material = new THREE.MeshBasicMaterial({ color: 0xff00000 })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
-
-const geometry2 = new THREE.BoxGeometry(1, 1, 1)
-const material2 = new THREE.MeshBasicMaterial({ color: 'blue' })
-const mesh2 = new THREE.Mesh(geometry2, material2)
-mesh2.position.x = 1
-mesh2.position.y = 2
-mesh2.position.z = 2
-scene.add(mesh2)
-
-const sizes = {
+</code></pre>
+<p><code>BoxGeometry</code>를 이용해서 네모상자 구조를 생성할 수 있다. 인자는 <code>(길이, 높이, 깊이)</code> 순서다.</p>
+<p><code>MeshBasicMaterial</code> 을 사용하면 단순한 음영으로 도형을 그릴 수 있다. 컬러는 <code>HEX, 색상이름, 16진수</code>으로도 지정가능</p>
+<p><code>Mesh</code> 를 이용하면 삼각형 폴리곤을 기반으로한 객체를 생성할 수 있는데 <code>geometry</code> 로 매체의 구조를 전달해주고 <code>material</code> 로 매체의 재질을 전달하면 오브젝트를 생성한다.</p>
+<p><code>scene.add(mesh)</code> 을 이용하면 앞서 생성한 공간에 방금만든 오브젝트를 추가할 수 있다.</p>
+<h3>카메라 생성</h3>
+<pre><code class="language-javascript">const sizes = {
   width: 800,
   height: 600
 }
@@ -39,9 +39,42 @@ camera.position.z = 5
 camera.position.x = 1
 camera.position.y = 1
 scene.add(camera)
+</code></pre>
+<p><code>PerspectiveCamera</code> 를 이용하면 원근을 처리하는 카메라를 생성할 수 있다.</p>
+<p>첫 번째 매개변수로는 화각을 넘겨줄 수 있다. 화각이 좁을수록(작을수록) 물체가 확대된 것처럼 보이고 넓을수록(클수록) 화면의 왜곡이 심해진다.</p>
+<p>두 번째 매개변수는 가로세로의 비율을 넘겨준다.</p>
+<p>추가로 <code>position</code>으로 카메라의 위치를 조절할 수 있다. 최초 랜더링 시 카메라와 물체(mesh)가 같은 위치에 존재하기에 카메라를 z축으로 값을 주어 물체가 보이도록 한다.</p>
+<p><code>scene.add(camera)</code> 를 이용하면 공간에 카메라를 추가할 수 있다.</p>
+<h3>HTML에 랜더링</h3>
+<pre><code class="language-javascript">const canvas = document.querySelector('canvas.webgl')
+
+const renderer = new THREE.WebGLRenderer({ canvas })
+renderer.setSize(sizes.width, sizes.height)
+renderer.render(scene, camera)
+</code></pre>
+<p><code>html</code>에 존재하는 엘리먼트를 지정하고 <code>new THREE.WebGLRenderer({ canvas })</code> 를 이용하여 Webgl을 객체를 생성한다.</p>
+<p><code>renderer.setSize(sizes.width, sizes.height)</code> 로 캔버스의 사이즈를 정해준다.</p>
+<p><code>renderer.render(scene, camera)</code> 을 이용해 앞서 생성했던 공간과 카메라를 캔버스에 랜더링한다.</p>
+<h3>전체 코드</h3>
+<pre><code class="language-javascript">const scene = new THREE.Scene()
+
+const geometry = new THREE.BoxGeometry(1, 1, 1)
+const material = new THREE.MeshBasicMaterial({ color: 0xff00000 })
+const mesh = new THREE.Mesh(geometry, material)
+scene.add(mesh)
+
+const sizes = {
+  width: 800,
+  height: 600
+}
+
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
+camera.position.z = 5
+camera.position.x = 1
+camera.position.y = 1
+scene.add(camera)
 
 const canvas = document.querySelector('canvas.webgl')
-
 const renderer = new THREE.WebGLRenderer({ canvas })
 renderer.setSize(sizes.width, sizes.height)
 renderer.render(scene, camera)
