@@ -7,7 +7,7 @@ tags: ['three.js']
 
 ---
 
-[Link](https://threejs-journey.xyz/lessons/3)
+[Link](https://threejs-journey.xyz/lessons/5)
 
 - 04강의에서 webpack을 이용하여 three.js를 연결하도록 했었다.(04강 Webpack설정은 따로 정리하지 않음.)
 -  `position` (개체 이동), `scale` (개체 크기 조정), `rotation` (개체 회전), `quaternion` (객체를 회전하기 위해; 나중에 자세히 알아보기)을 이용하면 오브젝트를 이동, 크기조절, 회전 할 수 있다.
